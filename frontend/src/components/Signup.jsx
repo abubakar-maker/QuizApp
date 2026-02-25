@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { signupStyles } from "../assets/dummyStyles";
 import { Link, useNavigate } from "react-router-dom";
+import { API_BASE } from "../services/api";
 import {
   ArrowLeft,
   CheckCircle,
@@ -35,8 +36,6 @@ function Signup({ onSignupSuccess = null }) {
       e.password = "Password must be at least 6 characters";
     return e;
   };
-
-  const API_BASE = "http://localhost:4000";
   const handleSubmit = async (ev) => {
     ev.preventDefault();
     setSubmitError("");

@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useCallback, useMemo } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { resultStyles } from "../assets/dummyStyles";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { API_BASE, getAuthHeader } from "../services/api";
 
 const Badge = ({ percent }) => {
   if (percent >= 85)
@@ -13,20 +14,12 @@ const Badge = ({ percent }) => {
   return <span className={resultStyles.badgeNeedsWork}>Needs Work</span>;
 };
 
-function MyResult({ apiBase = "http://localhost:4000" }) {
+function MyResult({ apiBase = API_BASE }) {
   const [results, setResults] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedTechnology, setSelectedTechnology] = useState("all");
   const [technologies, setTechnologies] = useState([]);
-
-  const getAuthHeader = useCallback(() => {
-    const token =
-      localStorage.getItem("token") ||
-      localStorage.getItem("authToken") ||
-      null;
-    return token ? { Authorization: `Bearer ${token}` } : {};
-  }, []);
 
   useEffect(() => {
   if (!results) return;
@@ -78,7 +71,7 @@ function MyResult({ apiBase = "http://localhost:4000" }) {
     return () => {
       mounted = false;
     };
-  }, [apiBase, selectedTechnology, getAuthHeader]);
+  }, [apiBase, selectedTechnology]);
 
   const makeKey = (r) => (r && r._id ? r._id : `${r.id}||${r.title}`);
 

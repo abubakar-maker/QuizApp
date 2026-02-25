@@ -6,26 +6,21 @@ import userRouter from './routes/userRoutes.js';
 import resultRouter from './routes/resultRoutes.js';
 
 const app = express();
-const port = 4000;
+const PORT = process.env.PORT || 4000;
 
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true })
-)
+app.use(express.urlencoded({ extended: true }));
 
 connetDB();
 
-app.use('/api/auth',userRouter )
-app.use('/api/results' ,resultRouter)
+app.use('/api/auth', userRouter);
+app.use('/api/results', resultRouter);
 
+app.get('/', (req, res) => {
+    res.send("Api Working");
+});
 
-app.get('/', (req,res) => {
-    res.send("Api Working ")
-})
-
-
-
-app.listen(port, ()=> {
-    console.log(`server satrted at http://localhost:${port}`);
-    
-})
+app.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}`);
+});

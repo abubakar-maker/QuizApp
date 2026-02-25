@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { loginStyles } from "../assets/dummyStyles";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, LogIn, Mail, Lock, EyeOff, Eye } from "lucide-react";
+import { API_BASE } from "../services/api";
 
 const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
@@ -13,8 +14,6 @@ const Login = ({ onLoginSuccess = null }) => {
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [submitError, setSubmitError] = useState("");
-
-  const API_BASE = "http://localhost:4000";
   const handleSubmit = async (ev) => {
     ev.preventDefault();
     setSubmitError("");
