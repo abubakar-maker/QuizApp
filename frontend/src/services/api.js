@@ -1,5 +1,5 @@
-// Get API base URL from environment, with fallback
-export const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:4000";
+// Get API base URL from environment, with fallback to Vercel backend
+export const API_BASE = import.meta.env.VITE_API_BASE || "https://quiz-app-mauve-sigma-34.vercel.app";
 
 // Helper function to get auth header
 export const getAuthHeader = () => {
