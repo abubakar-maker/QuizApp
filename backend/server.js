@@ -26,7 +26,10 @@ app.options("*", cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-connetDB();
+// Connect to database (async)
+connetDB().catch(err => {
+  console.error("Failed to connect to database:", err);
+});
 
 app.use('/api/auth', userRouter);
 app.use('/api/results', resultRouter);
