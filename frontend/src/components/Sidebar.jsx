@@ -644,13 +644,15 @@ function Sidebar() {
                     <Target size={20} />
                   </div>
                   <h2
-                    className={`${sidebarStyles.questionText} font-serif italic`}
+                    className={`${sidebarStyles.questionText} font-serif italic w-full`}
                   >
                     {currentQ.question.includes("\\") ||
                     currentQ.question.includes("^") ? (
-                      <InlineMath math={currentQ.question} />
+                      <div className="overflow-x-auto overflow-y-hidden py-1 custom-scrollbar">
+                        <InlineMath math={currentQ.question} />
+                      </div>
                     ) : (
-                      currentQ.question
+                      <span className="break-words">{currentQ.question}</span>
                     )}
                   </h2>
                 </div>
@@ -707,7 +709,7 @@ function Sidebar() {
                             (option.includes("\\") ||
                               option.includes("^") ||
                               option.includes("_") ||
-                              option.includes("/")) ? ( 
+                              option.includes("/")) ? (
                               <InlineMath math={option} />
                             ) : (
                               option

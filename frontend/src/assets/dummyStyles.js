@@ -256,7 +256,7 @@ export const sidebarStyles = {
 
   
   // Main content
-  mainContent: "flex-1 min-h-screen p-4 md:p-8 ml-0 md:ml-0",
+  mainContent: "flex-1 min-h-screen p-2 md:p-8 overflow-x-hidden",
   
   // Mobile header
   mobileHeader: "flex items-center justify-between mb-4 md:hidden",
@@ -335,14 +335,14 @@ export const sidebarStyles = {
   progressFill: "bg-gradient-to-r from-blue-300 to-indigo-300 h-2.5 rounded-full transition-all duration-500",
   
   // Question container
-  questionContainer: "bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-gray-100",
+ questionContainer: "bg-white p-4 md:p-8 rounded-2xl shadow-lg border border-gray-100 mx-auto w-[95%] md:w-full",
   questionHeader: "flex items-center mb-2",
   questionIcon: "bg-indigo-100 text-indigo-600 p-2 rounded-lg mr-3",
-  questionText: "text-lg md:text-xl  text-slate-800",
+  questionText: "text-base md:text-xl text-slate-800 break-words leading-relaxed",
   
   // Options container
-  optionsContainer: "space-y-4 mt-6",
-  optionButton: "w-full cursor-pointer text-left p-4 md:p-5 rounded-2xl border-2 transition-all duration-300",
+  optionsContainer: "space-y-3 mt-6 w-full",
+optionButton: "w-full cursor-pointer text-left p-3 md:p-5 rounded-xl border-2 transition-all duration-300 flex items-center justify-start",
   optionNormal: "border-gray-100 hover:border-indigo-200 hover:bg-indigo-50 hover:shadow-sm",
   optionCorrect: "bg-green-50 border-green-300 text-green-700 shadow-sm",
   optionIncorrect: "bg-red-50 border-red-300 text-red-700 shadow-sm",
@@ -350,7 +350,7 @@ export const sidebarStyles = {
   optionIconCorrect: "mr-3 text-green-500 flex-shrink-0",
   optionIconIncorrect: "mr-3 text-red-500 flex-shrink-0",
   optionIconEmpty: "w-5 h-5 rounded-full border-2 border-gray-200 mr-3 flex-shrink-0",
-  optionText: "text-sm md:text-lg",
+  optionText: "text-sm md:text-lg break-words flex-1",
   
   // Loading container
   loadingContainer: "h-full flex items-center justify-center",
