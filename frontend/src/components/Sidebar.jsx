@@ -643,18 +643,22 @@ function Sidebar() {
                   <div className={sidebarStyles.questionIcon}>
                     <Target size={20} />
                   </div>
-                  <h2
-                    className={`${sidebarStyles.questionText} font-serif italic w-full`}
-                  >
-                    {currentQ.question.includes("\\") ||
-                    currentQ.question.includes("^") ? (
-                      <div className="overflow-x-auto overflow-y-hidden py-1 custom-scrollbar">
-                        <InlineMath math={currentQ.question} />
-                      </div>
-                    ) : (
-                      <span className="break-words">{currentQ.question}</span>
-                    )}
-                  </h2>
+                  <div className="w-full max-w-full overflow-hidden">
+                    <h2
+                      className={`${sidebarStyles.questionText} font-serif italic w-full`}
+                    >
+                      {currentQ.question.includes("\\") ||
+                      currentQ.question.includes("^") ? (
+                        <div className="overflow-x-auto overflow-y-hidden py-2 custom-scrollbar outline-none">
+                          <InlineMath math={currentQ.question} />
+                        </div>
+                      ) : (
+                        <span className="break-words block w-full">
+                          {currentQ.question}
+                        </span>
+                      )}
+                    </h2>
+                  </div>
                 </div>
 
                 <div className={sidebarStyles.optionsContainer}>
