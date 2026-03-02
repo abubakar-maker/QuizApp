@@ -7,15 +7,32 @@ import resultRouter from './routes/resultRoutes.js';
 
 const app = express();
 
-// --- ONLY USE THIS ONE CORS BLOCK ---
+// --- UPDATED CORS BLOCK ---
 const allowedOrigins = [
   'http://localhost:5174',
   'http://localhost:5173',
-  /\.onrender\.com$/ 
+  'https://quizapp-production-f8fc.up.railway.app', // Your specific Railway Frontend
+  /\.onrender\.com$/,                              // Allows Render URLs
+  /\.up\.railway\.app$/                             // Automatically allows any Railway URL
 ];
 
 app.use(cors({
-  origin: allowedOrigins,
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl)
+    if (!origin) return callback(null, true);
+    
+    const isAllowed = allowedOrigins.some(allowed => {
+      if (allowed instanceof RegExp) return allowed.test(origin);
+      return allowed === origin;
+    });
+
+    if (isAllowed) {
+      callback(null, true);
+    } else {
+      console.log("CORS blocked for origin:", origin);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
