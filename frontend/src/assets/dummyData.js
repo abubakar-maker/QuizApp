@@ -1,1523 +1,1866 @@
-
 const questionsData = {
-  // HTML
-  html: {
-    basic: [
-      { id: 1, question: "What does HTML stand for?", options: ["Hyper Text Markup Language", "High Tech Modern Language", "Hyper Transfer Markup Language", "Home Tool Markup Language"], correctAnswer: 0 },
-      { id: 2, question: "Which tag is used to create a hyperlink?", options: ["<link>", "<a>", "<href>", "<hyper>"], correctAnswer: 1 },
-      { id: 3, question: "Which tag represents a paragraph?", options: ["<p>", "<para>", "<text>", "<paragraph>"], correctAnswer: 0 },
-      { id: 4, question: "What is the correct doctype for HTML5?", options: ["<!DOCTYPE HTML5>", "<!DOCTYPE html>", "<HTML5>", "<doctype html5>"], correctAnswer: 1 },
-      { id: 5, question: "Which attribute provides alternative text for images?", options: ["title", "src", "alt", "caption"], correctAnswer: 2 },
-      { id: 6, question: "Which tag inserts a line break?", options: ["<br>", "<lb>", "<break>", "<newline>"], correctAnswer: 0 },
-      { id: 7, question: "Which element is used for numbered lists?", options: ["<ul>", "<ol>", "<li>", "<dl>"], correctAnswer: 1 },
-      { id: 8, question: "Which element contains metadata about the document?", options: ["<meta>", "<header>", "<body>", "<info>"], correctAnswer: 0 },
-      { id: 9, question: "Which tag is used to define a table row?", options: ["<tr>", "<td>", "<th>", "<row>"], correctAnswer: 0 },
-      { id: 10, question: "Which attribute is used to add inline styles?", options: ["style", "class", "id", "css"], correctAnswer: 0 },
-      { id: 11, question: "Which element is used for the main heading of a page?", options: ["<head>", "<title>", "<h1>", "<header>"], correctAnswer: 2 },
-      { id: 12, question: "Which element holds the visible content of the page?", options: ["<body>", "<head>", "<main>", "<section>"], correctAnswer: 0 },
-      { id: 13, question: "How do you write an HTML comment?", options: ["<!-- comment -->", "// comment", "/* comment */", "<! comment !>"], correctAnswer: 0 },
-      { id: 14, question: "Which tag do you use to include a JavaScript file?", options: ["<script src='file.js'>", "<js src='file.js'>", "<include src='file.js'>", "<scriptfile src='file.js'>"], correctAnswer: 0 },
-      { id: 15, question: "Which tag is used to include CSS in an HTML document (external file)?", options: ["<stylesheet href='style.css'>", "<link rel='stylesheet' href='style.css'>", "<style src='style.css'>", "<css href='style.css'>"], correctAnswer: 1 },
-      { id: 16, question: "Which tag groups together form controls with a caption?", options: ["<fieldset>", "<group>", "<formgroup>", "<controls>"], correctAnswer: 0 },
-      { id: 17, question: "Which attribute sets the URL for an <a> tag?", options: ["href", "src", "link", "url"], correctAnswer: 0 },
-      { id: 18, question: "Which tag represents a list item?", options: ["<li>", "<item>", "<list-item>", "<entry>"], correctAnswer: 0 },
-      { id: 19, question: "Which tag is used to display an image?", options: ["<img>", "<image>", "<picture>", "<photo>"], correctAnswer: 0 },
-      { id: 20, question: "Which attribute is used to give an element a unique identifier?", options: ["class", "id", "name", "key"], correctAnswer: 1 }
-    ],
-
-    intermediate: [
-      { id: 1, question: "Which element is used for self-contained composition in a document?", options: ["<section>", "<article>", "<div>", "<aside>"], correctAnswer: 1 },
-      { id: 2, question: "Which input type shows a date picker in supporting browsers?", options: ["date", "datetime", "calendar", "time"], correctAnswer: 0 },
-      { id: 3, question: "Which attribute on <a> opens the link in a new tab?", options: ["target='_blank'", "rel='new'", "href='_blank'", "open='new'"], correctAnswer: 0 },
-      { id: 4, question: "Which element is used to play audio?", options: ["<sound>", "<audio>", "<mp3>", "<media>"], correctAnswer: 1 },
-      { id: 5, question: "Which tag should contain the page title?", options: ["<title>", "<h1>", "<header>", "<headtitle>"], correctAnswer: 0 },
-      { id: 6, question: "What does the <canvas> element provide?", options: ["Scalable vector graphics", "Bitmap drawing surface", "Audio support", "Table layout"], correctAnswer: 1 },
-      { id: 7, question: "Which semantic element represents site navigation?", options: ["<nav>", "<menu>", "<navigation>", "<links>"], correctAnswer: 0 },
-      { id: 8, question: "Which attribute on <form> disables browser validation?", options: ["novalidate", "no-validate", "validate='false'", "novate"], correctAnswer: 0 },
-      { id: 9, question: "Which tag is used for captioning a table?", options: ["<caption>", "<legend>", "<title>", "<label>"], correctAnswer: 0 },
-      { id: 10, question: "Which element is used to group form controls with a caption?", options: ["<fieldset>", "<group>", "<controls>", "<formgroup>"], correctAnswer: 0 },
-
-      { id: 11, question: "Which attribute provides responsive image candidates on <img>?", options: ["srcset", "sizes", "src", "picture"], correctAnswer: 0 },
-      { id: 12, question: "Which element allows multiple sources for responsive images?", options: ["<picture>", "<imgset>", "<sources>", "<figure>"], correctAnswer: 0 },
-      { id: 13, question: "Which attribute indicates an input is required?", options: ["required", "must", "validate", "needed"], correctAnswer: 0 },
-      { id: 14, question: "Which attribute specifies an input's placeholder text?", options: ["label", "placeholder", "hint", "prompt"], correctAnswer: 1 },
-      { id: 15, question: "Which attribute specifies the input's allowed file types?", options: ["accept", "type", "format", "files"], correctAnswer: 0 },
-      { id: 16, question: "Which element provides an embedded inline frame?", options: ["<embed>", "<iframe>", "<frame>", "<window>"], correctAnswer: 1 },
-      { id: 17, question: "Which attribute on <script> loads a module?", options: ["type='module'", "module='true'", "defer='module'", "async='module'"], correctAnswer: 0 },
-      { id: 18, question: "Which attribute defers script execution until parsing is done?", options: ["async", "defer", "later", "delay"], correctAnswer: 1 },
-      { id: 19, question: "Which attribute sets the character encoding for the document?", options: ["<meta charset='UTF-8'>", "<meta encoding='UTF-8'>", "<charset='UTF-8'>", "<meta type='UTF-8'>"], correctAnswer: 0 },
-      { id: 20, question: "Which attribute on a link can help with SEO and noreferrer/security when opening new tabs?", options: ["rel='noopener noreferrer'", "rel='nofollow'", "rel='external'", "rel='security'"], correctAnswer: 0 },
-
-      { id: 21, question: "Which element is used to define a list of navigation links in HTML5?", options: ["<nav>", "<ul>", "<list>", "<menu>"], correctAnswer: 0 },
-      { id: 22, question: "Which attribute is used to associate a <label> with an input?", options: ["for", "id", "name", "aria-label"], correctAnswer: 0 },
-      { id: 23, question: "Which global attribute allows storing custom data on an element?", options: ["data-* attributes", "aria-* attributes", "custom-*", "meta-*"], correctAnswer: 0 },
-      { id: 24, question: "Which element hides content visually but keeps it accessible to screen readers?", options: ["hidden", "aria-hidden", "visually-hidden/sr-only", "display:none"], correctAnswer: 2 },
-      { id: 25, question: "Which attribute marks boolean attributes in HTML (present means true)?", options: ["value present", "attribute present without value", "attribute='true'", "bool='yes'"], correctAnswer: 1 },
-      { id: 26, question: "Which element is appropriate for marking up quoted blocks of text?", options: ["<q>", "<blockquote>", "<quote>", "<cite>"], correctAnswer: 1 },
-      { id: 27, question: "Which element provides a machine-readable citation for a work?", options: ["<cite>", "<reference>", "<meta name='citation'>", "<cite-ref>"], correctAnswer: 0 },
-      { id: 28, question: "Which attribute on <img> helps with responsive layout by providing image sizes?", options: ["sizes", "srcset", "resolution", "media"], correctAnswer: 0 },
-      { id: 29, question: "Which element can be used to mark up a caption for a <figure>?", options: ["<figcaption>", "<caption>", "<label>", "<alt>"], correctAnswer: 0 },
-      { id: 30, question: "Which element is used to declare a client-side template that is not rendered directly?", options: ["<template>", "<slot>", "<script type='template'>", "<fragment>"], correctAnswer: 0 },
-
-      { id: 31, question: "Which attribute on <form> defines where to send form-data on submission?", options: ["action", "method", "enctype", "target"], correctAnswer: 0 },
-      { id: 32, question: "Which method attribute sends form-data as URL encoded key-value pairs (default)?", options: ["POST", "GET", "PUT", "PATCH"], correctAnswer: 1 },
-      { id: 33, question: "Which enctype is used for file uploads?", options: ["application/json", "multipart/form-data", "text/plain", "application/x-www-form-urlencoded"], correctAnswer: 1 },
-      { id: 34, question: "Which input type is optimized for email input on mobile keyboards?", options: ["text", "email", "email-address", "mail"], correctAnswer: 1 },
-      { id: 35, question: "Which attribute on <a> provides relationship information (e.g., noopener)?", options: ["rel", "reltype", "role", "aria-role"], correctAnswer: 0 },
-      { id: 36, question: "Which element is used for marked-up code snippets inline?", options: ["<code>", "<pre>", "<samp>", "<kbd>"], correctAnswer: 0 },
-      { id: 37, question: "Which element preserves whitespace and shows preformatted text?", options: ["<pre>", "<code>", "<samp>", "<plaintext>"], correctAnswer: 0 },
-      { id: 38, question: "Which attribute on an input restricts acceptable values with a regular expression?", options: ["pattern", "format", "validate", "mask"], correctAnswer: 0 },
-      { id: 39, question: "Which element provides a short list of options a user can pick from?", options: ["<datalist>", "<select>", "<optionlist>", "<choices>"], correctAnswer: 0 },
-      { id: 40, question: "Which accessibility attribute indicates the role of an element for assistive tech?", options: ["aria-role", "role", "access", "aria-type"], correctAnswer: 1 }
-    ],
-
-    advanced: [
-      { id: 1, question: "Which API lets pages store small amounts of key/value data in the browser persistently?", options: ["SessionStorage", "LocalStorage", "IndexedDB", "Cookies"], correctAnswer: 1 },
-      { id: 2, question: "Which HTML5 API supports drag-and-drop operations?", options: ["Drag and Drop API", "DnD API", "DragDrop", "All of the above"], correctAnswer: 0 },
-      { id: 3, question: "Which element supports srcset for responsive images?", options: ["<img>", "<picture>", "<figure>", "Both <img> and <picture>"], correctAnswer: 3 },
-      { id: 4, question: "Which attribute on <link> is used to apply stylesheets conditionally by media?", options: ["media", "conditional", "type", "rel"], correctAnswer: 0 },
-      { id: 5, question: "Which interface provides programmatic control of audio/video elements?", options: ["MediaController", "HTMLMediaElement", "MediaStream", "AudioAPI"], correctAnswer: 1 },
-      { id: 6, question: "Which element provides accessible labeling via the 'for' attribute?", options: ["<label>", "<legend>", "<caption>", "<title>"], correctAnswer: 0 },
-      { id: 7, question: "Which legacy feature supported offline web apps but is deprecated in favor of Service Workers?", options: ["AppCache", "Service Workers", "WebSQL", "IndexedDB"], correctAnswer: 0 },
-      { id: 8, question: "Which API provides geolocation information to web pages?", options: ["Navigator.location", "Navigator.geolocation", "GeoAPI", "LocationService"], correctAnswer: 1 },
-      { id: 9, question: "Which syntax lets you store custom data attributes on elements?", options: ["data-* attributes", "custom-* attributes", "meta-*", "dataattr-*"], correctAnswer: 0 },
-      { id: 10, question: "Which element is used to measure progress of a task?", options: ["<meter>", "<progress>", "<bar>", "<status>"], correctAnswer: 1 },
-
-      { id: 11, question: "Which attribute on <script> helps with subresource integrity checks?", options: ["integrity", "crossorigin", "sha256", "sri"], correctAnswer: 0 },
-      { id: 12, question: "Which rel value helps browsers establish early connections to origins?", options: ["preconnect", "dns-prefetch", "prefetch", "prerender"], correctAnswer: 0 },
-      { id: 13, question: "Which link rel helps preload critical resources like fonts or modules?", options: ["preload", "prefetch", "preconnect", "prerender"], correctAnswer: 0 },
-      { id: 14, question: "Which attribute on <link> or <script> indicates CORS behavior for the resource?", options: ["crossorigin", "cors", "cross", "mode"], correctAnswer: 0 },
-      { id: 15, question: "Which attribute on <img> supports different image density descriptors in srcset?", options: ["1x, 2x density descriptors", "sizes", "density", "pixel-ratio"], correctAnswer: 0 },
-      { id: 16, question: "Which element helps implement accessible expandable sections with a summary header?", options: ["<details> + <summary>", "<expander>", "<accordion>", "<section>"], correctAnswer: 0 },
-      { id: 17, question: "Which attribute can be used to suggest preferred language of content to the user agent?", options: ["lang", "locale", "xml:lang", "language"], correctAnswer: 0 },
-      { id: 18, question: "Which attribute on media elements allows captions/subtitles to be provided?", options: ["<track> element", "captions attribute", "subtitles attribute", "timeelement"], correctAnswer: 0 },
-      { id: 19, question: "Which element defines a shadow DOM insertion point for Web Components?", options: ["<slot>", "<shadow>", "<content>", "<slotpoint>"], correctAnswer: 0 },
-      { id: 20, question: "Which meta tag helps control viewport on mobile devices?", options: ["<meta name='viewport' content='width=device-width, initial-scale=1'>", "<meta viewport>", "<meta device='mobile'>", "<meta name='mobile'>"], correctAnswer: 0 },
-
-      { id: 21, question: "Which attribute on <a> mitigates reverse tabnabbing when opening new windows?", options: ["rel='noopener'", "rel='nofollow'", "target='_blank'", "rel='opener'"], correctAnswer: 0 },
-      { id: 22, question: "Which element allows embedding SVG content inline in HTML?", options: ["<svg>", "<vector>", "<canvas>", "<image>"], correctAnswer: 0 },
-      { id: 23, question: "Which feature allows authors to hint to the browser to render a page in the background for faster navigation?", options: ["prerender", "prefetch", "preconnect", "preload"], correctAnswer: 0 },
-      { id: 24, question: "Which attribute on <form> allows specifying a submit target (e.g., iframe)?", options: ["target", "action", "method", "enctype"], correctAnswer: 0 },
-      { id: 25, question: "Which element and attribute pair provides a semantic citation reference?", options: ["<cite>", "<cite>", "<ref>", "<meta name='citation'>"], correctAnswer: 0 },
-      { id: 26, question: "Which HTML mechanism helps to lazy-load images in supporting browsers?", options: ["loading='lazy' on <img>", "defer='lazy' on <img>", "lazyload attribute", "data-lazy"], correctAnswer: 0 },
-      { id: 27, question: "Which attribute on media can require user gesture to play by default (browser policy)?", options: ["muted", "autoplay", "controls", "playsinline"], correctAnswer: 0 },
-      { id: 28, question: "Which element is used to group a set of <option> elements together?", options: ["<optgroup>", "<group>", "<options>", "<fieldset>"], correctAnswer: 0 },
-      { id: 29, question: "Which attribute on <input type='number'> sets the smallest valid value?", options: ["min", "step", "value", "lowest"], correctAnswer: 0 },
-      { id: 30, question: "Which attribute prevents an element from receiving focus?", options: ["tabindex='-1'", "tabindex='0'", "focusable='false'", "nofocus"], correctAnswer: 0 },
-
-      { id: 31, question: "Which attribute provides a fallback download filename for <a download>?", options: ["download='filename'", "filename='name'", "file='name'", "name='file'"], correctAnswer: 0 },
-      { id: 32, question: "Which attribute indicates that a form control is editable by the user?", options: ["contenteditable='true'", "editable='true'", "usereditable='true'", "allowedit='true'"], correctAnswer: 0 },
-      { id: 33, question: "Which element provides semantic grouping of navigation links for accessibility (ARIA landmarK)?", options: ["<nav>", "<menu>", "<section>", "<aside>"], correctAnswer: 0 },
-      { id: 34, question: "Which attribute instructs browsers to bypass CORS preflight for fonts/connections? (hint: early connection)", options: ["crossorigin", "cors", "integrity", "preconnect"], correctAnswer: 0 },
-      { id: 35, question: "Which attribute enables a <form> control to be associated with a form not containing it?", options: ["form='formId'", "formFor='formId'", "associate='formId'", "belongs='formId'"], correctAnswer: 0 },
-      { id: 36, question: "Which element is used to provide fallback content for older browsers when embedding objects?", options: ["<object> with fallback content", "<embed> fallback", "<object-fallback>", "<legacy>"], correctAnswer: 0 },
-      { id: 37, question: "Which attribute on <button> sets the type to submit a form by default?", options: ["type='submit'", "action='submit'", "role='submit'", "method='submit'"], correctAnswer: 0 },
-      { id: 38, question: "Which attribute on <link> tells the browser that the stylesheet should be used for printing only?", options: ["media='print'", "rel='print'", "type='print'", "print='true'"], correctAnswer: 0 },
-      { id: 39, question: "Which element is best used for marking up the main content of a page for accessibility?", options: ["<main>", "<content>", "<article>", "<section>"], correctAnswer: 0 },
-      { id: 40, question: "Which element allows authors to include JavaScript templates that are inert until used?", options: ["<template>", "<script type='text/template'>", "<script type='template'>", "<templateScript>"], correctAnswer: 0 },
-
-      { id: 41, question: "Which attribute on <audio> or <video> allows showing native controls?", options: ["controls", "showcontrols", "native", "ui"], correctAnswer: 0 },
-      { id: 42, question: "Which attribute on <img> allows specifying an image placeholder before it loads (native lazy placeholder)?", options: ["loading='lazy'", "placeholder='blur'", "fetchpriority", "srcplaceholder"], correctAnswer: 0 },
-      { id: 43, question: "Which element is used to declare page headers or footers within an article or section?", options: ["<header> and <footer>", "<head> and <tail>", "<top> and <bottom>", "<hgroup> and <fgroup>"], correctAnswer: 0 },
-      { id: 44, question: "Which element can be used to mark an aside or tangential content?", options: ["<aside>", "<side>", "<float>", "<complement>"], correctAnswer: 0 },
-      { id: 45, question: "Which HTML attribute is commonly used to enable inline accessibility labeling for ARIA-hidden elements?", options: ["aria-label", "title", "alt", "label"], correctAnswer: 0 },
-      { id: 46, question: "Which element is used to create an ordered list where items are automatically generated numbers?", options: ["<ol>", "<ul>", "<list>", "<ordered>"], correctAnswer: 0 },
-      { id: 47, question: "Which attribute on <script> optionally indicates that the script should be evaluated as a module and can use import/export?", options: ["type='module'", "module='true'", "scriptmodule='yes'", "esmodule='true'"], correctAnswer: 0 },
-      { id: 48, question: "Which attribute is used in a link tag to hint the browser to dns-prefetch an origin?", options: ["rel='dns-prefetch'", "rel='preconnect'", "rel='prefetch'", "rel='preload'"], correctAnswer: 0 },
-      { id: 49, question: "Which element is used to define a table header cell?", options: ["<th>", "<td>", "<thead>", "<header>"], correctAnswer: 0 },
-      { id: 50, question: "Which global attribute allows toggling visibility for printing and screen readers when combined with CSS?", options: ["hidden", "aria-hidden", "data-hidden", "visually-hidden"], correctAnswer: 3 },
-
-      { id: 51, question: "Which attribute on a <link> or <script> instructs browsers to preserve integrity with SRI hashes?", options: ["integrity", "crossorigin", "referrerpolicy", "nonce"], correctAnswer: 0 },
-      { id: 52, question: "Which attribute can be added to inline event handlers to reduce security risks and enable CSP wise approaches? (recommended: avoid inline handlers)", options: ["Use addEventListener (no attribute)", "onclick-secure", "data-event", "event-handler"], correctAnswer: 0 },
-      { id: 53, question: "Which element provides keyboard input representation for user actions?", options: ["<kbd>", "<key>", "<input type='key'>", "<keyboard>"], correctAnswer: 0 },
-      { id: 54, question: "Which element represents output from a calculation or user action?", options: ["<output>", "<result>", "<calc>", "<value>"], correctAnswer: 0 },
-      { id: 55, question: "Which attribute on <button> or <input> can make a form control disabled and non-interactive?", options: ["disabled", "readonly", "locked", "inactive"], correctAnswer: 0 },
-      { id: 56, question: "Which attribute helps prevent automatic translation of content by the browser?", options: ["translate='no'", "notranslate='true'", "translate='false'", "data-translate='no'"], correctAnswer: 0 },
-      { id: 57, question: "Which element is used to show a short label or keyword for a form control (often shown inside)?", options: ["placeholder (input attribute)", "label element", "hint element", "caption"], correctAnswer: 0 },
-      { id: 58, question: "Which element is intended for marking up keyboard shortcuts and user input (sample output)?", options: ["<samp>", "<kbd>", "<code>", "<var>"], correctAnswer: 0 },
-      { id: 59, question: "Which link rel value hints the browser to fetch a resource for future navigation?", options: ["prefetch", "preload", "preconnect", "prerender"], correctAnswer: 0 },
-      { id: 60, question: "Which HTML feature allows you to include microdata vocabularies for semantics (structured data)?", options: ["Microdata (itemscope/itemprop)", "RDFa", "JSON-LD only", "All of the above (depends on approach)"], correctAnswer: 3 }
-    ]
-  },
-
-  // CSS
-  css: {
-    basic: [
-      { id: 1, question: "Which property changes text color?", options: ["font-color", "text-color", "color", "fg-color"], correctAnswer: 2 },
-      { id: 2, question: "How do you apply a class selector in CSS?", options: [".className", "#className", "className", "*className"], correctAnswer: 0 },
-      { id: 3, question: "Which property sets the background color?", options: ["bgcolor", "background", "background-color", "color"], correctAnswer: 2 },
-      { id: 4, question: "Which property controls spacing inside an element?", options: ["margin", "padding", "gap", "spacing"], correctAnswer: 1 },
-      { id: 5, question: "How to make text bold using CSS?", options: ["font-weight: bold;", "text-style: bold;", "font: bold;", "font-style: bold;"], correctAnswer: 0 },
-      { id: 6, question: "Which selector targets an element by id?", options: ["#id", ".id", "id", "*id"], correctAnswer: 0 },
-      { id: 7, question: "Which property controls the font size?", options: ["text-size", "font-size", "size", "type-size"], correctAnswer: 1 },
-      { id: 8, question: "Which display value places elements inline?", options: ["block", "inline", "flex", "grid"], correctAnswer: 1 },
-      { id: 9, question: "Which property controls element visibility but keeps layout?", options: ["display: none", "visibility: hidden", "opacity: 0", "hidden: true"], correctAnswer: 1 },
-      { id: 10, question: "How do you write a comment in CSS?", options: ["// comment", "/* comment */", "<!-- comment -->", "# comment"], correctAnswer: 1 },
-      { id: 11, question: "Which box-sizing value makes width include padding and border?", options: ["content-box", "border-box", "padding-box", "box-total"], correctAnswer: 1 },
-      { id: 12, question: "Which property defines the font family?", options: ["font-family", "font-type", "font", "typeface"], correctAnswer: 0 },
-      { id: 13, question: "Which property aligns inline content horizontally inside an element?", options: ["vertical-align", "text-align", "align-items", "justify-content"], correctAnswer: 1 },
-      { id: 14, question: "Which property controls the space between lines of text?", options: ["line-spacing", "leading", "line-height", "text-height"], correctAnswer: 2 },
-      { id: 15, question: "Which property changes the mouse cursor when hovering over an element?", options: ["pointer", "cursor", "mouse", "hover-cursor"], correctAnswer: 1 },
-      { id: 16, question: "Which unit is absolute and not relative to font-size?", options: ["em", "rem", "px", "%"], correctAnswer: 2 },
-      { id: 17, question: "Which at-rule is used to define a custom font-face?", options: ["@font", "@font-face", "@import-font", "@face"], correctAnswer: 1 },
-      { id: 18, question: "Which property is the shorthand for setting all four paddings at once?", options: ["padding-all", "padding", "paddings", "padding-shorthand"], correctAnswer: 1 },
-      { id: 19, question: "Which property controls an element's transparency?", options: ["opacity", "transparent", "visibility", "alpha"], correctAnswer: 0 },
-      { id: 20, question: "Which property sets the width of an element?", options: ["width", "size", "w", "max-width"], correctAnswer: 0 }
-    ],
-
-    intermediate: [
-      { id: 1, question: "Which property sets the layout to a two-dimensional grid?", options: ["display: grid", "display: flex", "display: block", "display: table"], correctAnswer: 0 },
-      { id: 2, question: "Which unit is relative to the root font-size?", options: ["em", "rem", "px", "%"], correctAnswer: 1 },
-      { id: 3, question: "How to center a block horizontally with a fixed width?", options: ["margin: auto;", "text-align: center;", "align: center;", "justify: center;"], correctAnswer: 0 },
-      { id: 4, question: "Which pseudo-class targets links when hovered?", options: [":active", ":visited", ":hover", ":focus"], correctAnswer: 2 },
-      { id: 5, question: "Which property creates a flexible box layout?", options: ["display: flex", "display: block", "display: grid", "display: inline"], correctAnswer: 0 },
-      { id: 6, question: "Which property sets spacing between flex items?", options: ["gap", "space", "item-gap", "margin"], correctAnswer: 0 },
-      { id: 7, question: "Which property controls order of flex items?", options: ["z-index", "order", "flex-order", "position"], correctAnswer: 1 },
-      { id: 8, question: "Which at-rule imports fonts or other style sheets?", options: ["@font-face", "@import", "@media", "@charset"], correctAnswer: 1 },
-      { id: 9, question: "Which property adds rounded corners?", options: ["border-radius", "corner-radius", "radius", "border-curvature"], correctAnswer: 0 },
-      { id: 10, question: "Which property controls box shadow?", options: ["box-shadow", "shadow", "text-shadow", "box-glow"], correctAnswer: 0 },
-
-      { id: 11, question: "Which pseudo-element inserts content before an element?", options: [":before", "::before", ":first", "::first"], correctAnswer: 1 },
-      { id: 12, question: "Which function performs calculations in CSS values?", options: ["calc()", "compute()", "math()", "value()"], correctAnswer: 0 },
-      { id: 13, question: "Which property controls stacking order of positioned elements?", options: ["z-index", "stack-order", "order", "layer"], correctAnswer: 0 },
-      { id: 14, question: "Which property creates responsive image behavior in layout (object fit)?", options: ["object-position", "object-fit", "background-size", "contain"], correctAnswer: 1 },
-      { id: 15, question: "Which property sets an element's position relative to normal flow?", options: ["position", "display", "float", "place"], correctAnswer: 0 },
-      { id: 16, question: "Which position value removes the element from normal flow and positions relative to viewport?", options: ["relative", "absolute", "fixed", "static"], correctAnswer: 2 },
-      { id: 17, question: "Which property defines how a background image is repeated?", options: ["background-repeat", "background-tile", "repeat", "bg-repeat"], correctAnswer: 0 },
-      { id: 18, question: "Which property controls element overflow behavior?", options: ["overflow", "clip", "flow", "hide"], correctAnswer: 0 },
-      { id: 19, question: "Which form of selector targets children only one level deep?", options: ["> (child selector)", "+ (adjacent)", "~ (sibling)", "space (descendent)"], correctAnswer: 0 },
-      { id: 20, question: "Which combinator selects the next sibling element?", options: [">", "+", "~", " "], correctAnswer: 1 },
-
-      { id: 21, question: "Which declaration defines multiple background layers?", options: ["background-image: url(a), url(b);", "background-multi: ...", "background-layers: ...", "background-list: ..."], correctAnswer: 0 },
-      { id: 22, question: "Which property controls text overflow with ellipsis?", options: ["text-ellipsis", "text-overflow: ellipsis", "overflow-text", "ellipsis"], correctAnswer: 1 },
-      { id: 23, question: "Which at-rule applies styles when a media condition is met (responsive)?", options: ["@media", "@supports", "@responsive", "@match"], correctAnswer: 0 },
-      { id: 24, question: "Which property allows transitions between property values?", options: ["transition", "animate", "transform", "motion"], correctAnswer: 0 },
-      { id: 25, question: "Which property defines a transform-origin point?", options: ["transform-origin", "origin", "pivot", "transform-center"], correctAnswer: 0 },
-      { id: 26, question: "Which value for display creates an inline-level flex container?", options: ["display: flex", "display: inline-flex", "display: inline-block", "display: grid"], correctAnswer: 1 },
-      { id: 27, question: "Which property sets the minimum width of an element?", options: ["min-width", "minsize", "width-min", "min-size"], correctAnswer: 0 },
-      { id: 28, question: "Which method creates equal-height columns using grid?", options: ["grid-auto-rows", "align-items", "grid-template-rows", "row-gap"], correctAnswer: 0 },
-      { id: 29, question: "Which function repeats track definitions in grid layout?", options: ["repeat()", "loop()", "times()", "repeat-track()"], correctAnswer: 0 },
-      { id: 30, question: "Which property controls placement of a grid item across columns/rows?", options: ["grid-column / grid-row", "column-start / row-start", "place-grid", "grid-area-only"], correctAnswer: 0 },
-
-      { id: 31, question: "Which property establishes a new stacking context besides z-index?", options: ["opacity less than 1", "transform: translateZ(0)", "filter property", "all of the above"], correctAnswer: 3 },
-      { id: 32, question: "Which property creates a CSS variable?", options: ["--my-var: 10px;", "var(--my-var)", "set(--my-var)", "css-var(--my-var)"], correctAnswer: 0 },
-      { id: 33, question: "Which function reads a CSS custom property value?", options: ["var(--name)", "get(--name)", "cssvar(--name)", "prop(--name)"], correctAnswer: 0 },
-      { id: 34, question: "Which property controls the gap between grid rows and columns?", options: ["gap", "grid-gap", "gutter", "spacing"], correctAnswer: 0 },
-      { id: 35, question: "Which CSS unit is relative to viewport width?", options: ["vh", "vw", "vmin", "vmax"], correctAnswer: 1 },
-      { id: 36, question: "Which property prevents an element from collapsing margins with its children (establishes block formatting context)?", options: ["overflow: auto", "display: block", "clear: both", "contain: layout"], correctAnswer: 0 },
-      { id: 37, question: "Which property sets pointer events behavior on an element?", options: ["pointer-events", "mouse-events", "touch-action", "event-handling"], correctAnswer: 0 },
-      { id: 38, question: "Which property controls whether content can be selected by the user?", options: ["user-select", "selectable", "allow-select", "text-select"], correctAnswer: 0 },
-      { id: 39, question: "Which shorthand sets font-style, font-weight, font-size, line-height, and font-family in one declaration?", options: ["font", "font-all", "font-shorthand", "type"], correctAnswer: 0 },
-      { id: 40, question: "Which pseudo-class matches an element when it has focus?", options: [":active", ":focus", ":focus-visible", ":hover"], correctAnswer: 1 }
-    ],
-
-    advanced: [
-      { id: 1, question: "Which at-rule applies styles based on viewport size?", options: ["@responsive", "@viewport", "@media", "@screen"], correctAnswer: 2 },
-      { id: 2, question: "Which layout method is best for complex 2D designs?", options: ["flexbox", "grid", "float", "table"], correctAnswer: 1 },
-      { id: 3, question: "Which function creates a linear gradient?", options: ["gradient()", "linear-gradient()", "linear()", "grad-linear()"], correctAnswer: 1 },
-      { id: 4, question: "Which property allows stacking context control?", options: ["z-index", "stack", "order", "layer"], correctAnswer: 0 },
-      { id: 5, question: "Which pseudo-element inserts content before an element's content?", options: [":before", "::before", ":first", "::first"], correctAnswer: 1 },
-      { id: 6, question: "Which property enables custom properties (CSS variables)?", options: ["--var: value;", "var(--x)", "Both defining and using require different syntax", "CSS doesn't support variables"], correctAnswer: 2 },
-      { id: 7, question: "Which function is used to reference a CSS custom property?", options: ["var(--name)", "get(--name)", "css(--name)", "prop(--name)"], correctAnswer: 0 },
-      { id: 8, question: "Which property transforms an element without affecting flow?", options: ["transform", "position", "translate", "move"], correctAnswer: 0 },
-      { id: 9, question: "Which property creates a clipping region?", options: ["clip-path", "mask", "overflow", "clip"], correctAnswer: 0 },
-      { id: 10, question: "Which display value creates a block-level flex container?", options: ["display: flex", "display: block-flex", "display: inline-flex", "display: grid"], correctAnswer: 0 },
-
-      { id: 11, question: "Which at-rule helps feature-detect support for a CSS property/value?", options: ["@supports", "@feature", "@detect", "@if"], correctAnswer: 0 },
-      { id: 12, question: "Which function clamps a value between a range (min/max)?", options: ["clamp()", "between()", "limit()", "range()"], correctAnswer: 0 },
-      { id: 13, question: "Which property indicates the initial preferred size of a flex item?", options: ["flex-basis", "flex-grow", "flex-shrink", "flex"], correctAnswer: 0 },
-      { id: 14, question: "Which property helps reduce repaint cost by hinting the browser about likely changes?", options: ["will-change", "optimize", "performance", "gpu-hint"], correctAnswer: 0 },
-      { id: 15, question: "Which property sets blending mode between element and background?", options: ["mix-blend-mode", "blend", "background-blend-mode", "blend-mode"], correctAnswer: 0 },
-      { id: 16, question: "Which new unit represents a fragment of the available space in grids?", options: ["fr", "fx", "portion", "share"], correctAnswer: 0 },
-      { id: 17, question: "Which CSS API allows painting custom images via JavaScript (Houdini)?", options: ["CSS Paint API", "CSS Houdini Paint", "Canvas API", "CSS Draw API"], correctAnswer: 0 },
-      { id: 18, question: "Which property creates containment for layout, paint, and size to improve performance?", options: ["contain", "isolation", "clip", "overflow"], correctAnswer: 0 },
-      { id: 19, question: "Which value for grid-template-columns creates equal flexible tracks?", options: ["repeat(auto-fit, minmax(...))", "1fr 1fr", "auto", "flex"], correctAnswer: 0 },
-      { id: 20, question: "Which property establishes a new formatting context for floats to avoid collapse?", options: ["clear", "overflow: auto", "contain", "isolate"], correctAnswer: 1 },
-
-      { id: 21, question: "Which CSS function returns the larger of two values?", options: ["max()", "min()", "greater()", "larger()"], correctAnswer: 0 },
-      { id: 22, question: "Which pseudo-class matches elements when they are the first child of their parent?", options: [":first-child", ":first-of-type", ":nth-child(1)", ":only-child"], correctAnswer: 0 },
-      { id: 23, question: "Which property provides an easy way to set both align-items and justify-content in grid/flex?", options: ["place-items", "align", "place-content", "grid-center"], correctAnswer: 0 },
-      { id: 24, question: "Which property helps set an intrinsic aspect ratio for an element?", options: ["aspect-ratio", "ratio", "preserve-aspect", "object-ratio"], correctAnswer: 0 },
-      { id: 25, question: "Which CSS property controls smoothing of fonts and rendering on some platforms?", options: ["font-smooth / -webkit-font-smoothing", "text-render", "font-render", "font-smoothing"], correctAnswer: 0 },
-      { id: 26, question: "Which selector targets elements based on attributes that begin with a value?", options: ["[attr^='value']", "[attr*='value']", "[attr$='value']", "[attr|='value']"], correctAnswer: 0 },
-      { id: 27, question: "Which value causes an element to act as a containing block for position: fixed in modern browsers (as of container queries era)?", options: ["contain-intrinsic-size", "contain: layout", "transform on ancestor", "position: relative"], correctAnswer: 2 },
-      { id: 28, question: "Which property toggles whether an element and its descendants are isolated from blending with elements behind them?", options: ["isolation", "mix-blend-mode", "z-index", "isolate"], correctAnswer: 0 },
-      { id: 29, question: "Which rule orders cascade layers (new CSS cascade layers)?", options: ["@layer", "@cascade", "@order", "@layer-order"], correctAnswer: 0 },
-      { id: 30, question: "Which CSS feature enables styling based on the size of an ancestor container rather than the viewport?", options: ["container queries", "media queries", "element queries", "parent queries"], correctAnswer: 0 },
-
-      { id: 31, question: "Which function returns the minimum of given values?", options: ["min()", "max()", "lower()", "smallest()"], correctAnswer: 0 },
-      { id: 32, question: "Which property sets how a replaced element's content should fit its box?", options: ["object-fit", "background-fit", "content-fit", "fit"], correctAnswer: 0 },
-      { id: 33, question: "Which pseudo-class matches an element when it is in a state where the user can hover over it?", options: [":hover", ":any-hover", ":active", ":can-hover"], correctAnswer: 1 },
-      { id: 34, question: "Which property is used to create multiple columns of text layout?", options: ["column-count", "multi-column", "text-columns", "columns"], correctAnswer: 0 },
-      { id: 35, question: "Which property controls whether elements are allowed to break inside a page/column/region?", options: ["break-inside", "page-break", "column-break", "break"], correctAnswer: 0 },
-      { id: 36, question: "Which property creates a mask using an image or gradient?", options: ["mask-image", "clip-path", "background-mask", "mask"], correctAnswer: 0 },
-      { id: 37, question: "Which CSS technique can be used to create a hardware-accelerated layer for smoother animations?", options: ["transform and opacity", "left/top positioning", "margin animations", "font-size animations"], correctAnswer: 0 },
-      { id: 38, question: "Which property pairs with filter to blur the background behind an element?", options: ["backdrop-filter", "background-blur", "filter: backdrop", "box-blur"], correctAnswer: 0 },
-      { id: 39, question: "Which function sets a fallback value for CSS variables inside var() call?", options: ["var(--a, fallback)", "fallback(--a)", "var-fallback(--a)", "get(--a, fallback)"], correctAnswer: 0 },
-      { id: 40, question: "Which property can be used to switch writing direction and layout for different languages?", options: ["writing-mode / direction", "text-direction", "lang-direction", "write-direction"], correctAnswer: 0 },
-
-      { id: 41, question: "Which property defines how to size columns when using grid-auto-columns/rows?", options: ["grid-auto-columns / grid-auto-rows", "auto-columns", "grid-columns-auto", "auto-grid"], correctAnswer: 0 },
-      { id: 42, question: "Which property will establish a new stacking context when set to a value other than 'auto' (example: transform)?", options: ["transform", "position", "display", "opacity"], correctAnswer: 0 },
-      { id: 43, question: "Which CSS value allows you to create breakpoints based on container width (container queries)?", options: ["@container", "@media", "@query", "@container-query"], correctAnswer: 0 },
-      { id: 44, question: "Which property is used to control hyphenation of text?", options: ["hyphens", "text-wrap", "word-break", "wrap"], correctAnswer: 0 },
-      { id: 45, question: "Which CSS function can be used to compute sizes using viewport units and arithmetic?", options: ["calc()", "compute()", "vcalc()", "math()"], correctAnswer: 0 },
-      { id: 46, question: "Which technique isolates CSS scoping in modern component styles (example: shadow DOM)?", options: ["shadow DOM", "scoped attribute", "iframe", "CSS modules"], correctAnswer: 0 },
-      { id: 47, question: "Which property allows authors to control the default box alignment for grid items?", options: ["align-content", "align-items", "justify-items", "place-items"], correctAnswer: 1 },
-      { id: 48, question: "Which unit is relative to the smallest side of the viewport?", options: ["vmin", "vmax", "vh", "vw"], correctAnswer: 0 },
-      { id: 49, question: "Which at-rule can help with preloading fonts with 'as' and rel='preload' usage?", options: ["link rel='preload' as='font'", "@preload", "@font-preload", "@load"], correctAnswer: 0 },
-      { id: 50, question: "Which property helps implement fluid typography using viewport units + clamp?", options: ["font-size: clamp()", "fluid-font", "responsive-font", "font-size: fluid()"], correctAnswer: 0 },
-
-      { id: 51, question: "Which API exposes CSS values programmatically (Typed OM)?", options: ["CSS Typed OM", "CSSOM", "Document.style", "StyleManager"], correctAnswer: 0 },
-      { id: 52, question: "Which property allows you to avoid painting an element's descendants (isolation for GPU compositing)?", options: ["contain: paint", "isolation", "will-change", "backface-visibility"], correctAnswer: 0 },
-      { id: 53, question: "Which value to grid-auto-flow changes how implicit grid items are placed?", options: ["row", "column", "dense", "row dense"], correctAnswer: 3 },
-      { id: 54, question: "Which property controls whether an element is included in accessibility tree (ARIA)?", options: ["aria-hidden", "hidden", "role", "tabindex"], correctAnswer: 0 },
-      { id: 55, question: "Which CSS feature lets authors namespace cascade style blocks and control priority order?", options: ["@layer", "@scope", "@namespace", "@cascade"], correctAnswer: 0 },
-      { id: 56, question: "Which property controls the default animation timing function for transitions? (shorthand property)", options: ["transition-timing-function", "animation-timing-function", "timing-function", "easing"], correctAnswer: 0 },
-      { id: 57, question: "Which selector matches an element based on its exact attribute value (word-separated)?", options: ["[attr~='value']", "[attr='value']", "[attr*='value']", "[attr|='value']"], correctAnswer: 1 },
-      { id: 58, question: "Which property is used to declare an overlay blending mode for the element's background only?", options: ["background-blend-mode", "mix-blend-mode", "blend-mode", "overlay-mode"], correctAnswer: 0 },
-      { id: 59, question: "Which mechanism is recommended for progressive enhancement of new CSS features based on browser support?", options: ["@supports feature queries", "@media queries", "feature-detect JS only", "User agent sniffing"], correctAnswer: 0 },
-      { id: 60, question: "Which approach is best for responsive images to balance performance and quality?", options: ["srcset + sizes with appropriate image variants", "single large image and scale via CSS", "use background-image only", "use canvas to resize"], correctAnswer: 0 }
-    ]
-  },
-
-  // JavaScript
-  js: {
-    basic: [
-      { id: 1, question: "Which keyword declares a variable with block scope introduced in ES6?", options: ["var", "let", "const", "both let and const"], correctAnswer: 1 },
-      { id: 2, question: "How do you write a single-line comment in JS?", options: ["// comment", "/* comment */", "<!-- comment -->", "# comment"], correctAnswer: 0 },
-      { id: 3, question: "Which function converts a JSON string to an object?", options: ["JSON.parse()", "JSON.stringify()", "JSON.toObject()", "parseJSON()"], correctAnswer: 0 },
-      { id: 4, question: "Which operator is used for strict equality (no type coercion)?", options: ["==", "=", "===", "!=="], correctAnswer: 2 },
-      { id: 5, question: "How do you add an element to the end of an array?", options: ["push()", "pop()", "shift()", "unshift()"], correctAnswer: 0 },
-      { id: 6, question: "Which global object contains timing functions like setTimeout in browsers?", options: ["Window", "Timer", "Global", "Navigator"], correctAnswer: 0 },
-      { id: 7, question: "How to create a function expression?", options: ["function name() {}", "const fn = function() {}", "fn := function() {}", "def fn() {}"], correctAnswer: 1 },
-      { id: 8, question: "Which method joins array elements into a string?", options: ["join()", "concat()", "toString()", "merge()"], correctAnswer: 0 },
-      { id: 9, question: "Which keyword throws an error manually?", options: ["raise", "throw", "error", "fail"], correctAnswer: 1 },
-      { id: 10, question: "How to check the type of a variable?", options: ["typeof x", "type(x)", "getType(x)", "typeof(x)"], correctAnswer: 0 },
-      { id: 11, question: "Which syntax declares a constant reference in JS?", options: ["constant foo = 1", "const foo = 1", "let const foo = 1", "var const foo = 1"], correctAnswer: 1 },
-      { id: 12, question: "Which method removes the last element from an array and returns it?", options: ["push()", "pop()", "shift()", "unshift()"], correctAnswer: 1 },
-      { id: 13, question: "Which loop repeatedly executes while condition is true (test before body)?", options: ["do...while", "while", "forEach", "for...in"], correctAnswer: 1 },
-      { id: 14, question: "Which operator is used to concatenate strings?", options: ["+", "&", ".", "concat() only"], correctAnswer: 0 },
-      { id: 15, question: "Which built-in method converts an object to a JSON string?", options: ["JSON.stringify()", "JSON.parse()", "toJSON()", "Object.toString()"], correctAnswer: 0 },
-      { id: 16, question: "Which statement creates a new array with values that pass a test?", options: ["map()", "filter()", "reduce()", "find()"], correctAnswer: 1 },
-      { id: 17, question: "Which value is returned when a function has no return statement?", options: ["undefined", "null", "0", "'' (empty string)"], correctAnswer: 0 },
-      { id: 18, question: "Which keyword makes a function an async function?", options: ["async", "await", "defer", "asyncify"], correctAnswer: 0 },
-      { id: 19, question: "Which method adds elements to the start of an array?", options: ["push()", "pop()", "shift()", "unshift()"], correctAnswer: 3 },
-      { id: 20, question: "Which built-in object provides methods like map, filter and reduce for arrays?", options: ["Array.prototype", "Object.prototype", "List.prototype", "Collection.prototype"], correctAnswer: 0 }
-    ],
-
-    intermediate: [
-      { id: 1, question: "Which method returns a promise resolved after a delay when you wrap setTimeout?", options: ["setTimeout returns a promise", "You must wrap setTimeout in a Promise", "delay()", "Promise.timeout()"], correctAnswer: 1 },
-      { id: 2, question: "Which array method creates a new array by applying a function to each element?", options: ["filter()", "map()", "forEach()", "reduce()"], correctAnswer: 1 },
-      { id: 3, question: "Which operator spreads elements of an array?", options: ["...", "spread()", "@spread", "++"], correctAnswer: 0 },
-      { id: 4, question: "Which symbol defines a template literal?", options: ["\"", "'", "` (backtick)"], optionsExtra: [], correctAnswer: 2 },
-      { id: 4, question: "Which symbol defines a template literal?", options: ['"', "'", "` (backtick)", "`` (double backtick)"], correctAnswer: 2 },
-      { id: 5, question: "Which keyword binds 'this' lexically in arrow functions?", options: ["this", "=>", "lex", "bind"], correctAnswer: 1 },
-      { id: 6, question: "Which method is used to handle promise rejections?", options: [".then()", ".catch()", ".finally()", ".resolve()"], correctAnswer: 1 },
-      { id: 7, question: "Which data structure stores unique values?", options: ["Array", "Set", "Map", "Object"], correctAnswer: 1 },
-      { id: 8, question: "Which method reduces an array to a single value?", options: ["reduce()", "aggregate()", "fold()", "combine()"], correctAnswer: 0 },
-      { id: 9, question: "Which syntax creates a new object with specified prototype?", options: ["Object.create(proto)", "{__proto__: proto}", "new Object(proto)", "Object.prototype(proto)"], correctAnswer: 0 },
-      { id: 10, question: "Which statement imports a module default export (ES module)?", options: ["import * as m from 'x'", "import m from 'x'", "const m = require('x')", "export m from 'x'"], correctAnswer: 1 },
-      { id: 11, question: "Which method serializes an object to JSON string?", options: ["JSON.toString()", "JSON.stringify()", "Object.stringify()", "toJSON()"], correctAnswer: 1 },
-      { id: 12, question: "Which object method returns an array of a given object's own enumerable property [key, value] pairs?", options: ["Object.keys()", "Object.values()", "Object.entries()", "Object.getOwnPropertyNames()"], correctAnswer: 2 },
-      { id: 13, question: "Which method creates a shallow-copied array of a portion of an existing array?", options: ["slice()", "splice()", "copyWithin()", "concat()"], correctAnswer: 0 },
-      { id: 14, question: "Which operator can be used to assign a default value when a variable is nullish (null or undefined)?", options: ["||", "??", "&&", "?: "], correctAnswer: 1 },
-      { id: 15, question: "Which built-in object provides key-value pairs but preserves insertion order and allows any value as key?", options: ["Object", "Map", "Set", "WeakMap"], correctAnswer: 1 },
-      { id: 16, question: "Which function creates a new Promise that resolves when all input promises resolve?", options: ["Promise.race()", "Promise.all()", "Promise.any()", "Promise.allSettled()"], correctAnswer: 1 },
-      { id: 17, question: "Which method returns the first element that satisfies the provided testing function?", options: ["filter()", "find()", "findIndex()", "some()"], correctAnswer: 1 },
-      { id: 18, question: "Which operator checks whether a property exists in an object (in operator)?", options: ["hasOwnProperty", "in", "typeof", "exists"], correctAnswer: 1 },
-      { id: 19, question: "Which loop iterates enumerable properties of an object (keys)?", options: ["for...of", "for...in", "forEach", "while"], correctAnswer: 1 },
-      { id: 20, question: "Which method converts a NodeList to an Array?", options: ["Array.from(nodeList)", "[...nodeList]", "Both of the above", "nodeList.toArray()"], correctAnswer: 2 },
-      { id: 21, question: "Which syntax defines a class in ES6?", options: ["class MyClass { }", "function MyClass() {}", "var MyClass = class {}", "Both 1 and 3"], correctAnswer: 3 },
-      { id: 22, question: "Which method binds a function's this permanently to a given value?", options: ["bind()", "call()", "apply()", "setThis()"], correctAnswer: 0 },
-      { id: 23, question: "Which methods call a function immediately with this and arguments specified?", options: ["call()/apply()", "bind()", "setThis()", "invoke()"], correctAnswer: 0 },
-      { id: 24, question: "Which array method tests whether at least one element passes the test implemented by the provided function?", options: ["every()", "some()", "filter()", "find()"], correctAnswer: 1 },
-      { id: 25, question: "Which built-in type is used to represent integers larger than Number.MAX_SAFE_INTEGER?", options: ["BigInt", "Integer", "Long", "BigNumber"], correctAnswer: 0 },
-      { id: 26, question: "Which syntax imports only a named export from a module?", options: ["import { foo } from 'm';", "import foo from 'm';", "const { foo } = require('m');", "require { foo } from 'm';"], correctAnswer: 0 },
-      { id: 27, question: "Which method returns true if a value is NaN (ES6+)?", options: ["isNaN()", "Number.isNaN()", "NaN.is()", "Number.isNaNOnly()"], correctAnswer: 1 },
-      { id: 28, question: "Which method schedules a callback to run after current call stack but before repaint (microtask)?", options: ["setTimeout(fn,0)", "queueMicrotask(fn)", "requestAnimationFrame(fn)", "setImmediate(fn)"], correctAnswer: 1 },
-      { id: 29, question: "Which operator returns property value or default when property is undefined using optional chaining?", options: ["?.", "?:", "&&", "||"], correctAnswer: 0 },
-      { id: 30, question: "Which function is used to parse an integer from a string?", options: ["parseInt()", "Number.parse()", "toInteger()", "Number.parseInt()"], correctAnswer: 0 },
-      { id: 31, question: "Which method freezes an object to prevent new properties and modification of existing ones?", options: ["Object.seal()", "Object.freeze()", "Object.lock()", "Object.preventExtensions()"], correctAnswer: 1 },
-      { id: 32, question: "Which operator checks for strict inequality?", options: ["!=", "!==", "not==", "!==="], correctAnswer: 1 },
-      { id: 33, question: "Which array method modifies the array by removing or replacing existing elements and/or adding new ones?", options: ["slice()", "splice()", "concat()", "map()"], correctAnswer: 1 },
-      { id: 34, question: "Which method returns a shallow copy of an array?", options: ["slice()", "splice()", "copy()", "clone()"], correctAnswer: 0 },
-      { id: 35, question: "Which object prototype method checks if a property exists directly on an object (not its prototype)?", options: ["obj.hasOwnProperty(prop)", "prop in obj", "Object.has(obj, prop)", "Object.exists(obj, prop)"], correctAnswer: 0 },
-      { id: 36, question: "Which built-in can be used to schedule repeated execution at intervals?", options: ["setTimeout", "setInterval", "requestAnimationFrame", "queueMicrotask"], correctAnswer: 1 },
-      { id: 37, question: "Which statement is true about 'var' declarations?", options: ["Block-scoped", "Function-scoped or global if outside function", "Not hoisted", "Can’t be redeclared"], correctAnswer: 1 },
-      { id: 38, question: "Which feature allows a function to accept a variable number of arguments as an array?", options: ["arguments object", "rest parameter (...args)", "both", "none"], correctAnswer: 2 },
-      { id: 39, question: "Which event loop queue runs microtasks such as Promise callbacks?", options: ["macrotask queue", "microtask queue", "render queue", "IO queue"], correctAnswer: 1 },
-      { id: 40, question: "Which array method returns a string concatenating all elements (with optional separator)?", options: ["join()", "toString()", "concat()", "reduce()"], correctAnswer: 0 }
-    ],
-
-    advanced: [
-      { id: 1, question: "Which API provides a way to run background tasks in a browser thread?", options: ["Worker API", "Service Worker", "BackgroundWorker", "Thread API"], correctAnswer: 0 },
-      { id: 2, question: "Which feature allows destructuring arrays into variables?", options: ["let [a,b] = arr", "let (a,b) = arr", "let {a,b} = arr", "let a,b = arr"], correctAnswer: 0 },
-      { id: 3, question: "Which operator coalesces nullish values (null or undefined)?", options: ["||", "??", "&&", "?: "], correctAnswer: 1 },
-      { id: 4, question: "Which method schedules microtasks to run after current script?", options: ["setTimeout", "setImmediate", "queueMicrotask", "requestAnimationFrame"], correctAnswer: 2 },
-      { id: 5, question: "Which object holds key-value pairs and preserves insertion order?", options: ["Object", "Map", "Set", "Array"], correctAnswer: 1 },
-      { id: 6, question: "Which concept avoids blocking UI by yielding control back to the event loop?", options: ["Promises", "Async/Await", "Callbacks", "All of these"], correctAnswer: 3 },
-      { id: 7, question: "Which method creates a shallow copy of an object?", options: ["Object.assign({}, obj)", "{...obj}", "Both of these", "clone(obj)"], correctAnswer: 2 },
-      { id: 8, question: "Which feature allows private fields in classes?", options: ["#privateField", "_private", "private:", "privateField()"], correctAnswer: 0 },
-      { id: 9, question: "Which API streams binary data in chunks (browser Fetch)?", options: ["Blob API", "Fetch Streams (ReadableStream)", "FileReader", "XHR"], correctAnswer: 1 },
-      { id: 10, question: "Which statement rejects a promise with a reason?", options: ["Promise.reject(reason)", "throw reason", "reject(reason)", "Promise.error(reason)"], correctAnswer: 0 },
-
-      { id: 11, question: "Which construct creates a generator function?", options: ["function* gen(){ }", "async function gen(){ }", "generator function gen(){ }", "function gen*(){}"], correctAnswer: 0 },
-      { id: 12, question: "Which syntax allows iterating over async iterables?", options: ["for...of", "for await...of", "forEach", "for await in"], correctAnswer: 1 },
-      { id: 13, question: "Which object type stores weakly held keys that don't prevent GC of key objects?", options: ["Map", "WeakMap", "WeakSet", "Set"], correctAnswer: 1 },
-      { id: 14, question: "Which method returns a Promise that fulfills as soon as any input promise fulfills?", options: ["Promise.race()", "Promise.any()", "Promise.all()", "Promise.allSettled()"], correctAnswer: 1 },
-      { id: 15, question: "Which API enables reactive streams via nodes (ReadableStream, WritableStream)?", options: ["Streams API", "XHR API", "Fetch API", "Socket API"], correctAnswer: 0 },
-      { id: 16, question: "Which feature provides symbol primitive values for unique property keys?", options: ["Symbol()", "Unique()", "NewKey()", "ID()"], correctAnswer: 0 },
-      { id: 17, question: "Which built-in API can be used to observe changes to an object’s properties?", options: ["Proxy", "Object.observe (deprecated)", "Reflect.observe", "MutationObserver"], correctAnswer: 0 },
-      { id: 18, question: "Which method of Proxy handler intercepts property access?", options: ["get", "set", "apply", "construct"], correctAnswer: 0 },
-      { id: 19, question: "Which global lets you fetch resources over the network and returns a Promise?", options: ["XMLHttpRequest", "fetch()", "axios", "net.fetch()"], correctAnswer: 1 },
-      { id: 20, question: "Which Web API allows bi-directional communication between client and server over a persistent connection?", options: ["HTTP polling", "WebSocket", "Server-Sent Events", "Long polling"], correctAnswer: 1 },
-
-      { id: 21, question: "Which method schedules a task to run on the next repaint?", options: ["setTimeout(fn, 0)", "requestAnimationFrame(fn)", "queueMicrotask(fn)", "setImmediate(fn)"], correctAnswer: 1 },
-      { id: 22, question: "Which value is used to create a BigInt literal?", options: ["9007199254740991n", "BigInt(9007199254740991)", "9007199254740991B", "Both 1 and 2"], correctAnswer: 3 },
-      { id: 23, question: "Which mechanism ensures safe insertion of user data into HTML to avoid XSS when using DOM APIs?", options: ["innerHTML with user data", "textContent / setAttribute properly escaped", "eval()", "document.write()"], correctAnswer: 1 },
-      { id: 24, question: "Which event is fired when the DOM is fully parsed but before resources like images finish loading?", options: ["load", "DOMContentLoaded", "readystatechange", "beforeunload"], correctAnswer: 1 },
-      { id: 25, question: "Which global API provides a high-resolution time stamp for performance measurements?", options: ["Date.now()", "performance.now()", "console.time()", "new Date()"], correctAnswer: 1 },
-      { id: 26, question: "Which method returns a shallow copy of an object including symbols (ES2017+)?", options: ["Object.assign()", "Object.getOwnPropertyDescriptors()", "Object.fromEntries()", "Object.entries()"], correctAnswer: 1 },
-      { id: 27, question: "Which operator checks for property existence in prototype chain?", options: ["hasOwnProperty", "in", "Object.hasOwn()", "exists"], correctAnswer: 1 },
-      { id: 28, question: "Which function allows dynamic importing of modules?", options: ["import('module')", "require('module')", "System.import('module')", "load('module')"], correctAnswer: 0 },
-      { id: 29, question: "Which pattern avoids callback hell by chaining asynchronous operations with promises?", options: ["callbacks", "promise chaining", "nested ifs", "synchronous loops"], correctAnswer: 1 },
-      { id: 30, question: "Which error type should be thrown for programmatic API misuse rather than runtime errors?", options: ["TypeError", "SyntaxError", "ReferenceError", "RangeError"], correctAnswer: 0 },
-
-      { id: 31, question: "Which API lets you persist key/value pairs larger than localStorage and support transactions?", options: ["localStorage", "sessionStorage", "IndexedDB", "Cookies"], correctAnswer: 2 },
-      { id: 32, question: "Which approach lets you prevent default browser handling of events like form submit?", options: ["return false", "event.preventDefault()", "event.stopPropagation()", "event.cancel()"], correctAnswer: 1 },
-      { id: 33, question: "Which function schedules a microtask equivalent to Promise.resolve().then(fn)?", options: ["queueMicrotask(fn)", "setTimeout(fn,0)", "setImmediate(fn)", "process.nextTick(fn)"], correctAnswer: 0 },
-      { id: 34, question: "Which API provides low-level cryptographic operations in the browser?", options: ["window.crypto.subtle", "cryptoJS", "WebCrypto API", "both 1 and 3"], correctAnswer: 3 },
-      { id: 35, question: "Which method obtains the prototype (i.e., [[Prototype]]) of an object?", options: ["Object.getPrototypeOf(obj)", "obj.__proto__", "Object.prototype(obj)", "Reflect.getPrototype(obj)"], correctAnswer: 0 },
-      { id: 36, question: "Which runtime behavior happens when you call an async function?", options: ["Returns undefined", "Returns a Promise", "Blocks until completion", "Throws immediately"], correctAnswer: 1 },
-      { id: 37, question: "Which method captures uncaught promise rejections globally in Node.js (runtime)?", options: ["process.on('unhandledRejection')", "window.onunhandledrejection", "Promise.catchAll()", "global.on('reject')"], correctAnswer: 0 },
-      { id: 38, question: "Which pattern can memoize function results for performance?", options: ["throttling", "debouncing", "memoization (cache)", "lazy loading"], correctAnswer: 2 },
-      { id: 39, question: "Which API lets pages register background sync and caching strategies (PWA)?", options: ["Service Workers", "Web Workers", "IndexedDB", "WebSockets"], correctAnswer: 0 },
-      { id: 40, question: "Which mechanism provides structured cloning for transferring complex objects to Web Workers?", options: ["JSON.stringify", "postMessage with structured clone", "toString/parse", "transferObjects only"], correctAnswer: 1 },
-
-      { id: 41, question: "Which expression delays execution until a value is truthy using optional chaining together with ?? operator? (pattern)", options: ["a?.b ?? default", "a && a.b", "a.b ?? default", "a?.b || default"], correctAnswer: 0 },
-      { id: 42, question: "Which method returns a new array with values flattened up to specified depth?", options: ["flat()", "flatten()", "concatAll()", "unpack()"], correctAnswer: 0 },
-      { id: 43, question: "Which ES feature enables private, package-level-like scoping with modules?", options: ["IIFE", "modules (ESM)", "var hoisting", "global scope"], correctAnswer: 1 },
-      { id: 44, question: "Which built-in is used to perform locale-aware string comparisons?", options: ["String.compare()", "Intl.Collator", "localeCompare only", "Intl.DateTimeFormat"], correctAnswer: 1 },
-      { id: 45, question: "Which method on Function.prototype returns a new function with this bound to provided value and initial args pre-filled?", options: ["bind()", "call()", "apply()", "compose()"], correctAnswer: 0 },
-      { id: 46, question: "Which iterator protocol method returns an object with { value, done } properties?", options: ["next()", "value()", "done()", "iterate()"], correctAnswer: 0 },
-      { id: 47, question: "Which method converts iterable of pairs into an object (ES2019+)?", options: ["Object.fromEntries()", "Object.entries()", "Object.assign()", "Object.create()"], correctAnswer: 0 },
-      { id: 48, question: "Which API returns the list of own property descriptors for an object?", options: ["Object.getOwnPropertyDescriptors()", "Object.getOwnPropertyNames()", "Object.keys()", "Object.entries()"], correctAnswer: 0 },
-      { id: 49, question: "Which operator can be used to define computed property names in object literals?", options: ["[expr]", "{[expr]: value}", "expr: value", "computed(expr)"], correctAnswer: 1 },
-      { id: 50, question: "Which global method can convert a URL to parts in browser?", options: ["new URL('...')", "parseURL()", "URL.parse()", "window.parseURL()"], correctAnswer: 0 },
-
-      { id: 51, question: "Which class of errors should you throw for an invalid numeric range (e.g., invalid array length)?", options: ["TypeError", "RangeError", "ReferenceError", "URIError"], correctAnswer: 1 },
-      { id: 52, question: "Which API lets you perform binary data operations like reading ArrayBuffer and TypedArray?", options: ["TypedArray / DataView", "Blob only", "String methods", "JSON"], correctAnswer: 0 },
-      { id: 53, question: "Which approach is best for avoiding layout thrashing when measuring and mutating DOM?", options: ["Measure then mutate (batch)", "Mutate then measure", "Alternate per element", "No difference"], correctAnswer: 0 },
-      { id: 54, question: "Which method returns a Promise that never rejects but always resolves with statuses of all promises?", options: ["Promise.all()", "Promise.allSettled()", "Promise.race()", "Promise.any()"], correctAnswer: 1 },
-      { id: 55, question: "Which function converts Node-style callback APIs to Promise-based ones in Node core (util)?", options: ["util.promisify()", "promisify()", "Promise.fromCallback()", "toPromise()"], correctAnswer: 0 },
-      { id: 56, question: "Which API provides per-frame memory and layout debugging in modern browsers (DevTools)?", options: ["Performance API", "Allocation Profiler", "Memory API (experimental)", "PerformanceTimeline"], correctAnswer: 0 },
-      { id: 57, question: "Which mechanism lets you atomically transfer ownership of an ArrayBuffer to a worker (avoid copying)?", options: ["postMessage with transfer list", "clone", "JSON.stringify", "structured clone only"], correctAnswer: 0 },
-      { id: 58, question: "Which language-level feature lets you create truly private methods/fields on instances?", options: ["#privateField syntax", "_prefix convention", "closures only", "WeakMap pattern only"], correctAnswer: 0 },
-      { id: 59, question: "Which API is used to get user media (camera/microphone) in browsers?", options: ["navigator.mediaDevices.getUserMedia()", "navigator.getMedia()", "MediaStream.get()", "getUserMedia() global"], correctAnswer: 0 },
-      { id: 60, question: "Which approach is recommended to protect against prototype pollution when merging untrusted objects?", options: ["Use Object.assign with whitelist", "Deep merge blindly", "Modify Object.prototype", "Use eval to sanitize"], correctAnswer: 0 }
-    ]
-  },
-
-  // React
-  react: {
-    basic: [
-      { id: 1, question: "What is JSX?", options: ["A styling language", "A JavaScript syntax extension for UI", "A database", "A bundler"], correctAnswer: 1 },
-      { id: 2, question: "Which hook manages local state in functional components?", options: ["useEffect", "useContext", "useState", "useReducer"], correctAnswer: 2 },
-      { id: 3, question: "How do you pass data from parent to child?", options: ["props", "state", "context", "store"], correctAnswer: 0 },
-      { id: 4, question: "Which method is used to render React into the DOM (v17)?", options: ["ReactDOM.render()", "renderReact()", "mount()", "attach()"], correctAnswer: 0 },
-      { id: 5, question: "Which prop helps list rendering with stable identity?", options: ["id", "key", "index", "uid"], correctAnswer: 1 },
-      { id: 6, question: "Which hook runs after every render by default?", options: ["useMemo", "useEffect", "useLayoutEffect", "useRef"], correctAnswer: 1 },
-      { id: 7, question: "Which component type has lifecycle methods (class)?", options: ["Function components only", "Class components only", "Both", "Neither"], correctAnswer: 1 },
-      { id: 8, question: "How to create context?", options: ["React.createContext()", "createContext()", "new Context()", "Context.create()"], correctAnswer: 0 },
-      { id: 9, question: "Which attribute names an HTML class in JSX?", options: ["class", "className", "cls", "styleName"], correctAnswer: 1 },
-      { id: 10, question: "How to prevent rendering of a component conditionally?", options: ["Return null", "Return <></>", "Return false", "All of the above depending on situation"], correctAnswer: 0 },
-      { id: 11, question: "Which hook returns a ref object that persists for the full lifetime of the component?", options: ["useRef", "useState", "useEffect", "useMemo"], correctAnswer: 0 },
-      { id: 12, question: "Which lifecycle method is equivalent to useEffect with empty deps for mounting in class components?", options: ["componentDidMount", "componentWillMount", "componentWillUnmount", "getDerivedStateFromProps"], correctAnswer: 0 },
-      { id: 13, question: "How do you lift state up to share it between sibling components?", options: ["Store in a service", "Move state to common parent and pass via props", "Use refs", "Use localStorage"], correctAnswer: 1 },
-      { id: 14, question: "Which hook is used to memoize a value to avoid expensive recalculation on every render?", options: ["useCallback", "useMemo", "useRef", "useLayoutEffect"], correctAnswer: 1 },
-      { id: 15, question: "Which keyword is used to create a component as a function?", options: ["component()", "function", "class", "create()"], correctAnswer: 1 },
-      { id: 16, question: "Which JSX fragment shorthand can be used instead of <React.Fragment>?", options: ["<>...</>", "<frag>...</frag>", "<></>", "<fragment></fragment>"], correctAnswer: 2 },
-      { id: 17, question: "Which prop is commonly used to provide children to a component?", options: ["child", "children", "slots", "content"], correctAnswer: 1 },
-      { id: 18, question: "Which hook would you use to read context in a child?", options: ["useState", "useContext", "useReducer", "useEffect"], correctAnswer: 1 },
-      { id: 19, question: "Which tool is the recommended core library to build React applications' UI?", options: ["React", "Angular", "Vue", "Svelte"], correctAnswer: 0 },
-      { id: 20, question: "Which attribute must be provided when rendering lists to help React identify items?", options: ["key", "id", "index", "ref"], correctAnswer: 0 }
-    ],
-
-    intermediate: [
-      { id: 1, question: "Which hook memoizes a callback function so it keeps the same reference between renders?", options: ["useMemo", "useCallback", "useRef", "useState"], correctAnswer: 1 },
-      { id: 2, question: "Which hook memoizes a computed value between renders?", options: ["useMemo", "useCallback", "useRef", "useEffect"], correctAnswer: 0 },
-      { id: 3, question: "Which method helps avoid re-renders by shallowly comparing props of a functional component?", options: ["React.memo", "PureComponent", "Both", "Neither"], correctAnswer: 2 },
-      { id: 4, question: "Which hook returns a mutable ref object you can attach to a DOM element?", options: ["useRef", "useState", "useMutable", "useCallback"], correctAnswer: 0 },
-      { id: 5, question: "Which pattern shares stateful logic between components via functions?", options: ["HOC", "Render Props", "Custom Hooks", "All of the above"], correctAnswer: 3 },
-      { id: 6, question: "Which approach lazy-loads components with a fallback while loading?", options: ["React.lazy + Suspense", "CodeSplit()", "lazyLoad()", "asyncComponent()"], correctAnswer: 0 },
-      { id: 7, question: "Which mechanism passes data deeply without props-drilling?", options: ["Context API", "Redux only", "Refs", "Portals"], correctAnswer: 0 },
-      { id: 8, question: "Which hook's cleanup runs when a component unmounts or before next effect run?", options: ["useEffect cleanup", "useLayoutEffect cleanup", "Both", "useMemo cleanup"], correctAnswer: 2 },
-      { id: 9, question: "Which prop drilling refers to?", options: ["Passing props deeply through multiple components", "Drilling holes in components", "Using refs excessively", "Multiple re-renders"], correctAnswer: 0 },
-      { id: 10, question: "Which technique avoids unnecessary recomputation of a derived value?", options: ["useMemo", "useState", "useRef", "useEffect"], correctAnswer: 0 },
-
-      { id: 11, question: "Which hook provides a reducer pattern similar to Redux but local to a component?", options: ["useState", "useReducer", "useContext", "useMemo"], correctAnswer: 1 },
-      { id: 12, question: "Which attribute on DOM ref in React gives direct access to a DOM node?", options: ["ref.current", "ref.node", "ref.dom", "ref.value"], correctAnswer: 0 },
-      { id: 13, question: "Which React API renders children into a DOM node outside the parent hierarchy?", options: ["Portals", "Fragments", "Teleport", "Gateways"], correctAnswer: 0 },
-      { id: 14, question: "Which hook runs synchronously after all DOM mutations but before the browser paints?", options: ["useEffect", "useLayoutEffect", "useInsertionEffect", "useDeferredValue"], correctAnswer: 1 },
-      { id: 15, question: "Which tool is recommended for type checking React props in development?", options: ["propTypes", "TypeScript", "Both", "Neither"], correctAnswer: 2 },
-      { id: 16, question: "Which property prevents a child component from re-rendering when parent re-renders if its props haven't changed (when used with React.memo)?", options: ["key", "memo", "areEqual comparator", "shouldUpdate"], correctAnswer: 2 },
-      { id: 17, question: "Which hook lets you read and subscribe to external stores in React 18+?", options: ["useContext", "useSyncExternalStore", "useSubscription", "useExternalStore"], correctAnswer: 1 },
-      { id: 18, question: "Which utility helps manage side-effects that need to run when dependencies change?", options: ["useEffect", "useMemo", "useRef", "useCallback"], correctAnswer: 0 },
-      { id: 19, question: "Which approach centralizes app-level state across many components?", options: ["Context API only", "Redux / Zustand / MobX", "local state only", "query strings"], correctAnswer: 1 },
-      { id: 20, question: "Which library is commonly used for routing in React applications?", options: ["react-router", "next/router", "reach-router", "All of the above depending on stack"], correctAnswer: 3 },
-
-      { id: 21, question: "Which hook returns a memoized value only when its dependencies change?", options: ["useMemo", "useCallback", "useEffect", "useRef"], correctAnswer: 0 },
-      { id: 22, question: "Which technique helps keep UI responsive by deferring non-urgent updates?", options: ["useDeferredValue", "useCallback", "useMemo", "useRef"], correctAnswer: 0 },
-      { id: 23, question: "Which React API helps server-side rendering to hydrate client markup?", options: ["ReactDOM.hydrate()", "ReactDOM.render()", "hydrateRoot()", "renderToString()"], correctAnswer: 2 },
-      { id: 24, question: "Which hook would you use to persist mutable values that don't trigger re-renders?", options: ["useRef", "useState", "useReducer", "useMemo"], correctAnswer: 0 },
-      { id: 25, question: "Which approach helps split JS bundles per route or component?", options: ["Code splitting (dynamic import)", "Inlining everything", "Single large bundle", "Preloading"], correctAnswer: 0 },
-      { id: 26, question: "Which pattern helps test components by rendering small pieces with specific props?", options: ["Unit/component testing", "E2E testing only", "Integration-only", "Snapshot-only"], correctAnswer: 0 },
-      { id: 27, question: "Which hook provides state that survives re-renders but resets on remount?", options: ["useRef", "useState", "useReducer", "useMemo"], correctAnswer: 1 },
-      { id: 28, question: "Which dev tool helps inspect component props and state at runtime?", options: ["React DevTools", "Redux DevTools", "Chrome Profiler only", "Lighthouse"], correctAnswer: 0 },
-      { id: 29, question: "Which lifecycle method is used for error boundaries in class components?", options: ["componentDidCatch", "getDerivedStateFromError", "componentWillCatch", "Both 1 and 2 depending usage"], correctAnswer: 3 },
-      { id: 30, question: "Which attribute should you use to give semantic hint for accessibility on an element?", options: ["aria-* attributes", "data-* attributes", "className", "style"], correctAnswer: 0 },
-
-      { id: 31, question: "Which pattern is recommended to avoid stale closures in effects that read props/state?", options: ["Include dependencies in effect's dep array", "Use always empty dep array", "Call setTimeout", "Use useMemo only"], correctAnswer: 0 },
-      { id: 32, question: "Which hook is used to create a context provider value that avoids re-creating object identity each render?", options: ["useMemo wrapping provider value", "useCallback always", "useRef store", "none"], correctAnswer: 0 },
-      { id: 33, question: "Which library is opinionated for data fetching and caching in React apps?", options: ["React Query (TanStack Query)", "Axios only", "Fetch only", "React Router"], correctAnswer: 0 },
-      { id: 34, question: "Which API can help lazy-load images or components based on viewport?", options: ["IntersectionObserver", "MutationObserver", "ResizeObserver", "Intl"], correctAnswer: 0 },
-      { id: 35, question: "Which concept in React helps keep function identity stable to avoid unnecessary effect re-runs?", options: ["useCallback", "useState", "useReducer", "useRef"], correctAnswer: 0 },
-      { id: 36, question: "Which pattern would you use for styling components in a scoped manner?", options: ["CSS Modules / styled-components / emotion", "Global CSS only", "Inline styles only", "None"], correctAnswer: 0 },
-      { id: 37, question: "Which prop on <input> gives you controlled component behavior?", options: ["value + onChange", "defaultValue", "ref only", "placeholder"], correctAnswer: 0 },
-      { id: 38, question: "Which tool bundles React code for production by default when using create-react-app?", options: ["Webpack", "Rollup", "Parcel", "Esbuild"], correctAnswer: 0 },
-      { id: 39, question: "Which hook can help avoid visual layout flicker caused by synchronous DOM reads/writes?", options: ["useLayoutEffect", "useEffect", "useMemo", "useRef"], correctAnswer: 0 },
-      { id: 40, question: "Which pattern is used to expose imperative methods from a child to a parent?", options: ["forwardRef + useImperativeHandle", "useCallback", "expose prop", "context"], correctAnswer: 0 }
-    ],
-
-    advanced: [
-      { id: 1, question: "Which API allows concurrent features in React (experimental)?", options: ["Concurrent Mode", "Strict Mode", "Legacy Mode", "Concurrent API"], correctAnswer: 0 },
-      { id: 2, question: "Which hook lets you read context without re-rendering often and is recommended for external stores?", options: ["useContext", "useMutableSource (legacy)", "useSyncExternalStore", "both 1 and 3 depending on use-case"], correctAnswer: 2 },
-      { id: 3, question: "Which technique prevents re-creating functions on every render?", options: ["useCallback", "useMemo", "useState", "useRef"], correctAnswer: 0 },
-      { id: 4, question: "Which library is commonly used for immutable updates in complex state trees?", options: ["immer", "lodash", "axios", "ramda"], correctAnswer: 0 },
-      { id: 5, question: "Which hook schedules an update before the browser paints?", options: ["useEffect", "useLayoutEffect", "useDeferredValue", "useInsertionEffect"], correctAnswer: 1 },
-      { id: 6, question: "Which API is recommended for subscribing to external stores in React 18+?", options: ["useSyncExternalStore", "useMutationObserver", "useExternalStore", "useSubscribe"], correctAnswer: 0 },
-      { id: 7, question: "Which concept allows splitting app bundle into smaller chunks for on-demand loading?", options: ["Tree shaking", "Code splitting", "Bundling", "Inlining"], correctAnswer: 1 },
-      { id: 8, question: "Which server rendering technique pre-renders HTML on the server?", options: ["CSR", "SSR", "SPA", "PWA"], correctAnswer: 1 },
-      { id: 9, question: "Which approach defers expensive updates to keep UI responsive?", options: ["useDeferredValue", "useTransition", "Both", "Neither"], correctAnswer: 2 },
-      { id: 10, question: "Which API helps to render list items efficiently via virtualization?", options: ["react-virtualized / react-window", "ReactDOM.render", "VirtualDOM", "list-optimizer"], correctAnswer: 0 },
-
-      { id: 11, question: "Which experimental pattern is used to stream server-rendered UI progressively to the client (React Server Components era)?", options: ["Streaming SSR / Server Components", "Classic SSR only", "CSR streaming", "Client Side Hydration only"], correctAnswer: 0 },
-      { id: 12, question: "Which hook helps avoid tearing by coordinating transitions in concurrent rendering?", options: ["useTransition", "useDeferredValue", "useCallback", "useLayoutEffect"], correctAnswer: 0 },
-      { id: 13, question: "Which technique reduces work by only rendering what's visible (windowing)?", options: ["Virtualization", "Code-splitting", "Memoization", "Throttling"], correctAnswer: 0 },
-      { id: 14, question: "Which tool analyzes bundle size and helps optimize splits and lazy loading?", options: ["webpack-bundle-analyzer", "eslint", "jest", "prettier"], correctAnswer: 0 },
-      { id: 15, question: "Which API allows you to measure render performance and marks in React apps?", options: ["User Timing API / Performance API", "console.timeOnly", "React Timing API (built-in)", "setTimeout profiling"], correctAnswer: 0 },
-      { id: 16, question: "Which server-side rendering API in React 18+ uses streaming to hydrate progressively?", options: ["renderToPipeableStream / renderToReadableStream", "renderToString only", "ReactDOM.renderToString", "hydrateRoot only"], correctAnswer: 0 },
-      { id: 17, question: "Which method avoids hydration mismatches by using the same markup server and client?", options: ["hydrateRoot() with SSR", "ReactDOM.render()", "render()", "hydrate() legacy"], correctAnswer: 0 },
-      { id: 18, question: "Which approach helps manage cached server data and optimistic updates in React apps?", options: ["React Query / TanStack Query", "Redux only", "Context only", "localStorage only"], correctAnswer: 0 },
-      { id: 19, question: "Which concurrency primitive is used internally by React to coordinate updates across priorities?", options: ["Scheduler (internal)", "setTimeout", "requestIdleCallback only", "microtasks only"], correctAnswer: 0 },
-      { id: 20, question: "Which API helps coordinate updates and avoid blocking the main thread under heavy loads?", options: ["startTransition", "setState", "forceUpdate", "batchUpdate"], correctAnswer: 0 },
-
-      { id: 21, question: "Which hook should be used to measure DOM layout synchronously after updates to avoid flicker?", options: ["useLayoutEffect", "useEffect", "useRef", "useMemo"], correctAnswer: 0 },
-      { id: 22, question: "Which approach allows you to render components on server but keep some interactive parts on client (islands / progressive hydration)?", options: ["Partial hydration / Islands architecture", "Full CSR only", "Static site only", "SSR full only"], correctAnswer: 0 },
-      { id: 23, question: "Which React pattern isolates side effects to specific components and makes them testable?", options: ["Custom hooks for side effects", "Inline effects in JSX", "Global event handlers", "Mutating DOM directly"], correctAnswer: 0 },
-      { id: 24, question: "Which API helps to avoid re-rendering children by providing a stable comparator to React.memo?", options: ["Second argument comparator to React.memo", "propTypes comparator", "useMemo comparator", "shouldComponentUpdate function"], correctAnswer: 0 },
-      { id: 25, question: "Which practice helps keep bundle sizes small when using large UI libraries?", options: ["Tree-shaking + importing specific modules", "Import entire library", "Use CDN always", "Inline everything"], correctAnswer: 0 },
-      { id: 26, question: "Which approach helps to server-render data fetching with components using frameworks like Next.js (data fetching on server)?", options: ["getServerSideProps / server components", "client-side fetch only", "localStorage", "cookies only"], correctAnswer: 0 },
-      { id: 27, question: "Which tool helps snapshot-test React components to detect UI regressions?", options: ["Jest snapshot testing", "Mocha-only", "Cypress-only", "Selenium"], correctAnswer: 0 },
-      { id: 28, question: "Which React API can be used to inject styles in the head during server render safely?", options: ["style tags via server renderer or CSS-in-JS SSR APIs", "inline CSS only", "external CSS only", "link rel prefetch"], correctAnswer: 0 },
-      { id: 29, question: "Which method provides a way to access imperative API from child to parent via refs?", options: ["forwardRef + useImperativeHandle", "useCallback only", "prop drilling", "context only"], correctAnswer: 0 },
-      { id: 30, question: "Which React feature helps avoid layout thrashing by batching state updates?", options: ["automatic batching (React 18+)", "setTimeout batching", "manual batching only", "requestAnimationFrame batching"], correctAnswer: 0 },
-
-      { id: 31, question: "Which approach lets you partially hydrate interactive widgets only when needed for performance?", options: ["Deferred hydration / lazy hydration", "Hydrate everything at once", "No hydration", "Hydrate on server"], correctAnswer: 0 },
-      { id: 32, question: "Which API allows you to create error boundaries in class components to catch render errors?", options: ["componentDidCatch / getDerivedStateFromError", "useErrorBoundary hook (not built-in)", "try/catch in render", "errorHandler only"], correctAnswer: 0 },
-      { id: 33, question: "Which testing library is recommended for testing React components focusing on user behavior?", options: ["React Testing Library", "Enzyme", "Jest alone", "Mocha"], correctAnswer: 0 },
-      { id: 34, question: "Which pattern allows you to wrap a component to add behavior (re-usable cross-cutting concerns)?", options: ["Higher-Order Component (HOC)", "Custom Hook", "render prop", "All of the above"], correctAnswer: 3 },
-      { id: 35, question: "Which statements about Server Components (RSC) are true?", options: ["They run on the server and can return UI that never ships client JS", "They run only in browser", "They are identical to client components", "They are deprecated"], correctAnswer: 0 },
-      { id: 36, question: "Which feature in React allows scheduling multiple updates with different priorities?", options: ["React Scheduler (internal)", "setTimeout queue", "requestIdleCallback only", "microtask queue"], correctAnswer: 0 },
-      { id: 37, question: "Which technique helps you debug render performance and wasted renders?", options: ["React DevTools profiler and use why-did-you-render", "Only console.log", "alert()", "CSS highlighting"], correctAnswer: 0 },
-      { id: 38, question: "Which hook allows you to create a stable callback reference but updates closure values when dependencies change?", options: ["useCallback combined with refs for latest values", "useMemo only", "useRef only", "useEffect only"], correctAnswer: 0 },
-      { id: 39, question: "Which pattern prevents prop drilling by passing data via context with a provider?", options: ["Context provider + consumer / useContext", "Higher order components only", "Refs only", "Global variables only"], correctAnswer: 0 },
-      { id: 40, question: "Which tactic should you use to secure XSS when rendering user supplied HTML in React?", options: ["Avoid dangerouslySetInnerHTML or sanitize input prior to use", "Use innerHTML directly", "Store raw HTML in state", "Escape only some tags"], correctAnswer: 0 },
-
-      { id: 41, question: "Which technique improves perceived performance by showing skeletons/fallbacks while fetching data?", options: ["Skeleton UIs + Suspense for data / loading placeholders", "Show spinners only", "Block rendering until data fetched", "Show static content only"], correctAnswer: 0 },
-      { id: 42, question: "Which hook would you use to read the layout size and reflow synchronously after DOM updates?", options: ["useLayoutEffect", "useEffect", "useRef", "useMemo"], correctAnswer: 0 },
-      { id: 43, question: "Which mechanism is used by Suspense when waiting for lazy-loaded components or data?", options: ["Throwing a promise to React's renderer", "Using setTimeout", "Using callbacks only", "Using synchronous blocking"], correctAnswer: 0 },
-      { id: 44, question: "Which approach is appropriate to handle server-side cookies and sessions when using SSR frameworks?", options: ["Set cookies on server response and use secure, httpOnly flags", "Store tokens in localStorage only", "Store secrets in client code", "Use global variables"], correctAnswer: 0 },
-      { id: 45, question: "Which library facilitates type-safe React apps by integrating with TypeScript?", options: ["TypeScript + @types/react or JSX support", "Flow only", "PropTypes only", "Babel only"], correctAnswer: 0 },
-      { id: 46, question: "Which pattern helps isolate component responsibilities and keep components small and composable?", options: ["Single Responsibility + composition (smaller components)", "Monolithic components with everything", "Heavy use of global state", "Imperative DOM updates"], correctAnswer: 0 },
-      { id: 47, question: "Which API helps integrating React with non-React code or libraries that manipulate DOM directly?", options: ["useRef + useEffect to bridge and cleanup", "Direct DOM manipulation without cleanup", "Render with innerHTML only", "No integration possible"], correctAnswer: 0 },
-      { id: 48, question: "Which tool helps server-side render and pre-render pages for SEO and initial load speed in React ecosystem?", options: ["Next.js / Remix / Gatsby", "Create React App only", "Parcel only", "SvelteKit"], correctAnswer: 0 },
-      { id: 49, question: "Which concept helps avoid unnecessary renders by keeping components pure and using memoization?", options: ["Pure components + memoization (React.memo/useMemo/useCallback)", "Using refs to avoid state", "Mutating props", "Using global variables"], correctAnswer: 0 },
-      { id: 50, question: "Which technique is used to coordinate rendering priority for user-initiated interactions in concurrent React?", options: ["startTransition for low-priority updates and immediate updates for urgent ones", "setState for everything", "useEffect for priority", "no mechanism"], correctAnswer: 0 },
-
-      { id: 51, question: "Which technique allows you to schedule non-urgent updates to reduce jank?", options: ["startTransition", "setTimeout only", "requestIdleCallback only", "deferRender"], correctAnswer: 0 },
-      { id: 52, question: "Which feature enables streaming server-rendered content incrementally to the client in React 18+?", options: ["Streaming SSR (pipeable/readable streams)", "Classic renderToString only", "No streaming support", "Client-only streaming"], correctAnswer: 0 },
-      { id: 53, question: "Which approach helps you prevent memory leaks in components using event listeners and subscriptions?", options: ["Cleanup in useEffect return or componentWillUnmount", "No cleanup", "Rely on GC only", "Attach listeners globally"], correctAnswer: 0 },
-      { id: 54, question: "Which strategy helps for efficient data fetching with automatic deduping, cache and revalidation?", options: ["React Query or SWR", "Manual fetch + cache only", "Use cookies", "Use localStorage only"], correctAnswer: 0 },
-      { id: 55, question: "Which pattern is best when you need a component to expose imperative methods to parent components?", options: ["forwardRef + useImperativeHandle", "pass callbacks via props only", "use global functions", "mutate child internals directly"], correctAnswer: 0 },
-      { id: 56, question: "Which React concept allows a component to indicate it depends on some external, mutable source for which the library provides a subscription hook?", options: ["useSyncExternalStore", "useSubscription only", "useContext only", "useEffect only"], correctAnswer: 0 },
-      { id: 57, question: "Which practice helps avoid hydration mismatches between server and client markup?", options: ["Ensure deterministic markup and avoid non-deterministic side-effects in render", "Use random IDs in render", "Different markup server vs client", "Use client-only rendering"], correctAnswer: 0 },
-      { id: 58, question: "Which tool can help find unnecessary renders and wasted work during development?", options: ["React DevTools Profiler and why-did-you-render", "console.trace", "alert()", "lint only"], correctAnswer: 0 },
-      { id: 59, question: "Which technique is used to coordinate splitting of CSS and JS for optimal first paint?", options: ["Critical CSS + code splitting + resource hints (preload)", "Load everything synchronously", "Use inline styles everywhere", "Use large CSS file only"], correctAnswer: 0 },
-      { id: 60, question: "Which security best practice should you follow when using dangerouslySetInnerHTML?", options: ["Sanitize any user-supplied HTML before injecting or avoid it", "Use it liberally", "Trust all inputs", "Only sanitize some tags"], correctAnswer: 0 }
-    ]
-  },
-
-  // Node.js
-  node: {
-    basic: [
-      { id: 1, question: "What is Node.js primarily used for?", options: ["Frontend styling", "Server-side JavaScript runtime", "Database engine", "Operating system"], correctAnswer: 1 },
-      { id: 2, question: "Which command runs a JS file with Node?", options: ["node file.js", "run file.js", "npm start file.js", "exec file.js"], correctAnswer: 0 },
-      { id: 3, question: "Which built-in module handles file system operations?", options: ["fs", "file", "io", "system"], correctAnswer: 0 },
-      { id: 4, question: "Which package manager is bundled with Node?", options: ["yarn", "npm", "pnpm", "bower"], correctAnswer: 1 },
-      { id: 5, question: "Which concept allows non-blocking I/O in Node?", options: ["Synchronous I/O", "Event loop", "Multithreading", "Blocking calls"], correctAnswer: 1 },
-      { id: 6, question: "Which file lists a Node project's dependencies?", options: ["package.json", "dependencies.json", "node.json", "modules.json"], correctAnswer: 0 },
-      { id: 7, question: "How to export a function in CommonJS?", options: ["export default fn", "module.exports = fn", "export fn", "exports = fn"], correctAnswer: 1 },
-      { id: 8, question: "Which method reads a file asynchronously (callback)?", options: ["fs.readFile", "fs.readFileSync", "fs.open", "fs.readAsync"], correctAnswer: 0 },
-      { id: 9, question: "Which global object provides console logging?", options: ["process", "console", "global", "logger"], correctAnswer: 1 },
-      { id: 10, question: "Which environment variable commonly indicates production mode?", options: ["NODE_ENV", "NODE_ENVIRONMENT", "ENV", "NODEMODE"], correctAnswer: 0 },
-      { id: 11, question: "Which method is used to include external modules in Node.js?", options: ["require()", "import()", "include()", "use()"], correctAnswer: 0 },
-      { id: 12, question: "What does the __dirname variable contain in Node.js?", options: ["The name of the current directory", "The absolute path of the current directory", "The name of the current file", "The absolute path of the current file"], correctAnswer: 1 },
-      { id: 13, question: "Which method is used to create a new HTTP server in Node.js?", options: ["http.createServer()", "http.newServer()", "http.server()", "http.initServer()"], correctAnswer: 0 },
-      { id: 14, question: "Which core module provides utilities for working with file paths?", options: ["path", "fs", "util", "os"], correctAnswer: 0 },
-      { id: 15, question: "What is the purpose of the package-lock.json file?", options: ["To lock package versions for consistent installs", "To provide metadata about the project", "To list scripts available in the project", "To configure npm settings"], correctAnswer: 0 },
-      { id: 16, question: "Which method can be used to schedule execution of a function after a delay?", options: ["setTimeout()", "setInterval()", "setImmediate()", "process.nextTick()"], correctAnswer: 0 },
-      { id: 17, question: "Which command installs all dependencies listed in package.json?", options: ["npm install", "npm init", "npm update", "npm add"], correctAnswer: 0 },
-      { id: 18, question: "Which global object provides information about the current Node.js process?", options: ["process", "global", "console", "module"], correctAnswer: 0 },
-      { id: 19, question: "Which method converts a callback-based function to a Promise-based one?", options: ["util.promisify()", "Promise.convert()", "callbackToPromise()", "asyncify()"], correctAnswer: 0 },
-      { id: 20, question: "Which flag enables experimental ES modules support in Node.js?", options: ["--experimental-modules", "--es-modules", "--enable-modules", "--module-support"], correctAnswer: 0 }
-    ],
-    intermediate: [
-      { id: 1, question: "Which module provides HTTP server utilities?", options: ["http", "https", "server", "net"], correctAnswer: 0 },
-      { id: 2, question: "Which pattern handles async with promises and async/await?", options: ["Callbacks", "Promises", "EventEmitter", "Synchronous calls"], correctAnswer: 1 },
-      { id: 3, question: "Which object emits and listens to events?", options: ["Dispatcher", "Emitter", "EventEmitter", "EventBus"], correctAnswer: 2 },
-      { id: 4, question: "Which worker provides multithreading in Node?", options: ["Worker Threads", "Child Process", "Cluster", "Both Worker Threads and Cluster depending on use-case"], correctAnswer: 3 },
-      { id: 5, question: "Which package helps automatically restart Node apps during development?", options: ["pm2", "nodemon", "forever", "restart-js"], correctAnswer: 1 },
-      { id: 6, question: "Which stream mode reads data chunk by chunk?", options: ["Flowing mode", "Paused mode", "Blocking mode", "Streaming mode"], correctAnswer: 0 },
-      { id: 7, question: "Which object provides command-line arguments in Node?", options: ["process.args", "process.argv", "argv", "args"], correctAnswer: 1 },
-      { id: 8, question: "Which method converts callback APIs to promises (util)?", options: ["util.promisify()", "util.callbackify()", "promisify()", "toPromise()"], correctAnswer: 0 },
-      { id: 9, question: "Which header helps keep connection alive in HTTP/1.1?", options: ["Connection: keep-alive", "Keep-Alive: true", "Persistent: true", "Connection: persistent"], correctAnswer: 0 },
-      { id: 10, question: "Which command installs packages and updates package-lock by default (npm v7+)?", options: ["npm i", "npm install --legacy-peer-deps", "npm ci", "npm add"], correctAnswer: 0 },
-      { id: 11, question: "What is the purpose of the Buffer class in Node.js?", options: ["To handle binary data", "To manage memory allocation", "To buffer HTTP requests", "To handle file operations"], correctAnswer: 0 },
-      { id: 12, question: "Which method is used to parse URL strings in Node.js?", options: ["url.parse()", "url.decode()", "url.read()", "url.analyze()"], correctAnswer: 0 },
-      { id: 13, question: "What does the cluster module allow you to do in Node.js?", options: ["Create child processes", "Create multiple worker threads", "Create multiple node instances to handle load", "Manage memory clusters"], correctAnswer: 2 },
-      { id: 14, question: "Which method can be used to handle uncaught exceptions in Node.js?", options: ["process.on('uncaughtException')", "try-catch blocks", "global.errorHandler", "process.handleException()"], correctAnswer: 0 },
-      { id: 15, question: "What is the purpose of the net module in Node.js?", options: ["To create TCP servers and clients", "To handle network requests", "To manage internet connections", "To provide networking utilities"], correctAnswer: 0 },
-      { id: 16, question: "Which method is used to create a directory in Node.js?", options: ["fs.mkdir()", "fs.createDirectory()", "fs.newDir()", "fs.dir()"], correctAnswer: 0 },
-      { id: 17, question: "What is the purpose of the os module in Node.js?", options: ["To provide operating system-related utilities", "To handle file operations", "To manage processes", "To provide system security"], correctAnswer: 0 },
-      { id: 18, question: "Which method is used to execute shell commands from Node.js?", options: ["child_process.exec()", "child_process.run()", "process.exec()", "system.run()"], correctAnswer: 0 },
-      { id: 19, question: "What is the purpose of the querystring module in Node.js?", options: ["To parse and format URL query strings", "To handle string operations", "To manage query parameters", "To format database queries"], correctAnswer: 0 },
-      { id: 20, question: "Which method is used to create a readable stream in Node.js?", options: ["fs.createReadStream()", "fs.readStream()", "fs.openReadStream()", "fs.streamRead()"], correctAnswer: 0 },
-      { id: 21, question: "What is the purpose of the zlib module in Node.js?", options: ["To provide compression and decompression functionality", "To handle zip files", "To manage file compression", "To provide compression utilities"], correctAnswer: 0 },
-      { id: 22, question: "Which method is used to create a HTTP server that listens for requests?", options: ["server.listen()", "http.createServer().listen()", "http.listen()", "server.create().listen()"], correctAnswer: 1 },
-      { id: 23, question: "What is the purpose of the events module in Node.js?", options: ["To handle event-driven programming", "To manage event listeners", "To create custom events", "All of the above"], correctAnswer: 3 },
-      { id: 24, question: "Which method is used to write data to a writable stream?", options: ["stream.write()", "stream.send()", "stream.output()", "stream.push()"], correctAnswer: 0 },
-      { id: 25, question: "What is the purpose of the crypto module in Node.js?", options: ["To provide cryptographic functionality", "To handle encryption and decryption", "To manage security features", "All of the above"], correctAnswer: 3 },
-      { id: 26, question: "Which method is used to resolve a sequence of paths into an absolute path?", options: ["path.resolve()", "path.join()", "path.absolute()", "path.normalize()"], correctAnswer: 0 },
-      { id: 27, question: "What is the purpose of the domain module in Node.js?", options: ["To handle uncaught exceptions", "To manage multiple IO operations", "To handle errors in async operations", "All of the above"], correctAnswer: 2 },
-      { id: 28, question: "Which method is used to create a new child process?", options: ["child_process.spawn()", "child_process.fork()", "child_process.exec()", "All of the above"], correctAnswer: 3 },
-      { id: 29, question: "What is the purpose of the repl module in Node.js?", options: ["To provide a read-eval-print loop", "To handle REPL sessions", "To create interactive shells", "All of the above"], correctAnswer: 3 },
-      { id: 30, question: "Which method is used to parse JSON strings in Node.js?", options: ["JSON.parse()", "json.decode()", "util.parseJson()", "JSON.read()"], correctAnswer: 0 },
-      { id: 31, question: "What is the purpose of the assert module in Node.js?", options: ["To provide assertion testing", "To handle errors", "To validate conditions", "All of the above"], correctAnswer: 0 },
-      { id: 32, question: "Which method is used to create a UDP server in Node.js?", options: ["dgram.createSocket()", "udp.createServer()", "net.createUDPServer()", "dgram.createServer()"], correctAnswer: 0 },
-      { id: 33, question: "What is the purpose of the string_decoder module in Node.js?", options: ["To decode Buffer objects into strings", "To handle string encoding", "To manage string operations", "To decode encoded strings"], correctAnswer: 0 },
-      { id: 34, question: "Which method is used to create a HTTPS server in Node.js?", options: ["https.createServer()", "https.createSecureServer()", "http.createSecureServer()", "tls.createServer()"], correctAnswer: 0 },
-      { id: 35, question: "What is the purpose of the timers module in Node.js?", options: ["To schedule execution of code", "To handle timeouts and intervals", "To manage timer functions", "All of the above"], correctAnswer: 3 },
-      { id: 36, question: "Which method is used to create a pipe between streams?", options: ["stream.pipe()", "stream.connect()", "stream.link()", "stream.join()"], correctAnswer: 0 },
-      { id: 37, question: "What is the purpose of the vm module in Node.js?", options: ["To compile and run code in V8 virtual machine contexts", "To handle virtual memory", "To manage virtual machines", "To provide virtualization utilities"], correctAnswer: 0 },
-      { id: 38, question: "Which method is used to create a new EventEmitter instance?", options: ["new events.EventEmitter()", "events.create()", "EventEmitter.new()", "new EventEmitter()"], correctAnswer: 0 },
-      { id: 39, question: "What is the purpose of the punycode module in Node.js?", options: ["To convert Unicode to ASCII", "To handle character encoding", "To manage string conversion", "To provide encoding utilities"], correctAnswer: 0 },
-      { id: 40, question: "Which method is used to create a new Socket instance?", options: ["new net.Socket()", "net.createSocket()", "socket.create()", "new Socket()"], correctAnswer: 0 }
-    ],
-    advanced: [
-      { id: 1, question: "Which tool is commonly used for process management in production for Node apps?", options: ["nodemon", "pm2", "forever-dev", "supervisor"], correctAnswer: 1 },
-      { id: 2, question: "Which protocol and module are used to create secure servers?", options: ["http + http2", "https + tls", "tcp + tls", "https + ssl"], correctAnswer: 1 },
-      { id: 3, question: "Which concept helps scale Node across CPU cores?", options: ["Clusters", "Workers", "Processes", "All of the above"], correctAnswer: 3 },
-      { id: 4, question: "Which method provides child process execution with promise wrapper in Node?", options: ["child_process.exec", "child_process.spawn", "util.promisify(child_process.exec)", "child_process.fork"], correctAnswer: 2 },
-      { id: 5, question: "Which API helps build HTTP/2 servers in Node?", options: ["http2 module", "http2 library", "http module with http2 flag", "express-http2"], correctAnswer: 0 },
-      { id: 6, question: "Which security header helps prevent clickjacking?", options: ["X-Frame-Options", "Content-Security-Policy", "X-Content-Type-Options", "Referrer-Policy"], correctAnswer: 0 },
-      { id: 7, question: "Which database client often pairs with Node for SQL databases?", options: ["mongoose", "pg (node-postgres)", "mongodb", "redis"], correctAnswer: 1 },
-      { id: 8, question: "Which feature provides native ESM support in Node (>=12+ experimental)?", options: ["--experimental-modules flag", "import", "require", "module.exports"], correctAnswer: 0 },
-      { id: 9, question: "Which Node core module provides TLS/SSL?", options: ["tls", "crypto", "https", "secure"], correctAnswer: 0 },
-      { id: 10, question: "Which pattern helps avoid callback hell?", options: ["Callbacks", "Promises / async-await", "Synchronous code", "Inline eval"], correctAnswer: 1 },
-      { id: 11, question: "What is the purpose of the V8 engine in Node.js?", options: ["To execute JavaScript code", "To provide a runtime environment", "To compile JavaScript to machine code", "All of the above"], correctAnswer: 3 },
-      { id: 12, question: "Which method is used to create a new HTTP/2 server in Node.js?", options: ["http2.createServer()", "http2.createSecureServer()", "http.createServer2()", "http2.server()"], correctAnswer: 0 },
-      { id: 13, question: "What is the purpose of the async_hooks module in Node.js?", options: ["To track async resources", "To handle async operations", "To manage async contexts", "All of the above"], correctAnswer: 3 },
-      { id: 14, question: "Which method is used to create a new performance timing entry?", options: ["performance.mark()", "performance.measure()", "performance.timing()", "performance.entry()"], correctAnswer: 0 },
-      { id: 15, question: "What is the purpose of the inspector module in Node.js?", options: ["To provide debugging capabilities", "To inspect Node.js processes", "To enable DevTools protocol", "All of the above"], correctAnswer: 3 },
-      { id: 16, question: "Which method is used to create a new WebSocket server in Node.js?", options: ["ws.Server()", "websocket.createServer()", "http.createWebSocketServer()", "net.createWebSocketServer()"], correctAnswer: 0 },
-      { id: 17, question: "What is the purpose of the perf_hooks module in Node.js?", options: ["To provide performance measurement utilities", "To hook into performance metrics", "To monitor performance", "All of the above"], correctAnswer: 3 },
-      { id: 18, question: "Which method is used to create a new stream transform?", options: ["new stream.Transform()", "stream.createTransform()", "transform.stream()", "stream.transform()"], correctAnswer: 0 },
-      { id: 19, question: "What is the purpose of the worker_threads module in Node.js?", options: ["To create multi-threaded applications", "To handle CPU-intensive tasks", "To run JavaScript in parallel", "All of the above"], correctAnswer: 3 },
-      { id: 20, question: "Which method is used to create a new crypto hash?", options: ["crypto.createHash()", "crypto.hash()", "crypto.createHmac()", "crypto.newHash()"], correctAnswer: 0 },
-      { id: 21, question: "What is the purpose of the diagnostics_channel module in Node.js?", options: ["To provide a pub/sub API for diagnostic data", "To handle diagnostic channels", "To manage diagnostic information", "All of the above"], correctAnswer: 3 },
-      { id: 22, question: "Which method is used to create a new pipeline between streams?", options: ["stream.pipeline()", "stream.pipe()", "stream.connect()", "stream.chain()"], correctAnswer: 0 },
-      { id: 23, question: "What is the purpose of the wasm module in Node.js?", options: ["To handle WebAssembly", "To compile WebAssembly", "To run WebAssembly code", "All of the above"], correctAnswer: 3 },
-      { id: 24, question: "Which method is used to create a new performance observer?", options: ["new PerformanceObserver()", "performance.createObserver()", "performance.observer()", "PerformanceObserver.new()"], correctAnswer: 0 },
-      { id: 25, question: "What is the purpose of the trace_events module in Node.js?", options: ["To trace events", "To monitor event loop", "To track performance", "All of the above"], correctAnswer: 3 },
-      { id: 26, question: "Which method is used to create a new crypto cipher?", options: ["crypto.createCipher()", "crypto.cipher()", "crypto.createCipheriv()", "crypto.newCipher()"], correctAnswer: 2 },
-      { id: 27, question: "What is the purpose of the module module in Node.js?", options: ["To handle module loading", "To manage module system", "To provide module utilities", "All of the above"], correctAnswer: 3 },
-      { id: 28, question: "Which method is used to create a new async resource?", options: ["new async_hooks.AsyncResource()", "async_hooks.createResource()", "AsyncResource.new()", "async_hooks.resource()"], correctAnswer: 0 },
-      { id: 29, question: "What is the purpose of the querystring module in Node.js?", options: ["To parse and format URL query strings", "To handle query parameters", "To manage URL queries", "All of the above"], correctAnswer: 3 },
-      { id: 30, question: "Which method is used to create a new DNS resolver?", options: ["dns.Resolver()", "dns.createResolver()", "new dns.Resolver()", "dns.resolver()"], correctAnswer: 2 },
-      { id: 31, question: "What is the purpose of the readline module in Node.js?", options: ["To read input from command line", "To handle readline interface", "To create interactive prompts", "All of the above"], correctAnswer: 3 },
-      { id: 32, question: "Which method is used to create a new performance timer?", options: ["performance.now()", "performance.timeOrigin", "performance.timing", "performance.getEntries()"], correctAnswer: 0 },
-      { id: 33, question: "What is the purpose of the sys module in Node.js?", options: ["To provide system utilities", "To handle system operations", "To manage system information", "All of the above"], correctAnswer: 3 },
-      { id: 34, question: "Which method is used to create a new stream duplex?", options: ["new stream.Duplex()", "stream.createDuplex()", "Duplex.stream()", "stream.duplex()"], correctAnswer: 0 },
-      { id: 35, question: "What is the purpose of the constants module in Node.js?", options: ["To provide constants for fs operations", "To handle constant values", "To manage system constants", "All of the above"], correctAnswer: 3 },
-      { id: 36, question: "Which method is used to create a new crypto key pair?", options: ["crypto.generateKeyPair()", "crypto.createKeyPair()", "crypto.keyPair()", "crypto.newKeyPair()"], correctAnswer: 0 },
-      { id: 37, question: "What is the purpose of the _http_agent module in Node.js?", options: ["To manage HTTP agent", "To handle HTTP connections", "To pool HTTP sockets", "All of the above"], correctAnswer: 3 },
-      { id: 38, question: "Which method is used to create a new stream readable?", options: ["new stream.Readable()", "stream.createReadable()", "Readable.stream()", "stream.readable()"], correctAnswer: 0 },
-      { id: 39, question: "What is the purpose of the _tls_common module in Node.js?", options: ["To handle TLS common functions", "To manage TLS connections", "To provide TLS utilities", "All of the above"], correctAnswer: 3 },
-      { id: 40, question: "Which method is used to create a new stream writable?", options: ["new stream.Writable()", "stream.createWritable()", "Writable.stream()", "stream.writable()"], correctAnswer: 0 },
-      { id: 41, question: "What is the purpose of the _stream_transform module in Node.js?", options: ["To handle stream transformations", "To manage transform streams", "To provide transform utilities", "All of the above"], correctAnswer: 3 },
-      { id: 42, question: "Which method is used to create a new crypto sign?", options: ["crypto.createSign()", "crypto.sign()", "crypto.createSignature()", "crypto.newSign()"], correctAnswer: 0 },
-      { id: 43, question: "What is the purpose of the _stream_passthrough module in Node.js?", options: ["To handle passthrough streams", "To manage passthrough operations", "To provide passthrough utilities", "All of the above"], correctAnswer: 3 },
-      { id: 44, question: "Which method is used to create a new crypto verify?", options: ["crypto.createVerify()", "crypto.verify()", "crypto.createVerification()", "crypto.newVerify()"], correctAnswer: 0 },
-      { id: 45, question: "What is the purpose of the _stream_duplex module in Node.js?", options: ["To handle duplex streams", "To manage duplex operations", "To provide duplex utilities", "All of the above"], correctAnswer: 3 },
-      { id: 46, question: "Which method is used to create a new crypto random bytes?", options: ["crypto.randomBytes()", "crypto.random()", "crypto.createRandom()", "crypto.newRandom()"], correctAnswer: 0 },
-      { id: 47, question: "What is the purpose of the _stream_readable module in Node.js?", options: ["To handle readable streams", "To manage readable operations", "To provide readable utilities", "All of the above"], correctAnswer: 3 },
-      { id: 48, question: "Which method is used to create a new crypto random fill?", options: ["crypto.randomFill()", "crypto.fillRandom()", "crypto.createRandomFill()", "crypto.newRandomFill()"], correctAnswer: 0 },
-      { id: 49, question: "What is the purpose of the _stream_writable module in Node.js?", options: ["To handle writable streams", "To manage writable operations", "To provide writable utilities", "All of the above"], correctAnswer: 3 },
-      { id: 50, question: "Which method is used to create a new crypto scrypt?", options: ["crypto.scrypt()", "crypto.createScrypt()", "crypto.scryptSync()", "crypto.newScrypt()"], correctAnswer: 0 },
-      { id: 51, question: "What is the purpose of the _stream_transform module in Node.js?", options: ["To handle stream transformations", "To manage transform streams", "To provide transform utilities", "All of the above"], correctAnswer: 3 },
-      { id: 52, question: "Which method is used to create a new crypto random int?", options: ["crypto.randomInt()", "crypto.randomInteger()", "crypto.createRandomInt()", "crypto.newRandomInt()"], correctAnswer: 0 },
-      { id: 53, question: "What is the purpose of the _stream_passthrough module in Node.js?", options: ["To handle passthrough streams", "To manage passthrough operations", "To provide passthrough utilities", "All of the above"], correctAnswer: 3 },
-      { id: 54, question: "Which method is used to create a new crypto timing safe equal?", options: ["crypto.timingSafeEqual()", "crypto.safeEqual()", "crypto.createTimingSafeEqual()", "crypto.newTimingSafeEqual()"], correctAnswer: 0 },
-      { id: 55, question: "What is the purpose of the _stream_duplex module in Node.js?", options: ["To handle duplex streams", "To manage duplex operations", "To provide duplex utilities", "All of the above"], correctAnswer: 3 },
-      { id: 56, question: "Which method is used to create a new crypto get curves?", options: ["crypto.getCurves()", "crypto.curves()", "crypto.createCurves()", "crypto.newCurves()"], correctAnswer: 0 },
-      { id: 57, question: "What is the purpose of the _stream_readable module in Node.js?", options: ["To handle readable streams", "To manage readable operations", "To provide readable utilities", "All of the above"], correctAnswer: 3 },
-      { id: 58, question: "Which method is used to create a new crypto get hashes?", options: ["crypto.getHashes()", "crypto.hashes()", "crypto.createHashes()", "crypto.newHashes()"], correctAnswer: 0 },
-      { id: 59, question: "What is the purpose of the _stream_writable module in Node.js?", options: ["To handle writable streams", "To manage writable operations", "To provide writable utilities", "All of the above"], correctAnswer: 3 },
-      { id: 60, question: "Which method is used to create a new crypto get ciphers?", options: ["crypto.getCiphers()", "crypto.ciphers()", "crypto.createCiphers()", "crypto.newCiphers()"], correctAnswer: 0 }
-    ]
-  },
-  mongodb: {
-    basic: [
-      { id: 1, question: "What type of database is MongoDB?", options: ["Relational", "NoSQL document store", "In-memory", "Graph database"], correctAnswer: 1 },
-      { id: 2, question: "Which format does MongoDB use to represent documents?", options: ["XML", "JSON-like BSON", "YAML", "CSV"], correctAnswer: 1 },
-      { id: 3, question: "What is a collection in MongoDB?", options: ["A table equivalent", "A row equivalent", "A database user", "A query"], correctAnswer: 0 },
-      { id: 4, question: "Which command inserts a document?", options: ["db.collection.insertOne()", "db.insert()", "insert.document()", "db.add()"], correctAnswer: 0 },
-      { id: 5, question: "Which index type speeds up queries on fields?", options: ["Hash index", "B-tree index", "Text index", "Single-field index"], correctAnswer: 3 },
-      { id: 6, question: "Which operator selects documents matching a condition?", options: ["$match", "$where", "$eq", "=="], correctAnswer: 2 },
-      { id: 7, question: "Which shell program interacts with MongoDB?", options: ["mongo shell", "mongosh", "mongo-cli", "mongoclient"], correctAnswer: 1 },
-      { id: 8, question: "Which driver connects Node apps to MongoDB?", options: ["mongoose", "mongodb driver", "both depending on approach", "mongo-node"], correctAnswer: 2 },
-      { id: 9, question: "Which command finds documents in a collection?", options: ["db.collection.find()", "db.find()", "find.collection()", "collection.search()"], correctAnswer: 0 },
-      { id: 10, question: "What type of schema does MongoDB use by default?", options: ["Strict schema", "Schema-less/flexible schema", "XML schema", "Fixed schema"], correctAnswer: 1 },
-      { id: 11, question: "Which command shows all databases in MongoDB?", options: ["show dbs", "show databases", "db.showDatabases()", "Both show dbs and show databases"], correctAnswer: 3 },
-      { id: 12, question: "Which command creates a new database in MongoDB?", options: ["use dbName", "create database dbName", "db.createDatabase()", "new database dbName"], correctAnswer: 0 },
-      { id: 13, question: "What is the primary key in MongoDB called?", options: ["_id", "id", "primaryKey", "key"], correctAnswer: 0 },
-      { id: 14, question: "Which operator is used to update specific fields in a document?", options: ["$set", "$update", "$change", "$modify"], correctAnswer: 0 },
-      { id: 15, question: "Which command removes a document from a collection?", options: ["db.collection.remove()", "db.collection.deleteOne()", "db.collection.drop()", "Both remove and deleteOne"], correctAnswer: 3 },
-      { id: 16, question: "Which operator is used to combine multiple conditions in a query?", options: ["$and", "$or", "$all", "Both $and and $or"], correctAnswer: 3 },
-      { id: 17, question: "Which command counts documents in a collection?", options: ["db.collection.count()", "db.collection.countDocuments()", "db.collection.find().count()", "All of the above"], correctAnswer: 3 },
-      { id: 18, question: "Which operator is used to check if a field exists in a document?", options: ["$exists", "$has", "$contains", "$present"], correctAnswer: 0 },
-      { id: 19, question: "Which command creates an index on a field?", options: ["db.collection.createIndex()", "db.collection.index()", "db.collection.addIndex()", "db.collection.makeIndex()"], correctAnswer: 0 },
-      { id: 20, question: "Which operator is used to sort query results?", options: ["sort()", "orderBy()", "arrange()", "sequence()"], correctAnswer: 0 }
-    ],
-    intermediate: [
-      { id: 1, question: "Which operator selects documents where a field is greater than value?", options: ["$gt", "$gte", "$lt", "$lte"], correctAnswer: 0 },
-      { id: 2, question: "Which command updates a single document?", options: ["updateOne()", "updateMany()", "replace()", "setOne()"], correctAnswer: 0 },
-      { id: 3, question: "Which aggregation stage filters documents?", options: ["$group", "$match", "$project", "$sort"], correctAnswer: 1 },
-      { id: 4, question: "Which operator adds an element to an array field?", options: ["$push", "$add", "$append", "$insert"], correctAnswer: 0 },
-      { id: 5, question: "Which index supports text search?", options: ["text index", "hashed index", "compound index", "sparse index"], correctAnswer: 0 },
-      { id: 6, question: "Which option makes an index unique?", options: ["unique: true", "unique: 1", "unique:true", "both 1 and 2 depending on syntax"], correctAnswer: 0 },
-      { id: 7, question: "Which command removes documents matching filter?", options: ["deleteOne()", "deleteMany()", "remove()", "Both deleteOne/deleteMany"], correctAnswer: 3 },
-      { id: 8, question: "Which file stores a MongoDB replica set configuration?", options: ["mongod.conf", "replica.conf", "config.json", "rs.conf"], correctAnswer: 0 },
-      { id: 9, question: "Which tool imports JSON data into MongoDB?", options: ["mongoimport", "mongorestore", "mongoimportJSON", "mongoload"], correctAnswer: 0 },
-      { id: 10, question: "Which storage engine is default in modern MongoDB?", options: ["WiredTiger", "MMAPv1", "InMemory", "RocksDB"], correctAnswer: 0 },
-      { id: 11, question: "Which operator is used to select documents where a field is in a specified array?", options: ["$in", "$within", "$contains", "$has"], correctAnswer: 0 },
-      { id: 12, question: "Which aggregation stage is used to group documents by a specified key?", options: ["$group", "$match", "$project", "$sort"], correctAnswer: 0 },
-      { id: 13, question: "Which operator is used to limit the number of documents returned in a query?", options: ["limit()", "top()", "first()", "take()"], correctAnswer: 0 },
-      { id: 14, question: "Which operator is used to skip a specified number of documents in a query?", options: ["skip()", "offset()", "jump()", "pass()"], correctAnswer: 0 },
-      { id: 15, question: "Which operator is used to perform a left outer join in MongoDB?", options: ["$lookup", "$join", "$merge", "$combine"], correctAnswer: 0 },
-      { id: 16, question: "Which operator is used to rename a field in the aggregation pipeline?", options: ["$rename", "$project", "$set", "$alias"], correctAnswer: 0 },
-      { id: 17, question: "Which operator is used to check if a field value matches a regular expression?", options: ["$regex", "$match", "$like", "$pattern"], correctAnswer: 0 },
-      { id: 18, question: "Which operator is used to calculate the average of values in a group?", options: ["$avg", "$mean", "$average", "$calcAvg"], correctAnswer: 0 },
-      { id: 19, question: "Which operator is used to calculate the sum of values in a group?", options: ["$sum", "$total", "$add", "$calculateSum"], correctAnswer: 0 },
-      { id: 20, question: "Which operator is used to get the maximum value in a group?", options: ["$max", "$maximum", "$top", "$highest"], correctAnswer: 0 },
-      { id: 21, question: "Which operator is used to get the minimum value in a group?", options: ["$min", "$minimum", "$bottom", "$lowest"], correctAnswer: 0 },
-      { id: 22, question: "Which operator is used to get the first document in a group?", options: ["$first", "$top", "$beginning", "$start"], correctAnswer: 0 },
-      { id: 23, question: "Which operator is used to get the last document in a group?", options: ["$last", "$end", "$final", "$bottom"], correctAnswer: 0 },
-      { id: 24, question: "Which operator is used to add fields to documents in the aggregation pipeline?", options: ["$addFields", "$set", "$include", "$append"], correctAnswer: 0 },
-      { id: 25, question: "Which operator is used to remove fields from documents in the aggregation pipeline?", options: ["$unset", "$remove", "$exclude", "$delete"], correctAnswer: 0 },
-      { id: 26, question: "Which operator is used to count the number of documents in a group?", options: ["$count", "$sum", "$total", "$number"], correctAnswer: 0 },
-      { id: 27, question: "Which operator is used to combine arrays into a single array?", options: ["$concatArrays", "$mergeArrays", "$combineArrays", "$joinArrays"], correctAnswer: 0 },
-      { id: 28, question: "Which operator is used to filter an array in the aggregation pipeline?", options: ["$filter", "$where", "$match", "$select"], correctAnswer: 0 },
-      { id: 29, question: "Which operator is used to slice an array in the aggregation pipeline?", options: ["$slice", "$cut", "$part", "$segment"], correctAnswer: 0 },
-      { id: 30, question: "Which operator is used to get the size of an array?", options: ["$size", "$length", "$count", "$measure"], correctAnswer: 0 },
-      { id: 31, question: "Which operator is used to check if all elements in an array match a condition?", options: ["$all", "$every", "$each", "$matchAll"], correctAnswer: 0 },
-      { id: 32, question: "Which operator is used to check if any element in an array matches a condition?", options: ["$elemMatch", "$any", "$some", "$matchAny"], correctAnswer: 0 },
-      { id: 33, question: "Which operator is used to round a number to a whole integer?", options: ["$round", "$floor", "$ceil", "$trunc"], correctAnswer: 0 },
-      { id: 34, question: "Which operator is used to convert a value to a string?", options: ["$toString", "$string", "$str", "$convertString"], correctAnswer: 0 },
-      { id: 35, question: "Which operator is used to convert a value to a number?", options: ["$toDouble", "$toInt", "$toLong", "All of the above"], correctAnswer: 3 },
-      { id: 36, question: "Which operator is used to convert a value to a date?", options: ["$toDate", "$date", "$convertDate", "$parseDate"], correctAnswer: 0 },
-      { id: 37, question: "Which operator is used to get the current date?", options: ["$now", "$currentDate", "$today", "$currentTime"], correctAnswer: 1 },
-      { id: 38, question: "Which operator is used to extract the year from a date?", options: ["$year", "$getYear", "$extractYear", "$dateYear"], correctAnswer: 0 },
-      { id: 39, question: "Which operator is used to extract the month from a date?", options: ["$month", "$getMonth", "$extractMonth", "$dateMonth"], correctAnswer: 0 },
-      { id: 40, question: "Which operator is used to extract the day from a date?", options: ["$dayOfMonth", "$getDay", "$extractDay", "$dateDay"], correctAnswer: 0 }
-    ],
-    advanced: [
-      { id: 1, question: "Which feature provides horizontal scaling in MongoDB?", options: ["Replication", "Sharding", "Indexing", "Aggregation"], correctAnswer: 1 },
-      { id: 2, question: "Which concern does replica sets address?", options: ["Sharding workload", "High availability and failover", "Index performance", "Query optimization"], correctAnswer: 1 },
-      { id: 3, question: "Which mechanism ensures read/write atomicity on single document?", options: ["Transactions", "Two-phase commit", "Single-document atomic operations", "Locks"], correctAnswer: 2 },
-      { id: 4, question: "Which command starts a multi-document transaction (supported on replica sets)?", options: ["session.startTransaction()", "db.startTransaction()", "mongo.startTrans()", "startTransaction()"], correctAnswer: 0 },
-      { id: 5, question: "Which operator allows conditional updates in aggregation pipeline?", options: ["$cond", "$if", "$switch", "$choose"], correctAnswer: 0 },
-      { id: 6, question: "Which index type is best for equality queries on hashed values?", options: ["Hashed index", "Text index", "Compound index", "Wildcard index"], correctAnswer: 0 },
-      { id: 7, question: "Which tool restores binary database backups (BSON)?", options: ["mongorestore", "mongoimport", "mongoload", "mongobackup"], correctAnswer: 0 },
-      { id: 8, question: "Which operator projects specific fields from documents?", options: ["$project", "$select", "$fields", "$pick"], correctAnswer: 0 },
-      { id: 9, question: "Which consistency model does MongoDB provide for single-document writes?", options: ["Eventual consistency", "Strong consistency for single-document operations", "Weak consistency", "No consistency"], correctAnswer: 1 },
-      { id: 10, question: "Which shell command shows replica set status?", options: ["rs.status()", "repl.status()", "rsStatus()", "replset.status()"], correctAnswer: 0 },
-      { id: 11, question: "Which feature allows MongoDB to handle large files?", options: ["GridFS", "FileFS", "LargeFile", "BigFile"], correctAnswer: 0 },
-      { id: 12, question: "Which operator is used to perform a full-text search?", options: ["$text", "$search", "$find", "$matchText"], correctAnswer: 0 },
-      { id: 13, question: "Which operator is used to specify weights for text search?", options: ["$text with weights", "$search with weights", "$weight", "$textScore"], correctAnswer: 0 },
-      { id: 14, question: "Which operator is used to sort by text search score?", options: ["$meta:textScore", "$textScore", "$searchScore", "$score"], correctAnswer: 0 },
-      { id: 15, question: "Which operator is used to perform geospatial queries?", options: ["$geoNear", "$near", "$geoWithin", "All of the above"], correctAnswer: 3 },
-      { id: 16, question: "Which operator is used to query for documents within a specified geometry?", options: ["$geoWithin", "$within", "$geoContains", "$contains"], correctAnswer: 0 },
-      { id: 17, question: "Which operator is used to query for documents near a specified point?", options: ["$near", "$close", "$proximity", "$distance"], correctAnswer: 0 },
-      { id: 18, question: "Which operator is used to calculate the distance between points?", options: ["$distance", "$geoDistance", "$calcDistance", "$dist"], correctAnswer: 1 },
-      { id: 19, question: "Which index type supports geospatial queries?", options: ["2dsphere", "2d", "geo", "Both 2dsphere and 2d"], correctAnswer: 3 },
-      { id: 20, question: "Which operator is used to perform map-reduce operations?", options: ["mapReduce()", "mapReduce", "executeMapReduce", "runMapReduce"], correctAnswer: 0 },
-      { id: 21, question: "Which feature allows MongoDB to validate documents on insert/update?", options: ["Document validation", "Schema validation", "Data validation", "All of the above"], correctAnswer: 3 },
-      { id: 22, question: "Which operator is used to specify validation rules?", options: ["$jsonSchema", "$schema", "$validate", "$rules"], correctAnswer: 0 },
-      { id: 23, question: "Which feature allows MongoDB to encrypt data at rest?", options: ["Encrypted storage engine", "WiredTiger encryption", "MongoDB Encryption", "All of the above"], correctAnswer: 3 },
-      { id: 24, question: "Which feature allows MongoDB to encrypt data in transit?", options: ["TLS/SSL", "SSL/TLS", "Encrypted connections", "All of the above"], correctAnswer: 3 },
-      { id: 25, question: "Which tool is used to monitor MongoDB instances?", options: ["mongostat", "mongotop", "mongomonitor", "Both mongostat and mongotop"], correctAnswer: 3 },
-      { id: 26, question: "Which tool is used to backup MongoDB databases?", options: ["mongodump", "mongobackup", "mongosave", "mongoexport"], correctAnswer: 0 },
-      { id: 27, question: "Which tool is used to restore MongoDB databases?", options: ["mongorestore", "mongoload", "mongoinport", "mongodeploy"], correctAnswer: 0 },
-      { id: 28, question: "Which tool is used to import data into MongoDB?", options: ["mongoimport", "mongoload", "mongodeploy", "mongoadd"], correctAnswer: 0 },
-      { id: 29, question: "Which tool is used to export data from MongoDB?", options: ["mongoexport", "mongosave", "mongodump", "mongoget"], correctAnswer: 0 },
-      { id: 30, question: "Which feature allows MongoDB to compress data?", options: ["Compression", "WiredTiger compression", "Data compression", "All of the above"], correctAnswer: 3 },
-      { id: 31, question: "Which compression algorithm is supported by WiredTiger?", options: ["snappy", "zlib", "zstd", "All of the above"], correctAnswer: 3 },
-      { id: 32, question: "Which feature allows MongoDB to cache frequently accessed data?", options: ["Cache", "WiredTiger cache", "Memory cache", "All of the above"], correctAnswer: 3 },
-      { id: 33, question: "Which parameter controls the size of the WiredTiger cache?", options: ["wiredTigerCacheSizeGB", "cacheSizeGB", "wtCacheSizeGB", "All of the above"], correctAnswer: 3 },
-      { id: 34, question: "Which feature allows MongoDB to perform incremental backups?", options: ["Oplog", "Operation log", "Change stream", "All of the above"], correctAnswer: 3 },
-      { id: 35, question: "Which feature allows applications to subscribe to data changes?", options: ["Change streams", "Oplog tailing", "Data subscription", "All of the above"], correctAnswer: 3 },
-      { id: 36, question: "Which operator is used in change streams to watch for changes?", options: ["watch()", "observe()", "subscribe()", "listen()"], correctAnswer: 0 },
-      { id: 37, question: "Which feature allows MongoDB to perform time-series data analysis?", options: ["Time series collections", "Time series data", "Time series analysis", "All of the above"], correctAnswer: 3 },
-      { id: 38, question: "Which operator is used to create a time series collection?", options: ["createCollection() with timeseries options", "createTimeSeries()", "newTimeSeries()", "makeTimeSeries()"], correctAnswer: 0 },
-      { id: 39, question: "Which feature allows MongoDB to perform graph traversal?", options: ["$graphLookup", "$traverse", "$graph", "$path"], correctAnswer: 0 },
-      { id: 40, question: "Which operator is used to perform recursive search in graph traversal?", options: ["$graphLookup", "$recursive", "$traverse", "$graphSearch"], correctAnswer: 0 },
-      { id: 41, question: "Which feature allows MongoDB to perform faceted search?", options: ["Faceted search", "Facet stage", "$facet", "All of the above"], correctAnswer: 3 },
-      { id: 42, question: "Which operator is used to perform faceted search?", options: ["$facet", "$faceted", "$facetSearch", "$multiFacet"], correctAnswer: 0 },
-      { id: 43, question: "Which feature allows MongoDB to perform full-text search with Atlas?", options: ["Atlas Search", "Full-text search", "Text search", "All of the above"], correctAnswer: 3 },
-      { id: 44, question: "Which operator is used in Atlas Search to perform search?", options: ["$search", "$text", "$find", "$match"], correctAnswer: 0 },
-      { id: 45, question: "Which feature allows MongoDB to perform machine learning with Atlas?", options: ["Atlas Data Lake", "Atlas Machine Learning", "Atlas Analytics", "All of the above"], correctAnswer: 3 },
-      { id: 46, question: "Which feature allows MongoDB to query data in S3?", options: ["Atlas Data Lake", "S3 Query", "Data Lake Query", "All of the above"], correctAnswer: 3 },
-      { id: 47, question: "Which feature allows MongoDB to perform real-time analytics?", options: ["Real-time analytics", "Change streams", "Aggregation pipeline", "All of the above"], correctAnswer: 3 },
-      { id: 48, question: "Which feature allows MongoDB to perform BI connectivity?", options: ["BI Connector", "SQL Interface", "ODBC/JDBC", "All of the above"], correctAnswer: 3 },
-      { id: 49, question: "Which tool allows SQL queries on MongoDB data?", options: ["MongoDB BI Connector", "SQL Interface", "ODBC/JDBC", "All of the above"], correctAnswer: 3 },
-      { id: 50, question: "Which feature allows MongoDB to integrate with Kafka?", options: ["Kafka Connect", "MongoDB Kafka Source", "MongoDB Kafka Sink", "All of the above"], correctAnswer: 3 },
-      { id: 51, question: "Which feature allows MongoDB to integrate with Spark?", options: ["MongoDB Spark Connector", "Spark MongoDB", "MongoDB for Spark", "All of the above"], correctAnswer: 3 },
-      { id: 52, question: "Which feature allows MongoDB to integrate with Hadoop?", options: ["MongoDB Hadoop Connector", "Hadoop MongoDB", "MongoDB for Hadoop", "All of the above"], correctAnswer: 3 },
-      { id: 53, question: "Which feature allows MongoDB to perform data federation?", options: ["Atlas Data Federation", "Data Lake", "Federated Query", "All of the above"], correctAnswer: 3 },
-      { id: 54, question: "Which feature allows MongoDB to perform data visualization?", options: ["Charts", "MongoDB Charts", "Data Visualization", "All of the above"], correctAnswer: 3 },
-      { id: 55, question: "Which feature allows MongoDB to perform automatic indexing?", options: ["Atlas Auto Indexing", "Automatic Indexing", "Auto Index", "All of the above"], correctAnswer: 3 },
-      { id: 56, question: "Which feature allows MongoDB to perform performance advisory?", options: ["Performance Advisor", "Index Suggestions", "Query Optimization", "All of the above"], correctAnswer: 3 },
-      { id: 57, question: "Which feature allows MongoDB to perform real-time performance monitoring?", options: ["Real-Time Performance Panel", "Live Performance Monitoring", "Real-Time Metrics", "All of the above"], correctAnswer: 3 },
-      { id: 58, question: "Which feature allows MongoDB to perform automated scaling?", options: ["Atlas Auto-Scaling", "Auto-Scaling", "Automated Scaling", "All of the above"], correctAnswer: 3 },
-      { id: 59, question: "Which feature allows MongoDB to perform automated backups?", options: ["Atlas Backups", "Cloud Backups", "Automated Backups", "All of the above"], correctAnswer: 3 },
-      { id: 60, question: "Which feature allows MongoDB to perform point-in-time recovery?", options: ["Point-in-Time Recovery", "Continuous Backup", "PITR", "All of the above"], correctAnswer: 3 }
-    ]
-  },
-
-  // Java
-  java: {
-    basic: [
-      { id: 1, question: "Which keyword declares a class in Java?", options: ["class", "struct", "object", "define"], correctAnswer: 0 },
-      { id: 2, question: "Which method is entry point of a Java program?", options: ["start()", "main()", "run()", "init()"], correctAnswer: 1 },
-      { id: 3, question: "Which operator concatenates strings with other values?", options: ["+", "&", ".", "concat()"], correctAnswer: 0 },
-      { id: 4, question: "Which primitive type holds true/false?", options: ["boolean", "int", "char", "String"], correctAnswer: 0 },
-      { id: 5, question: "Which keyword prevents inheritance of a class?", options: ["final", "static", "private", "sealed"], correctAnswer: 0 },
-      { id: 6, question: "Which OOP concept allows one name many forms?", options: ["Encapsulation", "Inheritance", "Polymorphism", "Abstraction"], correctAnswer: 2 },
-      { id: 7, question: "Which collection stores key-value pairs?", options: ["List", "Set", "Map", "Queue"], correctAnswer: 2 },
-      { id: 8, question: "Which package contains core Java classes like String?", options: ["java.base", "java.lang", "java.core", "java.util"], correctAnswer: 1 },
-      { id: 9, question: "Which exception must be declared or handled (checked)?", options: ["RuntimeException", "IOException", "Error", "NullPointerException"], correctAnswer: 1 },
-      { id: 10, question: "Which access modifier restricts to package only?", options: ["public", "protected", "private", "default (no modifier)"], correctAnswer: 3 },
-      { id: 11, question: "What is the default value of a boolean variable in Java?", options: ["true", "false", "null", "0"], correctAnswer: 1 },
-      { id: 12, question: "Which keyword is used to create an object in Java?", options: ["new", "create", "object", "init"], correctAnswer: 0 },
-      { id: 13, question: "Which method is used to compare two strings for equality in Java?", options: ["equals()", "compare()", "==", "equal()"], correctAnswer: 0 },
-      { id: 14, question: "What is the size of an int in Java?", options: ["32 bits", "16 bits", "64 bits", "Depends on the platform"], correctAnswer: 0 },
-      { id: 15, question: "Which keyword is used to inherit a class in Java?", options: ["extends", "inherits", "implements", "super"], correctAnswer: 0 },
-      { id: 16, question: "Which of these is not a primitive data type in Java?", options: ["int", "boolean", "String", "double"], correctAnswer: 2 },
-      { id: 17, question: "What is the superclass of all classes in Java?", options: ["Object", "Class", "Super", "Main"], correctAnswer: 0 },
-      { id: 18, question: "Which keyword is used to implement an interface?", options: ["implements", "extends", "interface", "implement"], correctAnswer: 0 },
-      { id: 19, question: "What is the output of: System.out.println(10 + 20 + \"30\");", options: ["3030", "60", "102030", "30"], correctAnswer: 2 },
-      { id: 20, question: "Which method is called when an object is garbage collected?", options: ["finalize()", "destroy()", "delete()", "cleanup()"], correctAnswer: 0 }
-    ],
-    intermediate: [
-      { id: 1, question: "Which interface supports dynamic method invocation in collections (forEach)?", options: ["Iterable", "Collection", "List", "Stream"], correctAnswer: 0 },
-      { id: 2, question: "Which class provides thread creation by implementing an interface?", options: ["Thread", "Runnable", "Callable", "Executor"], correctAnswer: 1 },
-      { id: 3, question: "Which keyword ensures a method cannot be overridden?", options: ["static", "final", "private", "sealed"], correctAnswer: 1 },
-      { id: 4, question: "Which package contains concurrency utilities like ExecutorService?", options: ["java.util", "java.util.concurrent", "java.concurrent", "java.thread"], correctAnswer: 1 },
-      { id: 5, question: "Which concept loads classes at runtime by name?", options: ["Reflection", "Serialization", "Deserialization", "Dynamic binding"], correctAnswer: 0 },
-      { id: 6, question: "Which collection prevents duplicates and has no guaranteed order?", options: ["List", "Set", "Map", "Queue"], correctAnswer: 1 },
-      { id: 7, question: "Which interface supports lazy sequence operations (map/filter)?", options: ["Stream", "Iterator", "Enumeration", "Sequence"], correctAnswer: 0 },
-      { id: 8, question: "Which keyword acquires intrinsic lock of an object?", options: ["synchronized", "lock", "wait", "notify"], correctAnswer: 0 },
-      { id: 9, question: "Which I/O API is non-blocking introduced in NIO?", options: ["java.io", "java.nio", "java.net", "java.file"], correctAnswer: 1 },
-      { id: 10, question: "Which method serializes an object to bytes (java.io)?", options: ["writeObject", "toBytes", "serialize", "objectToBytes"], correctAnswer: 0 },
-      { id: 11, question: "What is the output of: System.out.println(Math.min(Double.MIN_VALUE, 0.0d));", options: ["0.0", "Double.MIN_VALUE", "Negative infinity", "Positive infinity"], correctAnswer: 1 },
-      { id: 12, question: "Which annotation is used to override a method?", options: ["@Override", "@Overwrite", "@OverrideMethod", "@Super"], correctAnswer: 0 },
-      { id: 13, question: "What is the difference between == and .equals() in Java?", options: ["== compares references, .equals() compares content", "== compares content, .equals() compares references", "Both are the same", "None of the above"], correctAnswer: 0 },
-      { id: 14, question: "Which keyword is used to prevent a variable from being serialized?", options: ["transient", "static", "final", "volatile"], correctAnswer: 0 },
-      { id: 15, question: "What is the purpose of the finally block in try-catch?", options: ["To execute code regardless of exception", "To handle exceptions", "To catch exceptions", "To throw exceptions"], correctAnswer: 0 },
-      { id: 16, question: "Which collection maintains insertion order?", options: ["HashSet", "TreeSet", "LinkedHashSet", "All of the above"], correctAnswer: 2 },
-      { id: 17, question: "What is the default capacity of an ArrayList in Java?", options: ["10", "16", "0", "It depends on the constructor"], correctAnswer: 0 },
-      { id: 18, question: "Which method is used to start a thread execution?", options: ["run()", "start()", "execute()", "begin()"], correctAnswer: 1 },
-      { id: 19, question: "What is the diamond operator <> used for in Java?", options: ["Type inference", "Generic type declaration", "Both A and B", "None of the above"], correctAnswer: 2 },
-      { id: 20, question: "Which method is used to convert a string to an integer?", options: ["Integer.parseInt()", "String.toInt()", "Integer.valueOf()", "Both A and C"], correctAnswer: 3 },
-      { id: 21, question: "What is the purpose of the volatile keyword?", options: ["To ensure variable visibility across threads", "To make variable constant", "To prevent variable modification", "To optimize variable access"], correctAnswer: 0 },
-      { id: 22, question: "Which design pattern is used in Java's InputStream/OutputStream classes?", options: ["Decorator pattern", "Factory pattern", "Singleton pattern", "Observer pattern"], correctAnswer: 0 },
-      { id: 23, question: "What is the purpose of the hashCode() method?", options: ["To generate a hash code for an object", "To compare objects", "To convert object to string", "To serialize an object"], correctAnswer: 0 },
-      { id: 24, question: "Which method is used to create a deep copy of an object?", options: ["clone()", "copy()", "deepCopy()", "duplicate()"], correctAnswer: 0 },
-      { id: 25, question: "What is the purpose of the Comparator interface?", options: ["To define custom sorting order", "To compare two objects", "To sort collections", "All of the above"], correctAnswer: 3 },
-      { id: 26, question: "Which method is used to schedule a task for repeated execution?", options: ["ScheduledExecutorService.scheduleAtFixedRate()", "Timer.schedule()", "Thread.schedule()", "Both A and B"], correctAnswer: 3 },
-      { id: 27, question: "What is the purpose of the try-with-resources statement?", options: ["To automatically close resources", "To handle exceptions", "To manage memory", "To optimize performance"], correctAnswer: 0 },
-      { id: 28, question: "Which annotation is used to specify a custom serialization method?", options: ["@Serializable", "@Serialize", "@Serial", "Java uses default serialization"], correctAnswer: 3 },
-      { id: 29, question: "What is the purpose of the ClassLoader in Java?", options: ["To load Java classes into the JVM", "To compile Java code", "To execute Java programs", "To optimize Java code"], correctAnswer: 0 },
-      { id: 30, question: "Which method is used to get the class object of a primitive type?", options: ["Class.forName()", "Primitive.class", "Type.class", "Primitive types don't have class objects"], correctAnswer: 1 },
-      { id: 31, question: "What is the purpose of the assert keyword?", options: ["To test assumptions in code", "To handle exceptions", "To debug code", "To validate input"], correctAnswer: 0 },
-      { id: 32, question: "Which method is used to get the current thread?", options: ["Thread.currentThread()", "Thread.getCurrent()", "CurrentThread.get()", "Thread.getRunning()"], correctAnswer: 0 },
-      { id: 33, question: "What is the purpose of the yield() method in Thread?", options: ["To pause the current thread", "To give up CPU time to other threads", "To terminate the thread", "To wait for other threads"], correctAnswer: 1 },
-      { id: 34, question: "Which collection is synchronized by default?", options: ["ArrayList", "HashSet", "Vector", "HashMap"], correctAnswer: 2 },
-      { id: 35, question: "What is the purpose of the java.util.Properties class?", options: ["To manage configuration properties", "To store object properties", "To handle system properties", "All of the above"], correctAnswer: 3 },
-      { id: 36, question: "Which method is used to format dates in Java?", options: ["SimpleDateFormat.format()", "DateTimeFormatter.format()", "DateFormat.format()", "All of the above"], correctAnswer: 3 },
-      { id: 37, question: "What is the purpose of the java.nio.Buffer class?", options: ["To handle I/O operations", "To manage memory for I/O", "To buffer data", "All of the above"], correctAnswer: 3 },
-      { id: 38, question: "Which annotation is used to mark a method as deprecated?", options: ["@Deprecated", "@Deprecate", "@Obsolete", "@Remove"], correctAnswer: 0 },
-      { id: 39, question: "What is the purpose of the java.util.Optional class?", options: ["To avoid null pointer exceptions", "To represent optional values", "To handle missing values", "All of the above"], correctAnswer: 3 },
-      { id: 40, question: "Which method is used to convert a collection to an array?", options: ["toArray()", "asArray()", "convertToArray()", "collectionToArray()"], correctAnswer: 0 }
-    ],
-    advanced: [
-      { id: 1, question: "Which feature supports module system introduced in Java 9?", options: ["JPMS (module-info.java)", "Jigsaw only", "Modules.xml", "ModuleLoader"], correctAnswer: 0 },
-      { id: 2, question: "Which garbage collector focuses on low-pause concurrent compaction?", options: ["Serial GC", "Parallel GC", "G1 GC", "CMS"], correctAnswer: 2 },
-      { id: 3, question: "Which construct provides immutable data and pattern matching (Java 17+)?", options: ["Records", "DataClass", "Immutable", "Case class"], correctAnswer: 0 },
-      { id: 4, question: "Which API provides reactive streams support in Java?", options: ["java.util.stream", "Reactive Streams (Flow API)", "CompletableFuture only", "ExecutorService"], correctAnswer: 1 },
-      { id: 5, question: "Which annotation marks methods for deprecation?", options: ["@deprecated", "@Deprecated", "@Obsolete", "@Remove"], correctAnswer: 1 },
-      { id: 6, question: "Which tool analyses bytecode and provides profiling information?", options: ["jvisualvm", "javap", "jmap", "storm"], correctAnswer: 0 },
-      { id: 7, question: "Which statement ensures resources are closed automatically?", options: ["try-with-resources", "finally block", "AutoClose", "resource block"], correctAnswer: 0 },
-      { id: 8, question: "Which classloader loads application classes by default?", options: ["Bootstrap", "Platform", "System (Application)", "Custom"], correctAnswer: 2 },
-      { id: 9, question: "Which API introduced var for local variable type inference (Java 10)?", options: ["var", "let", "auto", "type"], correctAnswer: 0 },
-      { id: 10, question: "Which feature helps create compact numeric/time formatting (Java 8+)?", options: ["java.text", "java.time + DateTimeFormatter", "SimpleDateFormat", "Calendar"], correctAnswer: 1 },
-      { id: 11, question: "What is the purpose of the java.lang.invoke package?", options: ["To support dynamic language features", "To handle method invocation", "To provide method handles", "All of the above"], correctAnswer: 3 },
-      { id: 12, question: "Which feature allows multiple inheritance of type in Java?", options: ["Interfaces", "Abstract classes", "Mixins", "Java doesn't support multiple inheritance"], correctAnswer: 0 },
-      { id: 13, question: "What is the purpose of the jlink tool in Java?", options: ["To create custom runtime images", "To link Java classes", "To optimize Java code", "To debug Java applications"], correctAnswer: 0 },
-      { id: 14, question: "Which annotation is used to generate boilerplate code?", options: ["@Generated", "@AutoValue", "@Builder", "All of the above"], correctAnswer: 3 },
-      { id: 15, question: "What is the purpose of the java.util.ServiceLoader class?", options: ["To load service providers", "To manage services", "To discover services", "All of the above"], correctAnswer: 3 },
-      { id: 16, question: "Which feature allows pattern matching for instanceof (Java 16+)?", options: ["Pattern matching", "Enhanced instanceof", "Smart casting", "All of the above"], correctAnswer: 3 },
-      { id: 17, question: "What is the purpose of the jshell tool in Java?", options: ["To provide a REPL for Java", "To shell execute Java code", "To debug Java code", "To test Java code"], correctAnswer: 0 },
-      { id: 18, question: "Which annotation is used to specify repeatable annotations?", options: ["@Repeatable", "@Repeated", "@Multiple", "@Container"], correctAnswer: 0 },
-      { id: 19, question: "What is the purpose of the java.util.concurrent.ForkJoinPool?", options: ["To handle divide-and-conquer algorithms", "To manage parallel tasks", "To optimize CPU-intensive tasks", "All of the above"], correctAnswer: 3 },
-      { id: 20, question: "Which feature allows sealed classes (Java 17+)?", options: ["Sealed classes", "Restricted inheritance", "Controlled inheritance", "All of the above"], correctAnswer: 3 },
-      { id: 21, question: "What is the purpose of the jstat tool in Java?", options: ["To monitor JVM statistics", "To profile Java applications", "To debug Java code", "To analyze Java bytecode"], correctAnswer: 0 },
-      { id: 22, question: "Which annotation is used to specify method parameters are non-null?", options: ["@NonNull", "@NotNull", "@Nonnull", "All of the above"], correctAnswer: 3 },
-      { id: 23, question: "What is the purpose of the java.lang.ref package?", options: ["To handle references to objects", "To manage memory", "To implement weak references", "All of the above"], correctAnswer: 3 },
-      { id: 24, question: "Which feature allows local variable type inference (Java 10+)?", options: ["var keyword", "auto keyword", "let keyword", "type keyword"], correctAnswer: 0 },
-      { id: 25, question: "What is the purpose of the jstack tool in Java?", options: ["To generate thread dumps", "To stack trace Java applications", "To debug Java code", "To profile Java applications"], correctAnswer: 0 },
-      { id: 26, question: "Which annotation is used to specify a safe varargs method?", options: ["@SafeVarargs", "@VarargsSafe", "@SafeVariableArgs", "@Varargs"], correctAnswer: 0 },
-      { id: 27, question: "What is the purpose of the java.util.concurrent.atomic package?", options: ["To provide atomic operations", "To handle concurrent access", "To implement lock-free algorithms", "All of the above"], correctAnswer: 3 },
-      { id: 28, question: "Which feature allows text blocks (Java 15+)?", options: ["Text blocks", "Multiline strings", "Raw strings", "All of the above"], correctAnswer: 3 },
-      { id: 29, question: "What is the purpose of the jinfo tool in Java?", options: ["To get configuration information", "To set system properties", "To debug Java applications", "To profile Java applications"], correctAnswer: 0 },
-      { id: 30, question: "Which annotation is used to specify functional interfaces?", options: ["@FunctionalInterface", "@FunctionInterface", "@LambdaInterface", "@Functional"], correctAnswer: 0 },
-      { id: 31, question: "What is the purpose of the java.util.concurrent.locks package?", options: ["To provide locking mechanisms", "To handle concurrency", "To implement custom locks", "All of the above"], correctAnswer: 3 },
-      { id: 32, question: "Which feature allows switch expressions (Java 14+)?", options: ["Switch expressions", "Enhanced switch", "Expression switch", "All of the above"], correctAnswer: 3 },
-      { id: 33, question: "What is the purpose of the jmap tool in Java?", options: ["To generate memory maps", "To dump heap memory", "To profile memory usage", "All of the above"], correctAnswer: 3 },
-      { id: 34, question: "Which annotation is used to specify constructor injection?", options: ["@Inject", "@Autowired", "@Resource", "All of the above"], correctAnswer: 3 },
-      { id: 35, question: "What is the purpose of the java.util.concurrent.BlockingQueue?", options: ["To handle producer-consumer patterns", "To manage concurrent queues", "To implement thread-safe queues", "All of the above"], correctAnswer: 3 },
-      { id: 36, question: "Which feature allows record classes (Java 16+)?", options: ["Records", "Data classes", "Value classes", "All of the above"], correctAnswer: 3 },
-      { id: 37, question: "What is the purpose of the jcmd tool in Java?", options: ["To send diagnostic commands", "To debug Java applications", "To profile Java applications", "To monitor Java applications"], correctAnswer: 0 },
-      { id: 38, question: "Which annotation is used to specify method retry logic?", options: ["@Retry", "@Repeat", "@Retryable", "@Reattempt"], correctAnswer: 2 },
-      { id: 39, question: "What is the purpose of the java.util.concurrent.ConcurrentHashMap?", options: ["To provide thread-safe maps", "To handle concurrent access", "To implement lock-striping", "All of the above"], correctAnswer: 3 },
-      { id: 40, question: "Which feature allows pattern matching in switch (Java 17+)?", options: ["Pattern matching for switch", "Enhanced switch with patterns", "Smart switch", "All of the above"], correctAnswer: 3 },
-      { id: 41, question: "What is the purpose of the jdb tool in Java?", options: ["To debug Java applications", "To profile Java applications", "To monitor Java applications", "To analyze Java bytecode"], correctAnswer: 0 },
-      { id: 42, question: "Which annotation is used to specify method caching?", options: ["@Cacheable", "@Cache", "@Cached", "@Memoize"], correctAnswer: 0 },
-      { id: 43, question: "What is the purpose of the java.util.concurrent.Executors class?", options: ["To create thread pools", "To manage executors", "To handle concurrent tasks", "All of the above"], correctAnswer: 3 },
-      { id: 44, question: "Which feature allows foreign function interface (Java 16+)?", options: ["Foreign Function & Memory API", "JNI enhancements", "Native interface", "All of the above"], correctAnswer: 0 },
-      { id: 45, question: "What is the purpose of the jhat tool in Java?", options: ["To analyze heap dumps", "To profile memory usage", "To debug memory leaks", "To monitor memory usage"], correctAnswer: 0 },
-      { id: 46, question: "Which annotation is used to specify method validation?", options: ["@Valid", "@Validate", "@Constraint", "All of the above"], correctAnswer: 3 },
-      { id: 47, question: "What is the purpose of the java.util.concurrent.Semaphore?", options: ["To control access to resources", "To implement counting semaphores", "To handle concurrent access", "All of the above"], correctAnswer: 3 },
-      { id: 48, question: "Which feature allows virtual threads (Java 19+)?", options: ["Virtual threads", "Project Loom", "Lightweight threads", "All of the above"], correctAnswer: 3 },
-      { id: 49, question: "What is the purpose of the jstatd tool in Java?", options: ["To monitor JVM statistics remotely", "To profile Java applications", "To debug Java applications", "To analyze Java bytecode"], correctAnswer: 0 },
-      { id: 50, question: "Which annotation is used to specify method security?", options: ["@Secured", "@PreAuthorize", "@RolesAllowed", "All of the above"], correctAnswer: 3 },
-      { id: 51, question: "What is the purpose of the java.util.concurrent.CyclicBarrier?", options: ["To synchronize threads at a barrier", "To handle cyclic operations", "To implement reusable barriers", "All of the above"], correctAnswer: 3 },
-      { id: 52, question: "Which feature allows structured concurrency (Java 19+)?", options: ["Structured concurrency", "Structured task scope", "Enhanced concurrency", "All of the above"], correctAnswer: 3 },
-      { id: 53, question: "What is the purpose of the jconsole tool in Java?", options: ["To monitor JVM performance", "To profile Java applications", "To debug Java applications", "To analyze Java bytecode"], correctAnswer: 0 },
-      { id: 54, question: "Which annotation is used to specify method transactionality?", options: ["@Transactional", "@Transaction", "@Tx", "@Transact"], correctAnswer: 0 },
-      { id: 55, question: "What is the purpose of the java.util.concurrent.Exchanger?", options: ["To exchange data between threads", "To implement point-to-point communication", "To handle thread synchronization", "All of the above"], correctAnswer: 3 },
-      { id: 56, question: "Which feature allows vector API (Java 16+)?", options: ["Vector API", "SIMD instructions", "Vector operations", "All of the above"], correctAnswer: 3 },
-      { id: 57, question: "What is the purpose of the jps tool in Java?", options: ["To list JVM processes", "To profile Java applications", "To debug Java applications", "To analyze Java bytecode"], correctAnswer: 0 },
-      { id: 58, question: "Which annotation is used to specify method performance monitoring?", options: ["@Timed", "@Monitor", "@Profile", "@Performance"], correctAnswer: 0 },
-      { id: 59, question: "What is the purpose of the java.util.concurrent.Phaser?", options: ["To handle phased synchronization", "To implement reusable synchronization barriers", "To manage multi-phase operations", "All of the above"], correctAnswer: 3 },
-      { id: 60, question: "Which feature allows unscoped values (Java 20+)?", options: ["Unscoped values", "Scoped values", "Value ownership", "All of the above"], correctAnswer: 1 }
-    ]
-  },
-
-  // Python
-  python: {
-    basic: [
-      { id: 1, question: "Which keyword defines a function in Python?", options: ["func", "def", "function", "fn"], correctAnswer: 1 },
-      { id: 2, question: "Which data type holds an ordered, mutable sequence?", options: ["tuple", "list", "set", "dict"], correctAnswer: 1 },
-      { id: 3, question: "How to write single-line comments?", options: ["// comment", "# comment", "/* comment */", "<!-- -->"], correctAnswer: 1 },
-      { id: 4, question: "Which statement creates a new empty dictionary?", options: ["[]", "{}", "dict()", "both 2 and 3"], correctAnswer: 3 },
-      { id: 5, question: "Which function prints to the console?", options: ["echo()", "console.log()", "print()", "printf()"], correctAnswer: 2 },
-      { id: 6, question: "Which operator calculates exponentiation?", options: ["^", "**", "pow", "^^"], correctAnswer: 1 },
-      { id: 7, question: "Which keyword terminates a loop immediately?", options: ["stop", "break", "exit", "return"], correctAnswer: 1 },
-      { id: 8, question: "Which symbol is used for string formatting with f-strings?", options: ["f\"...\"", "s\"...\"", "fmt\"...\"", "format(...)"], correctAnswer: 0 },
-      { id: 9, question: "Which collection stores unique unordered items?", options: ["list", "set", "tuple", "dict"], correctAnswer: 1 },
-      { id: 10, question: "Which statement handles exceptions?", options: ["try/except", "try/catch", "begin/rescue", "catch/handle"], correctAnswer: 0 },
-      { id: 11, question: "What is the output of `bool('False')`?", options: ["True", "False", "Error", "None"], correctAnswer: 0 },
-      { id: 12, question: "Which method adds an element to the end of a list?", options: [".append()", ".insert()", ".add()", ".push()"], correctAnswer: 0 },
-      { id: 13, question: "What is the result of `'hello'[1:4]`?", options: ["'ell'", "'hel'", "'ello'", "'el'"], correctAnswer: 0 },
-      { id: 14, question: "Which of these is a valid variable name?", options: ["2nd_var", "my-var", "_myvar", "global"], correctAnswer: 2 },
-      { id: 15, question: "What is the purpose of the `elif` keyword?", options: ["To define a function", "To handle an exception", "To check another condition if the previous ones were false", "To exit a loop"], correctAnswer: 2 },
-      { id: 16, question: "What will `'Hi' * 3` evaluate to?", options: ["'HiHiHi'", "3", "Error", "'Hi3'"], correctAnswer: 0 },
-      { id: 17, question: "Which function converts a string to an integer?", options: ["str()", "int()", "float()", "convert()"], correctAnswer: 1 },
-      { id: 18, question: "What is the default return value of a function that doesn't have a `return` statement?", options: ["0", "None", "False", "An error occurs"], correctAnswer: 1 },
-      { id: 19, question: "What does the `in` keyword check for in a list?", options: ["The data type of elements", "If a value is present", "The memory location", "If the list is sorted"], correctAnswer: 1 },
-      { id: 20, question: "**Coding:** What is the output of `[n for n in range(5) if n % 2 == 0]`?", options: ["[0, 1, 2, 3, 4]", "[0, 2, 4]", "[1, 3]", "[2, 4]"], correctAnswer: 1 }
-    ],
-    intermediate: [
-      { id: 1, question: "Which comprehension creates a list from an iterable?", options: ["{x for x in it}", "[x for x in it]", "(x for x in it)", "<x for x in it>"], correctAnswer: 1 },
-      { id: 2, question: "Which module provides JSON parsing and serializing?", options: ["simplejson", "json", "ujson", "marshal"], correctAnswer: 1 },
-      { id: 3, question: "Which statement opens a file with automatic close?", options: ["open('f')", "with open('f') as f:", "try: open('f')", "openFile('f')"], correctAnswer: 1 },
-      { id: 4, question: "Which tool creates isolated Python environments?", options: ["virtualenv / venv", "pipenv", "conda", "Any of these"], correctAnswer: 3 },
-      { id: 5, question: "Which iterator yields values lazily?", options: ["list", "generator (yield)", "tuple", "set"], correctAnswer: 1 },
-      { id: 6, question: "Which construct catches multiple exception types?", options: ["except (TypeError, ValueError):", "catch TypeError, ValueError:", "except TypeError | ValueError:", "except TypeError and ValueError:"], correctAnswer: 0 },
-      { id: 7, question: "Which function applies a function over an iterable and returns an iterator in Python 3?", options: ["map()", "imap()", "maplist()", "apply()"], correctAnswer: 0 },
-      { id: 8, question: "Which decorator marks a method as a class-level method?", options: ["@classmethod", "@staticmethod", "@property", "@instance"], correctAnswer: 0 },
-      { id: 9, question: "Which built-in returns the number of items in an iterable?", options: ["size()", "len()", "count()", "length()"], correctAnswer: 1 },
-      { id: 10, question: "Which library is commonly used for HTTP requests?", options: ["requests", "http.client", "urllib", "aiohttp"], correctAnswer: 0 },
-      { id: 11, question: "What is the key difference between `deepcopy` and `copy`?", options: ["deepcopy is faster", "copy creates a new reference, deepcopy creates new objects", "deepcopy only works on lists", "There is no difference"], correctAnswer: 1 },
-      { id: 12, question: "What does the `zip()` function do?", options: ["Compresses files", "Creates a list of tuples from multiple iterables", "Encrypts data", "Sorts a list"], correctAnswer: 1 },
-      { id: 13, question: "How can you create an abstract base class?", options: ["By using the `abstract` keyword", "By inheriting from `ABC` and using `@abstractmethod`", "By naming it AbstractBase", "Python doesn't support abstraction"], correctAnswer: 1 },
-      { id: 14, question: "What is the purpose of `*args` in a function definition?", options: ["To accept only keyword arguments", "To accept a variable number of non-keyword arguments", "To unpack a list", "To define a decorator"], correctAnswer: 1 },
-      { id: 15, question: "What is the purpose of `**kwargs`?", options: ["To accept a variable number of keyword arguments", "To accept a variable number of non-keyword arguments", "To define a class", "To handle exceptions"], correctAnswer: 0 },
-      { id: 16, question: "What is method resolution order (MRO)?", options: ["The order in which methods are called", "The order in which Python searches for methods in a class hierarchy", "A sorting algorithm", "A list of built-in methods"], correctAnswer: 1 },
-      { id: 17, question: "Which module would you use for unit testing?", options: ["unittest", "pytest", "doctest", "Any of these"], correctAnswer: 3 },
-      { id: 18, question: "What is a metaclass in Python?", options: ["A class for measuring things", "The class of a class", "A deprecated feature", "A class that contains only static methods"], correctAnswer: 1 },
-      { id: 19, question: "What does the `__init__.py` file signify in a directory?", options: ["It makes the directory a Python package", "It initializes the Python interpreter", "It contains configuration settings", "It is required for all Python files"], correctAnswer: 0 },
-      { id: 20, question: "How do you create a virtual environment named 'venv'?", options: ["python create venv", "virtualenv venv", "pip install venv", "python -m venv venv"], correctAnswer: 3 },
-      { id: 21, question: "**Coding:** What does `list(map(lambda x: x**2, [1, 2, 3]))` return?", options: ["[1, 2, 3]", "[1, 4, 9]", "[2, 4, 6]", "Error"], correctAnswer: 1 },
-      { id: 22, question: "**Coding:** What is the output of `[x if x % 2 == 0 else 'odd' for x in range(3)]`?", options: ["[0, 'odd', 2]", "[0, 1, 2]", "['even', 'odd', 'even']", "[0, 'odd']"], correctAnswer: 0 },
-      { id: 23, question: "**Coding:** What will `'hello'.upper().lower()` return?", options: ["'HELLO'", "'hello'", "'Hello'", "Error"], correctAnswer: 1 },
-      { id: 24, question: "**Coding:** What is the result of `bool([])`?", options: ["True", "False", "None", "Error"], correctAnswer: 1 },
-      { id: 25, question: "**Coding:** What does `'a' in {'a': 1, 'b': 2}` evaluate to?", options: ["True", "False", "1", "Error"], correctAnswer: 0 },
-      { id: 26, question: "What is the difference between `==` and `is`?", options: ["`is` compares values, `==` compares identities", "`==` compares values, `is` compares identities", "They are the same", "`is` is used for numbers only"], correctAnswer: 1 },
-      { id: 27, question: "What is a context manager's primary purpose?", options: ["To manage class context", "To manage resources (setup/teardown)", "To manage variable scope", "To manage imports"], correctAnswer: 1 },
-      { id: 28, question: "Which method is called when an object is created?", options: ["__new__", "__init__", "__create__", "__call__"], correctAnswer: 1 },
-      { id: 29, question: "Which method is called to get the string representation of an object for printing?", options: ["__str__", "__repr__", "__print__", "__string__"], correctAnswer: 0 },
-      { id: 30, question: "What is the output of `round(3.5)` and `round(4.5)` in Python?", options: ["4 and 4", "4 and 5", "3 and 4", "4 and 4"], correctAnswer: 0 },
-      { id: 31, question: "How can you make a function's local variable global inside the function?", options: ["Use the `global` keyword", "It's global by default", "Use the `nonlocal` keyword", "Return the variable"], correctAnswer: 0 },
-      { id: 32, question: "What is the use of `nonlocal`?", options: ["To declare a global variable", "To declare a variable in an enclosing (non-global) scope", "To declare a constant", "To declare a local variable"], correctAnswer: 1 },
-      { id: 33, question: "What does `sys.argv` contain?", options: ["The command-line arguments passed to a script", "A list of installed modules", "The Python version", "The system's architecture"], correctAnswer: 0 },
-      { id: 34, question: "Which module helps in parsing command-line options?", options: ["getopt", "argparse", "optparse", "Any of these"], correctAnswer: 3 },
-      { id: 35, question: "What is a namedtuple?", options: ["A tuple with named fields", "A special kind of dictionary", "A function that returns a tuple", "A deprecated feature"], correctAnswer: 0 },
-      { id: 36, question: "**Coding:** What will `all([True, 1, 'hello'])` return?", options: ["True", "False", "Error", "None"], correctAnswer: 0 },
-      { id: 37, question: "**Coding:** What will `any([False, 0, ''])` return?", options: ["True", "False", "Error", "None"], correctAnswer: 1 },
-      { id: 38, question: "**Coding:** What is the output of `' '.join(['hello', 'world'])`?", options: ["'hello world'", "['hello', 'world']", "'helloworld'", "Error"], correctAnswer: 0 },
-      { id: 39, question: "**Coding:** What does `'hello'.find('l')` return?", options: ["2", "3", "True", "[2, 3]"], correctAnswer: 0 },
-      { id: 40, question: "**Coding:** What is the result of `sorted('hello')`?", options: ["['h', 'e', 'l', 'l', 'o']", "['e', 'h', 'l', 'l', 'o']", "['o', 'l', 'l', 'e', 'h']", "'ehllo'"], correctAnswer: 1 }
-    ],
-    advanced: [
-      { id: 1, question: "Which module supports asynchronous IO in Python?", options: ["asyncio", "threading", "multiprocessing", "concurrent"], correctAnswer: 0 },
-      { id: 2, question: "Which statement creates generator expressions?", options: ["(x for x in it)", "[x for x in it]", "{x for x in it}", "<x for x in it>"], correctAnswer: 0 },
-      { id: 3, question: "Which protocol does asyncio event loop implement for concurrency?", options: ["Threading", "Event loop with coroutines", "Multiprocessing", "Forking"], correctAnswer: 1 },
-      { id: 4, question: "Which package is used for data analysis in Python?", options: ["numpy / pandas", "requests", "flask", "django"], correctAnswer: 0 },
-      { id: 5, question: "Which method serializes objects for inter-process communication (pickle)?", options: ["pickle.dumps()", "json.dumps()", "marshal.dump()", "serialize()"], correctAnswer: 0 },
-      { id: 6, question: "Which design pattern provides single instance availability?", options: ["Factory", "Singleton", "Strategy", "Observer"], correctAnswer: 1 },
-      { id: 7, question: "Which tool measures code coverage in Python tests?", options: ["pytest", "unittest", "coverage.py", "nose"], correctAnswer: 2 },
-      { id: 8, question: "Which library offers machine learning algorithms (commonly)?", options: ["scikit-learn", "pandas", "matplotlib", "flask"], correctAnswer: 0 },
-      { id: 9, question: "Which statement safely acquires locks for threads?", options: ["with lock:", "lock.acquire()", "lock.try()", "lock.get()"], correctAnswer: 0 },
-      { id: 10, question: "Which feature offers type hints in Python?", options: ["typing module", "type() builtin", "annotations disabled", "pytypes"], correctAnswer: 0 },
-      { id: 11, question: "What is the Global Interpreter Lock (GIL)?", options: ["A security feature", "A mutex that allows only one thread to execute Python bytecode at a time", "A tool for locking global variables", "A database lock"], correctAnswer: 1 },
-      { id: 12, question: "How can you achieve parallelism in Python to bypass the GIL?", options: ["Using threading", "Using asyncio", "Using multiprocessing", "You cannot bypass the GIL"], correctAnswer: 2 },
-      { id: 13, question: "What is a coroutine?", options: ["A specialized subroutine for concurrent execution", "A type of exception", "A data validation function", "A decorator"], correctAnswer: 0 },
-      { id: 14, question: "What are Python's magic or dunder methods?", options: ["Methods with secret functionality", "Methods that start and end with double underscores (e.g., __init__)", "Methods only used in machine learning", "Deprecated methods"], correctAnswer: 1 },
-      { id: 15, question: "What is the purpose of `__slots__`?", options: ["To define a list of allowed attributes and save memory", "To create time slots for execution", "To define a slot machine game", "To manage database connections"], correctAnswer: 0 },
-      { id: 16, question: "What is monkey patching?", options: ["Fixing bugs in the Python standard library", "Dynamically modifying a class or module at runtime", "A testing technique", "A way to organize code"], correctAnswer: 1 },
-      { id: 17, question: "What is a descriptor in Python?", options: ["A file descriptor", "An object that defines how attribute access is handled (__get__, __set__, __delete__)", "A description of a function", "A comment block"], correctAnswer: 1 },
-      { id: 18, question: "What is the difference between `__getattr__` and `__getattribute__`?", options: ["They are the same", "__getattr__ is called for missing attributes, __getattribute__ is called for every attribute access", "__getattribute__ is called for missing attributes", "__getattr__ is an older version"], correctAnswer: 1 },
-      { id: 19, question: "What is metaprogramming?", options: ["Programming for metadata", "Writing programs that write or manipulate other programs", "Programming with metaclasses only", "A type of web programming"], correctAnswer: 1 },
-      { id: 20, question: "What is the purpose of the `@property` decorator?", options: ["To define a class property", "To define a method that can be accessed like an attribute", "To make a method private", "To create a read-only attribute"], correctAnswer: 1 },
-      { id: 21, question: "What is function overloading? How is it achieved in Python?", options: ["Having multiple functions with the same name but different parameters; achieved using `@overload` from `typing`", "It's not possible in Python", "Using `*args` and `**kwargs` to simulate it", "Both 1 and 3"], correctAnswer: 3 },
-      { id: 22, question: "What is a weak reference?", options: ["A reference that doesn't protect the object from garbage collection", "A reference to a small object", "An encrypted reference", "A slow reference"], correctAnswer: 0 },
-      { id: 23, question: "Which library is used for creating graphical user interfaces (GUIs)?", options: ["Tkinter", "PyQt", "Kivy", "Any of these"], correctAnswer: 3 },
-      { id: 24, question: "What is the difference between `multiprocessing.Queue` and `queue.Queue`?", options: ["They are the same", "multiprocessing.Queue is for inter-process communication, queue.Queue is for threads", "queue.Queue is faster", "multiprocessing.Queue is for threads"], correctAnswer: 1 },
-      { id: 25, question: "What is a Python wheel?", options: ["A built-package format for faster installation", "A type of exception", "A data structure", "A GUI component"], correctAnswer: 0 },
-      { id: 26, question: "What does the `@lru_cache` decorator do?", options: ["Caches the results of a function, memoizing up to the maxsize most recent calls", "Clears the cache", "Loads data from a cache", "Encrypts data"], correctAnswer: 0 },
-      { id: 27, question: "What is a data class (from `dataclasses`)?", options: ["A class for storing databases", "A decorator to automatically add special methods like __init__ and __repr__ to classes", "A type of numpy array", "A class with only data and no methods"], correctAnswer: 1 },
-      { id: 28, question: "What is the purpose of `__post_init__` in a data class?", options: ["To initialize the class after the parent class", "To run code after the auto-generated __init__ is done", "To post data to a server", "To initialize class variables"], correctAnswer: 1 },
-      { id: 29, question: "What is the `__call__` method used for?", options: ["To make an instance callable like a function", "To call a method", "To make a phone call", "To define the constructor"], correctAnswer: 0 },
-      { id: 30, question: "What is the Memento pattern?", options: ["A pattern for saving and restoring an object's state", "A pattern for creating objects", "A pattern for structuring code", "A pattern for handling memory"], correctAnswer: 0 },
-      { id: 31, question: "**Coding:** What will this async code do? `async def foo(): await asyncio.sleep(1); return 'done'`", options: ["Run synchronously and block", "Run asynchronously, pausing for 1 second without blocking the event loop", "Cause an error", "Sleep for 1 minute"], correctAnswer: 1 },
-      { id: 32, question: "**Coding:** What is the output of `[(x, y) for x in [1,2] for y in [3,4]]`?", options: ["[(1, 3), (1, 4), (2, 3), (2, 4)]", "[(1, 2), (3, 4)]", "[(1, 3), (2, 4)]", "Error"], correctAnswer: 0 },
-      { id: 33, question: "**Coding:** What does `functools.partial(function, arg)` do?", options: ["Raises a partial exception", "Creates a new function with some arguments pre-filled", "Partially executes the function", "Checks for partial matches"], correctAnswer: 1 },
-      { id: 34, question: "**Coding:** What will `collections.Counter('hello')` return?", options: ["{'h':1, 'e':1, 'l':2, 'o':1}", "5", "['h','e','l','l','o']", "A sorted list"], correctAnswer: 0 },
-      { id: 35, question: "**Coding:** What is the result of `sys.getsizeof(1000) > sys.getsizeof(1)`?", options: ["True", "False", "They are the same", "Error"], correctAnswer: 0 },
-      { id: 36, question: "**Coding:** What will `[i for i in range(10) if i % 2]` yield?", options: ["[0, 2, 4, 6, 8]", "[1, 3, 5, 7, 9]", "[2, 4, 6, 8]", "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]"], correctAnswer: 1 },
-      { id: 37, question: "**Coding:** What does `itertools.cycle([1,2])` do?", options: ["Creates an infinite iterator cycling through [1,2,1,2...]", "Creates a cycle object", "Rounds the elements", "Throws an error"], correctAnswer: 0 },
-      { id: 38, question: "**Coding:** What is `yield from` used for?", options: ["To yield from a subgenerator", "To yield from a list", "To stop a generator", "To yield all values at once"], correctAnswer: 0 },
-      { id: 39, question: "**Coding:** How do you make a class iterable?", options: ["Implement __iter__ and __next__", "Implement __iter__ only", "Implement __next__ only", "Inherit from Iterable"], correctAnswer: 0 },
-      { id: 40, question: "**Coding:** What is the output of `'hello'.encode('utf-8')`?", options: ["b'hello'", "'hello'", "104 101 108 108 111", "Error"], correctAnswer: 0 },
-      { id: 41, question: "What is the purpose of the `__dict__` attribute?", options: ["A dictionary holding the class's namespace", "A dictionary for module functions", "A built-in dictionary object", "It stores the object's writable attributes"], correctAnswer: 3 },
-      { id: 42, question: "What is a context variable (from `contextvars`)?", options: ["A variable that holds context", "A variable that can have different values in different execution contexts (e.g., async)", "A global variable", "A constant"], correctAnswer: 1 },
-      { id: 43, question: "What is the Expression Problem?", options: ["A bug in arithmetic expressions", "A programming language design problem about extending data types and operations", "A problem with conditional expressions", "A memory issue"], correctAnswer: 1 },
-      { id: 44, question: "What is the Liskov Substitution Principle (LSP)?", options: ["A sorting algorithm", "A principle that subclasses should be substitutable for their base classes", "A principle for database design", "A principle for function naming"], correctAnswer: 1 },
-      { id: 45, question: "What is a Python egg?", options: ["An older built-package format", "A type of exception", "A data structure for eggs", "A GUI widget"], correctAnswer: 0 },
-      { id: 46, question: "What is the purpose of `__subclasses__()`?", options: ["To get a list of a class's direct subclasses", "To create a subclass", "To check if a class is a subclass", "To get all parent classes"], correctAnswer: 0 },
-      { id: 47, question: "What is the Diamond Problem in multiple inheritance? How does Python handle it?", options: ["Ambiguity in method resolution; handled using the C3 Linearization MRO", "A memory issue; handled by garbage collection", "A problem with importing; handled by sys.path", "It's not handled and causes an error"], correctAnswer: 0 },
-      { id: 48, question: "What is the difference between `@cached_property` and `@property`?", options: ["They are the same", "@cached_property computes the value once and caches it on the instance", "@property caches the value", "@cached_property is faster"], correctAnswer: 1 },
-      { id: 49, question: "What is a sentinel value?", options: ["A value used to signal special conditions (e.g., end of data)", "A value for security", "The first value in a list", "A value that is always True"], correctAnswer: 0 },
-      { id: 50, question: "What is the purpose of the `atexit` module?", options: ["To register functions to be called upon normal program termination", "To handle exits from a context manager", "To handle system exits", "To exit a function early"], correctAnswer: 0 },
-      { id: 51, question: "**Coding:** What will `[ord(c) for c in 'abc']` return?", options: ["[97, 98, 99]", "['a', 'b', 'c']", "[1, 2, 3]", "Error"], correctAnswer: 0 },
-      { id: 52, question: "**Coding:** What is the output of `math.isclose(0.1 + 0.2, 0.3)`?", options: ["True", "False", "Error", "None"], correctAnswer: 0 },
-      { id: 53, question: "**Coding:** What does `pathlib.Path('/a/b').parent` return?", options: ["Path('/a')", "Path('/a/b')", "Path('/')", "''"], correctAnswer: 0 },
-      { id: 54, question: "**Coding:** What will `dict.fromkeys(['a', 'b'], 0)` create?", options: ["{'a': 0, 'b': 0}", "{'a': 'b', 0: 0}", "{'a': None, 'b': None}", "Error"], correctAnswer: 0 },
-      { id: 55, question: "**Coding:** What is the result of `re.findall(r'\\d+', 'a123b45')`?", options: ["['123', '45']", "['a', 'b']", "['a123b45']", "[]"], correctAnswer: 0 },
-      { id: 56, question: "**Coding:** What does `operator.itemgetter(1)([1, 2, 3])` return?", options: ["1", "2", "3", "[2]"], correctAnswer: 1 },
-      { id: 57, question: "**Coding:** What is the output of `functools.reduce(lambda x, y: x+y, [1, 2, 3, 4])`?", options: ["10", "24", "[1, 2, 3, 4]", "Error"], correctAnswer: 0 },
-      { id: 58, question: "**Coding:** What will `contextlib.suppress(FileNotFoundError): os.remove('file.txt')` do?", options: ["Delete the file and suppress all errors", "Delete the file and suppress only FileNotFoundError", "Attempt to delete the file and ignore a FileNotFoundError if it occurs", "Always raise an error"], correctAnswer: 2 },
-      { id: 59, question: "**Coding:** What is `asyncio.run(main())` used for?", options: ["To run the main function in a thread", "To run the main coroutine and manage the event loop", "To run a function synchronously", "To run multiple processes"], correctAnswer: 1 },
-      { id: 60, question: "**Coding:** What is the output of `[(lambda x: x*i) for i in range(3)]`? What happens when you call each function?", options: ["A list of functions that all return 2", "A list of functions that return 0, 1, 2", "A list of functions that all return the last value of i (2)", "A syntax error"], correctAnswer: 2 }
-    ]
-  },
-
-  // C++
-  cpp: {
-    basic: [
-      { id: 1, question: "Which file extension usually denotes C++ source files?", options: [".cpp", ".c", ".java", ".py"], correctAnswer: 0 },
-      { id: 2, question: "Which operator is used for output to console (iostream)?", options: ["printf", "cout <<", "console.log", "System.out.println"], correctAnswer: 1 },
-      { id: 3, question: "Which keyword declares a constant value?", options: ["const", "final", "immutable", "static"], correctAnswer: 0 },
-      { id: 4, question: "Which container holds elements sequentially?", options: ["vector", "map", "set", "unordered_map"], correctAnswer: 0 },
-      { id: 5, question: "Which operator is used to allocate dynamic memory?", options: ["malloc", "new", "alloc", "create"], correctAnswer: 1 },
-      { id: 6, question: "Which concept groups functions and data together?", options: ["Class", "Struct", "Module", "Package"], correctAnswer: 0 },
-      { id: 7, question: "Which loop runs while condition is true?", options: ["for", "while", "do-while", "foreach"], correctAnswer: 1 },
-      { id: 8, question: "Which header is required for std::string?", options: ["<string>", "<cstring>", "<iostream>", "<sstream>"], correctAnswer: 0 },
-      { id: 9, question: "Which symbol is used for comments (single-line)?", options: ["//", "/* */", "#", "<!-- -->"], correctAnswer: 0 },
-      { id: 10, question: "Which function signature starts program execution?", options: ["int main()", "void main()", "start()", "main(void)"], correctAnswer: 0 },
-      { id: 11, question: "What is the default access specifier for members of a `class`?", options: ["public", "private", "protected", "package"], correctAnswer: 1 },
-      { id: 12, question: "What is the default access specifier for members of a `struct`?", options: ["public", "private", "protected", "package"], correctAnswer: 0 },
-      { id: 13, question: "Which operator is used to access a member via a pointer?", options: [". (dot)", "-> (arrow)", ":: (scope)", "* (dereference)"], correctAnswer: 1 },
-      { id: 14, question: "What does the `sizeof` operator return?", options: ["The value of a variable", "The size in bytes of a type or object", "The length of a string", "A pointer to the object"], correctAnswer: 1 },
-      { id: 15, question: "Which header file is needed for `std::cout` and `std::cin`?", options: ["<cstdio>", "<iostream>", "<ostream>", "<console>"], correctAnswer: 1 },
-      { id: 16, question: "What is the purpose of the `#include` directive?", options: ["To define a macro", "To include the contents of a header file", "To conditionally compile code", "To declare a function"], correctAnswer: 1 },
-      { id: 17, question: "Which keyword is used to define an alias for a data type?", options: ["alias", "typedef", "define", "using"], correctAnswer: 3 },
-      { id: 18, question: "**Coding:** What is the output of `int x = 5; std::cout << x++ << ++x;`?", options: ["56", "66", "57", "67 (Undefined Behavior)"], correctAnswer: 3 },
-      { id: 19, question: "**Coding:** What does `int arr[5] = {};` initialize all elements to?", options: ["Garbage values", "0", "1", "Compiler error"], correctAnswer: 1 },
-      { id: 20, question: "**Coding:** What is the value of `y` after `int y = 10 / 4;`?", options: ["2", "2.5", "2.0", "3"], correctAnswer: 0 }
-    ],
-    intermediate: [
-      { id: 1, question: "Which feature allows function polymorphism based on parameter types?", options: ["Function overriding", "Function overloading", "Templates", "Inheritance"], correctAnswer: 1 },
-      { id: 2, question: "Which keyword declares a template function or class?", options: ["template", "generic", "typename", "template<typename T>"], correctAnswer: 3 },
-      { id: 3, question: "Which RAII idiom helps resource management?", options: ["Smart pointers", "Manual new/delete", "Garbage collection", "Global variables"], correctAnswer: 0 },
-      { id: 4, question: "Which smart pointer has unique ownership semantics?", options: ["shared_ptr", "unique_ptr", "weak_ptr", "raw pointers"], correctAnswer: 1 },
-      { id: 5, question: "Which container provides associative key-value storage?", options: ["vector", "map", "list", "stack"], correctAnswer: 1 },
-      { id: 6, question: "Which header provides threading support (C++11)?", options: ["<thread>", "<pthread>", "<threads>", "<concurrency>"], correctAnswer: 0 },
-      { id: 7, question: "Which operator can be overloaded for custom behavior?", options: ["Only arithmetic operators", "Any suitable operator", "No operators", "Only comparison operators"], correctAnswer: 1 },
-      { id: 8, question: "Which memory model handles object lifetime deterministically?", options: ["GC based", "RAII", "Manual GC", "Reference counting only"], correctAnswer: 1 },
-      { id: 9, question: "Which feature avoids copying by moving resources?", options: ["Copy constructor", "Move semantics / move constructor", "Assignment operator", "Default constructor"], correctAnswer: 1 },
-      { id: 10, question: "Which container provides constant time average lookup by key?", options: ["std::map", "std::unordered_map", "std::vector", "std::list"], correctAnswer: 1 },
-      { id: 11, question: "What is a pure virtual function?", options: ["A function with no body", "A function declared with `= 0`", "A very efficient function", "A function that cannot be virtual"], correctAnswer: 1 },
-      { id: 12, question: "What is an abstract class?", options: ["A class that is difficult to understand", "A class with at least one pure virtual function", "A class that cannot be instantiated", "Both 2 and 3"], correctAnswer: 3 },
-      { id: 13, question: "What is the difference between `struct` and `class` in C++?", options: ["No difference", "Only `class` can have methods", "Default member access (public vs private)", "Only `struct` can have data members"], correctAnswer: 2 },
-      { id: 14, question: "What is the `mutable` keyword used for?", options: ["To make a variable constant", "To allow a member to be modified in a `const` method", "To make a variable volatile", "To indicate a variable can be moved"], correctAnswer: 1 },
-      { id: 15, question: "What is the purpose of a destructor?", options: ["To delete an object", "To clean up resources when an object is destroyed", "To initialize an object", "To copy an object"], correctAnswer: 1 },
-      { id: 16, question: "What is the Rule of Three?", options: ["A coding guideline", "If a class defines a destructor, copy constructor, or copy assignment operator, it should define all three", "A class should have three methods", "A function should have three parameters"], correctAnswer: 1 },
-      { id: 17, question: "What is the Rule of Five?", options: ["Extension of Rule of Three to include move constructor and move assignment operator", "A class should have five methods", "A different guideline entirely", "Deprecated rule"], correctAnswer: 0 },
-      { id: 18, question: "What is `std::move` used for?", options: ["To move an object physically in memory", "To cast an lvalue to an rvalue reference", "To transfer ownership of a unique_ptr", "To copy an object efficiently"], correctAnswer: 1 },
-      { id: 19, question: "What is a lambda expression?", options: ["An anonymous function object", "A type of loop", "A function pointer", "A macro"], correctAnswer: 0 },
-      { id: 20, question: "What does `auto` keyword do?", options: ["Defines a automatic variable", "Deduces the type of a variable from its initializer", "Creates a generic type", "Is the same as `var`"], correctAnswer: 1 },
-      { id: 21, question: "What is `constexpr` used for?", options: ["To define a constant", "To specify that a value or function can be evaluated at compile time", "To make a variable read-only", "To define a constant expression"], correctAnswer: 1 },
-      { id: 22, question: "What is the `noexcept` specifier for?", options: ["To specify a function does not return", "To specify a function will not throw exceptions", "To make a function noisy", "To indicate a function is not optimized"], correctAnswer: 1 },
-      { id: 23, question: "What is `std::initializer_list`?", options: ["A list container", "A lightweight proxy object for initializing containers with a list", "A type of array", "A function parameter list"], correctAnswer: 1 },
-      { id: 24, question: "What is the range-based for loop syntax?", options: ["for (auto i : container)", "for (i in container)", "for (i = 0; i < N; ++i)", "foreach (auto i : container)"], correctAnswer: 0 },
-      { id: 25, question: "What is `std::function`?", options: ["A mathematical function", "A wrapper for any callable object (function, lambda, etc.)", "A function pointer", "A template for functions"], correctAnswer: 1 },
-      { id: 26, question: "**Coding:** What is the output? `std::vector<int> v = {1, 2, 3}; for (auto& i : v) i++; for (auto i : v) std::cout << i;`", options: ["123", "234", " compile error", " undefined behavior"], correctAnswer: 1 },
-      { id: 27, question: "**Coding:** What does this lambda do? `auto f = [](int a, int b) { return a > b; };`", options: ["Adds a and b", "Compares if a > b", "Returns the greater value", "Throws an error"], correctAnswer: 1 },
-      { id: 28, question: "**Coding:** What is `v.size()` after `std::vector<int> v; v.reserve(100);`?", options: ["100", "0", "undefined", "1"], correctAnswer: 1 },
-      { id: 29, question: "**Coding:** What is the problem? `std::unique_ptr<int> p1(new int(5)); std::unique_ptr<int> p2 = p1;`", options: ["No problem", "Memory leak", "Compile error: copy deleted", "Runtime error"], correctAnswer: 2 },
-      { id: 30, question: "**Coding:** What is the value of `x`? `constexpr int square(int x) { return x * x; } int x = square(5);`", options: ["25", "Garbage value", "Compiler error", "0"], correctAnswer: 0 },
-      { id: 31, question: "What is the `explicit` keyword for?", options: ["To make a function clear", "To prevent implicit conversions for constructors", "To export a symbol", "To declare a function virtual"], correctAnswer: 1 },
-      { id: 32, question: "What is a `friend` function?", options: ["A function that is friendly", "A function that has access to private members of a class", "A function defined inside a class", "A global function"], correctAnswer: 1 },
-      { id: 33, question: "What is the difference between `stack` and `heap` memory?", options: ["Stack is for primitives, heap for objects", "Stack is automatic, heap is manual (new/delete)", "No difference", "Heap is faster"], correctAnswer: 1 },
-      { id: 34, question: "What is a `static` member variable?", options: ["A variable that doesn't change", "A variable shared by all instances of a class", "A local variable", "A constant variable"], correctAnswer: 1 },
-      { id: 35, question: "What is a `namespace` used for?", options: ["To name a space", "To avoid name collisions", "To define a class", "To organize code physically"], correctAnswer: 1 },
-      { id: 36, question: "What is `std::endl`?", options: ["A newline character", "A manipulator that inserts a newline and flushes the stream", "End of line constant", "End of file constant"], correctAnswer: 1 },
-      { id: 37, question: "What is the `volatile` keyword used for?", options: ["To make a variable constant", "To indicate a variable may be changed outside the program's control", "To make a variable volatile in memory", "To optimize a variable"], correctAnswer: 1 },
-      { id: 38, question: "What is a `union`?", options: ["A data structure that holds multiple types at once", "A data structure that holds only one member at a time", "A combined class", "A type of enum"], correctAnswer: 1 },
-      { id: 39, question: "What is `std::pair`?", options: ["A container for two elements of the same type", "A container for two elements of possibly different types", "A key-value map", "A tuple of size 2"], correctAnswer: 1 },
-      {
-        id: 40,
-        question: "**Coding (Intermediate):** What will be the output of the following C++ code?\n\n```cpp\n#include <iostream>\n#include <stdexcept>\n\nint main() {\n    try {\n        throw std::runtime_error(\"Custom error occurred\");\n    } catch (std::logic_error& e) {\n        std::cout << \"Logic Error: \" << e.what();\n    } catch (std::exception& e) {\n        std::cout << \"Exception: \" << e.what();\n    }\n}\n```\n",
-        options: [
-          "Logic Error: Custom error occurred",
-          "Exception: Custom error occurred",
-          "Nothing",
-          "Compile error"
-        ],
-        correctAnswer: 1
-      }
-    ],
-    advanced: [
-      { id: 1, question: "What is the strict aliasing rule and what kind of undefined behavior does it invoke?", options: ["A rule about naming variables similarly", "A rule that allows accessing an object through a pointer of a different type in specific cases", "A rule that makes aliasing references illegal", "A rule that prevents using two names for the same variable"], correctAnswer: 1 },
-      { id: 2, question: "What is a `memory barrier` or `fence` and when is it needed in lock-free programming?", options: ["A wall in memory that prevents access", "A way to mark memory as read-only", "An instruction that enforces ordering constraints on memory operations", "A tool to detect memory leaks"], correctAnswer: 2 },
-      { id: 3, question: "Explain the 'as-if' rule.", options: ["A rule for conditional compilation", "A rule that allows any optimization as long as the observable behavior of the program is identical", "A rule for virtual function dispatch", "A rule for exception handling"], correctAnswer: 1 },
-      { id: 4, question: "What is `SFINAE` (Substitution Failure Is Not An Error) and what was its primary use before C++20?", options: ["A compiler bug", "A principle where an invalid substitution of template parameters is not an error but causes the overload to be discarded", "A syntax for function declarations", "A macro definition technique"], correctAnswer: 1 },
-      {
-        id: 5, question: "How do you use `std::enable_if` to conditionally remove a function from overload resolution?",
-        options: ["As a default template parameter", "As the return type", "As a function parameter", "All of the above"], correctAnswer: 3
-      },
-      {
-        id: 6, question: "What is the `Curiously Recurring Template Pattern (CRTP)` and what is a common use case?",
-        options: ["A pattern for recursive templates that causes compiler crashes", "A pattern where a class `X` derives from a class template instantiation using `X` itself as a template argument. Used for static polymorphism.", "A pattern for creating template base classes", "A pattern for recursive data structures"], correctAnswer: 1
-      },
-      {
-        id: 7, question: "What is `std::declval` and why is it useful in `decltype` expressions?",
-        options: ["A function that declares a value", "A utility that returns an rvalue reference to a type, allowing member access in unevaluated contexts without needing a constructor", "A function to get the value of a variable", "A replacement for `decltype`"], correctAnswer: 1
-      },
-      {
-        id: 8, question: "What are `move semantics` fundamentally? How do they relate to rvalue references?",
-        options: ["A way to move objects in memory", "A way to transfer ownership of resources from one object to another. Rvalue references identify objects that can have their resources moved.", "A faster way to copy objects", "A type of smart pointer"], correctAnswer: 1
-      },
-      {
-        id: 9, question: "What is a `perfect forwarding` constructor and how is it implemented?",
-        options: ["A constructor that never fails", "A constructor that takes a universal reference (`T&&`) and uses `std::forward` to preserve the value category (lvalue/rvalue) of its arguments", "A constructor that copies its arguments perfectly", "A constructor that forwards to the base class"], correctAnswer: 1
-      },
-      {
-        id: 10, question: "What is the `Rule of Five`?",
-        options: ["A rule that a class should have five members", "A guideline: if you define any of destructor, copy constructor, copy assignment, move constructor, or move assignment, you should likely define all five.", "A rule for function parameter count", "A design pattern"], correctAnswer: 1
-      },
-      {
-        id: 11, question: "What is the `Empty Base Optimization (EBO)`?",
-        options: ["Optimizing away empty functions", "A compiler optimization where a base class subobject of size zero does not increase the size of the derived class", "Deleting unused code", "Optimizing empty containers"], correctAnswer: 1
-      },
-      {
-        id: 12, question: "What is `argument-dependent lookup (ADL)` or `Koenig lookup`?",
-        options: ["Looking up names in the scope of the function's arguments", "A rule where functions are searched for in the namespaces of their arguments, in addition to the usual scopes", "A way to find function definitions in linked libraries", "A deprecated lookup method"], correctAnswer: 1
-      },
-      {
-        id: 13, question: "What is `type erasure`? Give an example from the standard library.",
-        options: ["Deleting type information", "A technique for hiding the concrete type of an object behind a uniform interface. `std::function` and `std::any` are examples.", "Casting to `void*`", "Using templates to erase types"], correctAnswer: 1
-      },
-      {
-        id: 14, question: "How does `std::make_shared` often achieve better performance than直接 using `std::shared_ptr(new T)`?",
-        options: ["It is always faster", "It performs a single allocation for both the object and the control block, improving locality and reducing overhead", "It uses a faster allocator", "It doesn't; it's just exception-safe"], correctAnswer: 1
-      },
-      {
-        id: 15, question: "What is the `std::initializer_list` pitfall? When might `auto x{10};` not be an `int`?",
-        options: ["It has no pitfalls", "Before C++17, `auto x{10};` deduces `std::initializer_list<int>`, not `int`", "It can't be used with `auto`", "It only works with copies"], correctAnswer: 1
-      },
-      {
-        id: 16, question: "What is a `customization point` and how can they be implemented in C++?",
-        options: ["A function that can be customized by the user, often implemented via ADL and sometimes tag invocation (e.g., `std::swap`, `std::begin`)", "A virtual function", "A function pointer", "A macro"], correctAnswer: 0
-      },
-      {
-        id: 17, question: "What is `non-virtual interface (NVI) idiom`?",
-        options: ["An interface without virtual functions", "An idiom where the public virtual functions are non-public, and public non-virtual functions call them", "An interface that is not virtual", "A design pattern for templates"], correctAnswer: 1
-      },
-      {
-        id: 18, question: "What is the `Attorney-Client idiom` and how is it a more restrictive form of friendship?",
-        options: ["A legal term in coding", "An idiom where a client class grants friendship to an 'attorney' class, which in turn provides controlled access to only specific members for other classes", "A way to handle court cases in code", "A pattern for client-server models"], correctAnswer: 1
-      },
-      {
-        id: 19, question: "What are `expression templates` and what are they used for?",
-        options: ["Templates that express emotions", "A template metaprogramming technique used to build complex structures representing an operation (e.g., in linear algebra libraries) to avoid temporary objects and enable lazy evaluation", "Templates made of expressions", "A type of `constexpr` function"], correctAnswer: 1
-      },
-      {
-        id: 20, question: "**Coding:** What is the potential output and why? `int i = 0; std::cout << i++ << ++i;`",
-        options: ["`0 2`", "`1 1`", "`0 1`", "Undefined Behavior"], correctAnswer: 3
-      },
-      {
-        id: 21, question: "**Coding:** What does this do? `template <typename T> void f(T&& param);`",
-        options: ["Declares an rvalue reference parameter", "Declares a universal (forwarding) reference parameter", "Declares a const reference parameter", "Illegal syntax"], correctAnswer: 1
-      },
-      {
-        id: 22, question: "**Coding:** Identify the bug: `std::thread t(function); t.detach();` followed by a return from `main`.",
-        options: ["No bug", "The detached thread may be killed when the main thread exits, potentially while still running", "`detach` is called wrong", "`function` is not defined"], correctAnswer: 1
-      },
-      {
-        id: 23, question: "**Coding:** What is the problem? `std::async(std::launch::async, func);` // return value ignored",
-        options: ["Nothing", "The returned `std::future`'s destructor will block, potentially waiting for the async task, defeating the purpose of async", "Wrong launch policy", "`func` must be called with `get()`"], correctAnswer: 1
-      },
-      {
-        id: 24, question: "**Coding:** What is the result? `alignof(struct { char a; int b; });`",
-        options: ["1", "`sizeof(int)` (e.g., 4)", "The size of the struct", "Implementation-defined, but likely `alignof(int)`"], correctAnswer: 3
-      },
-      {
-        id: 25, question: "**Coding:** What is `noexcept` in this context? `void func() noexcept(false);`",
-        options: ["A compile error", "Specifies that the function *can* throw exceptions", "Specifies that the function cannot throw", "A warning"], correctAnswer: 1
-      },
-      {
-        id: 26, question: "**Coding:** What is the purpose of `[[carries_dependency]]`?",
-        options: ["To carry dependencies between functions", "To indicate that dependency chains are carried across function boundaries, affecting memory ordering to potentially allow more efficient code", "To mark parameters as dependent", "A deprecated attribute"], correctAnswer: 1
-      },
-      {
-        id: 27, question: "**Coding:** What is the type of `var`? `auto var = { 1, 2, 3 };`",
-        options: ["`std::vector<int>`", "`std::array<int, 3>`", "`std::initializer_list<int>`", "`int[3]`"], correctAnswer: 2
-      },
-      {
-        id: 28, question: "**Coding:** What is the effect of `[[noreturn]]`?",
-        options: ["Indicates a function does not return to its caller (e.g., always throws or terminates)", "Indicates a function returns void", "Indicates a function has no parameters", "Indicates a function should not be optimized"], correctAnswer: 0
-      },
-      {
-        id: 29, question: "**Coding:** What is the value of `v`? `std::vector<int> v; v.reserve(10); std::cout << v.size();`",
-        options: ["0", "10", "Undefined", "The capacity"], correctAnswer: 0
-      },
-      {
-        id: 30, question: "**Coding (Advanced):** Consider the following C++ code:\n\n```cpp\n#include <iostream>\n#include <thread>\n#include <string>\n\nvoid print(std::string& msg) {\n    std::cout << msg << std::endl;\n}\n\nint main() {\n    std::string s = \"Hello\";\n    std::thread t(print, s); // line A\n    t.join();\n}\n```\n\nWhat is the issue with the above code at line A, and how should it be fixed to safely pass `s` by reference to the thread function?\n",
-        options: ["Compilation fails because `std::thread` cannot bind temporary to non-const reference. Fix: use `std::ref(s)`.",
-          "It runs correctly and prints `Hello` without any change.",
-          "It causes undefined behavior due to dangling reference. Fix: make `print` take `const std::string&`.",
-          "Compile-time error because `std::thread` only accepts static functions."], correctAnswer: 0
-      },
-      {
-        id: 31, question: "What are `Concepts` (C++20) and what problem do they solve?",
-        options: ["Abstract ideas in programming", "Named sets of constraints on template parameters that make templates easier to use and error messages more readable", "A type of class", "A new loop construct"], correctAnswer: 1
-      },
-      {
-        id: 32, question: "What are the `spaceship operator <=>` and its return type category?",
-        options: ["A three-way comparison operator that returns a std::strong_ordering, std::weak_ordering, or std::partial_ordering", "A boolean operator", "An operator for spaceship simulation", "An operator that returns void"], correctAnswer: 0
-      },
-      {
-        id: 33, question: "What are `modules` (C++20) and what are their intended benefits over headers?",
-        options: ["A way to organize code into files", "A language feature for component packaging that reduces compile times, eliminates macro collisions, and improves isolation", "A new type of library", "A replacement for namespaces"], correctAnswer: 1
-      },
-      {
-        id: 34, question: "What are `coroutines` (C++20) and their core keywords (`co_await`, `co_yield`, `co_return`)?",
-        options: ["Functions that can be suspended and resumed, enabling asynchronous code that looks synchronous", "A type of parallel loop", "Functions that yield to the OS", "A new exception handling mechanism"], correctAnswer: 0
-      },
-      {
-        id: 35, question: "What is `std::jthread` (C++20) and how does it improve on `std::thread`?",
-        options: ["A Java-style thread", "A joining thread that automatically joins on destruction and has a built-in stop token for cooperative interruption", "A faster thread", "A graphical thread"], correctAnswer: 1
-      },
-      {
-        id: 36, question: "What is `std::span` (C++20) and when should it be used?",
-        options: ["A container", "A non-owning view over a contiguous sequence of objects. Used as a safer alternative to passing a pointer and size.", "A reference to a `std::vector`", "A string view for integers"], correctAnswer: 1
-      },
-      {
-        id: 37, question: "What is `std::format` (C++20) and its advantages over `printf`/`iostreams`?",
-        options: ["A type-safe, positional, and extensible formatting library that combines the safety of iostreams with the ease of `printf`", "A faster `printf`", "A new way to format disks", "A macro-based formatting tool"], correctAnswer: 0
-      },
-      {
-        id: 38, question: "What are `designated initializers` (C++20) and their restrictions compared to C?",
-        options: ["Initializers that specify members by name. In C++, they must be in declaration order and cannot nest.", "Initializers for design patterns", "Initializers that are designed by the compiler", "A way to initialize only some members"], correctAnswer: 0
-      },
-      {
-        id: 39, question: "What is `constexpr` support for `virtual functions` (C++20)?",
-        options: ["A virtual function can now be `constexpr`, allowing polymorphic calls in constant expressions", "A function that is both const and virtual", "A new keyword", "It is not allowed"], correctAnswer: 0
-      },
-      {
-        id: 40, question: "What are `consteval` functions (C++20) and how do they differ from `constexpr`?",
-        options: ["Functions that are more constant", "Immediate functions: functions that must produce a compile-time constant. They are stricter than `constexpr` functions.", "A synonym for `constexpr`", "Functions that can only be evaluated at runtime"], correctAnswer: 1
-      },
-      {
-        id: 41, question: "What is `std::source_location` (C++20) and how does it replace `__LINE__` and `__FILE__`?",
-        options: ["A class representing source code info (file, line, column). It provides a superior, function-based alternative to macros.", "A location in the source code", "A debugger tool", "A preprocessor directive"], correctAnswer: 0
-      },
-      {
-        id: 42, question: "What are `std::atomic_ref` (C++20) and its use case?",
-        options: ["A reference to an atomic variable", "Applies atomic operations to a non-atomic object for a period of time, allowing existing objects to be used atomically without changing their type", "A new smart pointer", "A way to create atomic references"], correctAnswer: 1
-      },
-      {
-        id: 43, question: "What is the `[[likely]]` and `[[unlikely]]` attribute (C++20) for?",
-        options: ["To make code more or less likely to be compiled", "To provide hints to the compiler about the expected path of a branch for optimization", "To mark functions as likely to throw", "To control inlining"], correctAnswer: 1
-      },
-      {
-        id: 44, question: "What is `std::lerp` and `std::midpoint` (C++20)?",
-        options: ["Mathematical functions for linear interpolation and midpoint calculation", "Graphics functions", "Names of new algorithms", "Types of iterators"], correctAnswer: 0
-      },
-      {
-        id: 45, question: "What are `range-based algorithms` (C++20) and how do they improve code?",
-        options: ["Algorithms that work on ranges (e.g., `std::ranges::sort(my_vec)`) instead of iterator pairs, are more composable, and often support projections", "Algorithms that use ranges instead of integers", "Algorithms for the `range` class", "A new STL container"], correctAnswer: 0
-      },
-      {
-        id: 46, question: "What are `views` in the ranges library (C++20) and what is their key property?",
-        options: ["A type of smart pointer", "Non-owning, composable range adaptors that provide lazy transformation of sequences (e.g., `filter`, `transform`)", "A GUI component", "A way to view memory"], correctAnswer: 1
-      },
-      {
-        id: 47, question: "What is the `using enum` declaration (C++20)?",
-        options: ["A declaration to use an enum", "Bringes all enumerators of an enum into the current scope, reducing verbosity", "A synonym for `typedef enum`", "A way to create an enum"], correctAnswer: 1
-      },
-      {
-        id: 48, question: "What is a `template lambda` with `auto` parameters (C++14/C++20)?",
-        options: ["A lambda that is a template", "A lambda that has generic parameters using `auto` (becomes a function template in C++20)", "A lambda that takes a `template` keyword", "A lambda inside a template function"], correctAnswer: 1
-      },
-      {
-        id: 49, question: "What is `std::is_constant_evaluated()` (C++20) and when would you use it?",
-        options: ["A function that returns true if it is called at compile time. Used to provide different implementations for compile-time vs runtime.", "A function to check if a variable is const", "A replacement for `constexpr`", "A macro"], correctAnswer: 0
-      },
-      {
-        id: 50, question: "What are `non-type template parameters` for classes (NTTP) in C++20?",
-        options: ["Parameters that are not types", "The ability to have floating-point, class-type, and other literals as template parameters for classes, not just types and integers", "A template without types", "A deprecated feature"], correctAnswer: 1
-      },
-      {
-        id: 51, question: "**Coding (C++20):** What is the type of `result`? `std::strong_ordering result = 5 <=> 10;`",
-        options: ["`bool`", "`int`", "`std::strong_ordering::less`", "`std::strong_ordering`"], correctAnswer: 3
-      },
-      {
-        id: 52, question: "**Coding (C++20):** Write a concept that constrains a type `T` to be incrementable.",
-        options: ["`concept Incrementable = requires(T t) { ++t; };`", "`concept Incrementable = T++;`", "`template<Incrementable T>`", "`#define INCREMENTABLE`"], correctAnswer: 0
-      },
-      {
-        id: 53, question: "**Coding (C++20):** What does this view do? `auto view = vec | std::views::filter(is_even) | std::views::transform(square);`",
-        options: ["Modifies `vec` in place", "Creates a new vector", "Creates a lazy view that will square the even elements of `vec` when iterated", "Causes a compile error"], correctAnswer: 3
-      },
-      {
-        id: 54, question: "**Coding (C++20):** How do you create a `std::jthread` that can be stopped?",
-        options: ["`std::jthread jt([](std::stop_token st) { while (!st.stop_requested()) { ... } });`", "`std::jthread jt([] { ... }); jt.request_stop();`", "`std::jthread jt; jt.stop();`", "It cannot be stopped"], correctAnswer: 0
-      },
-      {
-        id: 55, question: "**Coding (C++20):** How do you format an integer `x` as hex with `std::format`?",
-        options: ["`std::format(\"{:x}\", x)`", "`std::format(\"{hex}\", x)`", "`std::format(\"{0x}\", x)`", "`std::format(\"%x\", x)`"], correctAnswer: 0
-      },
-      {
-        id: 56, question: "What is the ``volatile`` keyword's role in multi-threaded programming according to the C++ standard?",
-        options: ["It is the primary way to ensure visibility of changes between threads", "It is not sufficient for synchronization between threads. It is for dealing with special memory (e.g., memory-mapped I/O), not thread communication.", "It creates atomic variables", "It prevents compiler reordering"], correctAnswer: 1
-      },
-      {
-        id: 57, question: "What is `undefined behavior (UB)` and why is it significant?",
-        options: ["An error that is caught at runtime", "Behavior for which the C++ standard imposes no requirements. The program can do *anything*, making it a critical concept for correctness and security.", "A behavior that is not defined by the programmer", "A warning"], correctAnswer: 1
-      },
-      {
-        id: 58, question: "What is `sequential consistency` and what is the default memory ordering for `std::atomic` operations?",
-        options: ["The order in which code is written", "The strongest memory ordering, providing a single total order of operations seen by all threads. It is the default for `std::atomic` operations.", "The consistency of data structures", "A type of data race"], correctAnswer: 1
-      },
-      {
-        id: 59, question: "What is a `data race` and what is the relationship between a data race and undefined behavior?",
-        options: ["A race condition", "A situation where two threads access the same memory location concurrently, at least one is a write, and they are not synchronized. This is Undefined Behavior.", "A competition between threads", "A defined outcome based on timing"], correctAnswer: 1
-      },
-      {
-        id: 60, question: "What is `speculative execution` and how can it lead to security vulnerabilities like Spectre?",
-        options: ["Executing code ahead of time", "A CPU optimization where instructions are executed before knowing if they are needed. It can leave side-effects (e.g., in cache) that can be measured to leak data.", "Executing code in a special mode", "A compiler optimization"], correctAnswer: 1
-      }
-    ]
-  },
-  bootstrap: {
-    basic: [
-      { id: 1, question: "What is Bootstrap primarily used for?", options: ["Backend development", "A CSS framework for building responsive, mobile-first websites", "A JavaScript library for animations", "A database management system"], correctAnswer: 1 },
-      { id: 2, question: "Which class makes an image responsive in Bootstrap (scales with parent element)?", options: [".img-responsive", ".img-fluid", ".responsive-img", ".image-scaling"], correctAnswer: 1 },
-      { id: 3, question: "Which class creates a fixed-width, responsive container?", options: [".container-fluid", ".container", ".container-fixed", ".wrapper"], correctAnswer: 1 },
-      { id: 4, question: "What does the .row class do in Bootstrap's grid system?", options: ["Defines a column", "Wraps a set of columns and handles their layout", "Creates a horizontal line", "Adds a border around content"], correctAnswer: 1 },
-      { id: 5, question: "Which class adds a top margin of 1rem (16px) in Bootstrap's spacing utilities?", options: [".m-1", ".mt-1", ".margin-top-1", ".spacer-1"], correctAnswer: 1 },
-      { id: 6, question: "Which class is used to create a primary styled button?", options: [".btn", ".btn-primary", ".button-primary", ".primary-btn"], correctAnswer: 1 },
-      { id: 7, question: "Which component provides a responsive navigation header?", options: [".nav", ".navbar", ".navigation", ".header"], correctAnswer: 1 },
-      { id: 8, question: "What is the purpose of the col-md-6 class?", options: ["Creates 6 equal columns on medium screens and up", "Creates 6 equal columns on all screens", "Creates a column with a width of 6px", "Is an invalid class"], correctAnswer: 0 },
-      { id: 9, question: "Which class centers text horizontally?", options: [".text-center", ".align-center", ".center", ".justify-center"], correctAnswer: 0 },
-      { id: 10, question: "Which class makes text bold using Bootstrap's utility classes?", options: [".text-bold", ".bold", ".font-weight-bold", ".fw-bold (Bootstrap 5)"], correctAnswer: 3 },
-      { id: 11, question: "How do you include Bootstrap using a CDN?", options: ["By downloading and hosting the files", "By linking to the CSS and JS files in your HTML <head> and before </body>", "By using an @import rule in CSS", "By installing via npm only"], correctAnswer: 1 },
-      { id: 12, question: "Which class creates a full-width container that spans the entire viewport?", options: [".container", ".container-fluid", ".container-full", ".full-width"], correctAnswer: 1 },
-      { id: 13, question: "What is the base number of columns in Bootstrap's grid system?", options: ["10", "12", "16", "It is fluid"], correctAnswer: 1 },
-      { id: 14, question: "Which class is used to create a card component?", options: [".panel", ".card", ".box", ".tile"], correctAnswer: 1 },
-      { id: 15, question: "Which class adds a light blue background and text to indicate information?", options: [".alert-info", ".bg-info", ".text-info", "Both 2 and 3"], correctAnswer: 3 },
-      { id: 16, question: "Which class creates a horizontal form layout?", options: [".form-horizontal", ".form-inline", ".form-row", ".form-group"], correctAnswer: 1 },
-      { id: 17, question: "What does the .sr-only class do?", options: ["Makes an element visible only on small screens", "Hides an element visually but keeps it for screen readers", "Shows an element only on screen readers", "Is a deprecated class"], correctAnswer: 1 },
-      { id: 18, question: "Which class creates a dropdown menu?", options: [".dropdown", ".select", ".menu", ".list-group"], correctAnswer: 0 },
-      { id: 19, question: "**Coding:** Which class structure creates a 3-column layout on large screens and a 1-column layout on extra small screens?", options: ["<div class='col-3'></div><div class='col-3'></div><div class='col-3'></div>", "<div class='col-lg-4'></div><div class='col-lg-4'></div><div class='col-lg-4'></div>", "<div class='col-lg-4 col-12'></div><div class='col-lg-4 col-12'></div><div class='col-lg-4 col-12'></div>", "<div class='col-4'></div><div class='col-4'></div><div class='col-4'></div>"], correctAnswer: 2 },
-      { id: 20, question: "**Coding:** How do you create a button that is both large and outlined?", options: [".btn-lg .btn-outline-primary", ".btn-outline-primary .btn-lg", "<button class='btn btn-outline-primary btn-lg'>", "<button class='btn outline primary large'>"], correctAnswer: 2 }
-    ],
-    intermediate: [
-      { id: 1, question: "Which class creates a column that only takes the width it needs?", options: [".col", ".col-auto", ".col-fit", ".col-1"], correctAnswer: 1 },
-      { id: 2, question: "Which utility class truncates long text with an ellipsis?", options: [".text-truncate", ".text-ellipsis", ".truncate", ".text-overflow"], correctAnswer: 0 },
-      { id: 3, question: "What is the key difference between .container and .container-fluid?", options: [".container-fluid has more padding", ".container is always 1140px wide", ".container has a fixed max-width at each breakpoint, .container-fluid is always 100% wide", "There is no difference"], correctAnswer: 2 },
-      { id: 4, question: "Which JavaScript library is a peer dependency for Bootstrap's tooltips, popovers, and dropdowns?", options: ["jQuery", "Popper.js", "React", "Lodash"], correctAnswer: 1 },
-      { id: 5, question: "What is the class for a responsive navbar toggler icon?", options: [".navbar-toggler-icon", ".navbar-toggle", ".hamburger-menu", ".nav-icon"], correctAnswer: 0 },
-      { id: 6, question: "Which class adds a badge to an element, often used for notifications?", options: [".badge", ".label", ".tag", ".alert-badge"], correctAnswer: 0 },
-      { id: 7, question: "Which class changes the display property to flex?", options: [".d-flex", ".flex", ".display-flex", ".flex-container"], correctAnswer: 0 },
-      { id: 8, question: "In Bootstrap 5, which class is used to maintain aspect ratios for embedded content (like videos)?", options: [".ratio", ".embed-responsive", ".aspect-ratio", ".media-ratio"], correctAnswer: 0 },
-      { id: 9, question: "Which classes control the order of flex items in a .d-flex container?", options: [".order-*", ".flex-order-*", ".item-order-*", ".position-*"], correctAnswer: 0 },
-      { id: 10, question: "Which class creates a sticky element that sticks to the top of the viewport during scroll?", options: [".sticky-top", ".fixed-top", ".affix", ".position-sticky"], correctAnswer: 0 },
-      { id: 11, question: "What does the .g-0 class do on a .row?", options: ["Removes the negative margins", "Removes the gutters (padding between columns)", "Adds extra large gutters", "Is not a valid class"], correctAnswer: 1 },
-      { id: 12, question: "Which class vertically centers a single row of content within its container?", options: [".align-items-center", ".justify-content-center", ".vertical-center", ".my-auto"], correctAnswer: 0 },
-      { id: 13, question: "What is the purpose of data-bs-toggle='collapse'?", options: ["To toggle a modal", "To toggle the visibility of a collapsible element", "To toggle a dropdown", "To switch tabs"], correctAnswer: 1 },
-      { id: 14, question: "Which class adds a dark background and light text to a navbar?", options: [".navbar-dark .bg-dark", ".navbar-light .bg-light", ".navbar-black", ".navbar-inverse"], correctAnswer: 0 },
-      { id: 15, question: "How do you create a tooltip?", options: ["Add the .tooltip class", "Add data-bs-toggle='tooltip' and title attributes, then initialize via JavaScript", "It works automatically on all buttons", "Use the <tooltip> element"], correctAnswer: 1 },
-      { id: 16, question: "Which class creates a list group for displaying a series of content?", options: [".list-group", ".ul-group", ".card-list", ".menu-list"], correctAnswer: 0 },
-      { id: 17, question: "What is the correct markup for a Bootstrap 5 breadcrumb?", options: ["<nav class='breadcrumb'><a>Home</a></nav>", "<ol class='breadcrumb'><li class='breadcrumb-item'><a href='#'>Home</a></li></ol>", "<ul class='breadcrumb'><li>Home</li></ul>", "<div class='breadcrumb'>Home</div>"], correctAnswer: 1 },
-      { id: 18, question: "In Bootstrap, which class combination allows an alert to be dismissible (closeable by the user)?", options: [".alert .alert-dismissible", ".alert .dismiss", ".alert .fade .show", ".alert .closeable"], correctAnswer: 0 },
-      {
-        id: 19,
-        question: "In Bootstrap, which utility classes are commonly used to add a border and rounded corners to an element?",
-        options: [".border .rounded", ".outline .circle", ".boxed", ".frame"],
-        correctAnswer: 0
-      },
-      { id: 20, question: "What does the .shadow class do?", options: ["Adds a text shadow", "Adds a box shadow to an element", "Changes the opacity", "Creats a parallax effect"], correctAnswer: 1 },
-      { id: 21, question: "**Coding:** How would you create a grid where two columns are twice as wide as one column on medium screens?", options: ["<div class='row'><div class='col-md-8'>A</div><div class='col-md-4'>B</div></div>", "<div class='row'><div class='col-md-6'>A</div><div class='col-md-6'>B</div></div>", "<div class='row'><div class='col-md-2'>A</div><div class='col-md-1'>B</div></div>", "<div class='row'><div class='col-md-4'>A</div><div class='col-md-2'>B</div></div>"], correctAnswer: 0 },
-      { id: 22, question: "**Coding:** How do you create a modal and trigger it?", options: ["Add .modal to a div and .show to open it", "Build the modal HTML structure and use a button with data-bs-toggle='modal' data-bs-target='#myModal'", "Use the <modal> element", "Call $('#myModal').open() in JavaScript"], correctAnswer: 1 },
-      { id: 23, question: "**Coding:** How do you create a responsive table that allows horizontal scrolling?", options: [".table .table-responsive", ".table .table-scroll", ".table-responsive on a wrapper div", ".table .w-100"], correctAnswer: 2 },
-      { id: 24, question: "**Coding:** How do you align a button to the right side?", options: [".float-end (Bootstrap 5) / .float-right (Bootstrap 4)", ".align-right", ".text-right on the button", ".pull-right"], correctAnswer: 0 },
-      { id: 25, question: "**Coding:** How do you create a custom checkbox with a custom label?", options: [".form-check .custom-control-input .custom-control-label", ".form-check-input and .form-check-label", "Standard <input type='checkbox'> and <label>", "You can't style checkboxes"], correctAnswer: 1 },
-      { id: 26, question: "Which breakpoint prefix is used for devices ≥1200px wide?", options: ["sm", "md", "lg", "xl"], correctAnswer: 3 },
-      { id: 27, question: "Which breakpoint prefix is used for devices ≥1400px wide in Bootstrap 5?", options: ["xl", "xxl", "2xl", "xxxl"], correctAnswer: 1 },
-      { id: 28, question: "What does the .flex-column class do?", options: ["Makes flex items into columns", "Changes the flex direction to vertical", "Adds a column layout to non-flex elements", "Is the same as .col"], correctAnswer: 1 },
-      { id: 29, question: "Which class will make an element have a display of inline-block?", options: [".d-inline-block", ".inline-block", ".display-ib", ".ib"], correctAnswer: 0 },
-      { id: 30, question: "What is the purpose of the .mt-n1 class?", options: ["Adds a small positive margin top", "Adds a small negative margin top", "Is not a valid class", "Adds no margin"], correctAnswer: 1 },
-      { id: 31, question: "Which class can be used to override and force a display type at a specific breakpoint?", options: [".d-md-block", ".display-md-block", ".visible-md", ".show-md"], correctAnswer: 0 },
-      { id: 32, question: "What is the correct way to create a spinner/loading component?", options: [".spinner .spinner-border", ".loading .spinner", ".fa-spinner", "<div class='loader'></div>"], correctAnswer: 0 },
-      { id: 33, question: "Which class creates a small, simple alert box?", options: [".alert", ".toast", ".snackbar", ".notification"], correctAnswer: 1 },
-      { id: 34, question: "How do you make a button disabled?", options: ["Add the .disabled class", "Add the disabled attribute", "Both 1 and 2", "Use .btn-disabled"], correctAnswer: 2 },
-      { id: 35, question: "Which class adds a dark border and light text to a table row?", options: [".table-dark", ".table-primary", ".bg-dark", ".table-inverse"], correctAnswer: 0 },
-      { id: 36, question: "What is the purpose of the .valid-feedback class?", options: ["To show a green checkmark icon", "To display positive validation messages (usually green)", "To make a form field valid", "To style a success alert"], correctAnswer: 1 },
-      { id: 37, question: "Which class is used to create a pagination component?", options: [".pagination", ".page-nav", ".nav-pages", ".list-pages"], correctAnswer: 0 },
-      { id: 38, question: "What does the .stretched-link class do?", options: ["Makes a link bold", "Makes the entire containing block clickable via a link", "Underlines a link", "Adds an arrow to a link"], correctAnswer: 1 },
-      { id: 39, question: "Which class creates a progress bar?", options: [".progress-bar", ".progress", ".bar", ".meter"], correctAnswer: 1 },
-      { id: 40, question: "**Coding:** How do you create a responsive offcanvas sidebar?", options: ["Use .offcanvas .offcanvas-start and a button with data-bs-toggle='offcanvas'", "Use .sidebar .collapse", "It requires custom JavaScript", "Use .col-md-3 for the sidebar"], correctAnswer: 0 }
-    ],
-    advanced: [
-      { id: 1, question: "How do you customize Bootstrap's core Sass variables (like $primary color)?", options: ["Edit the node_modules/bootstrap/scss/_variables.scss file directly", "Override the CSS variables in your own stylesheet", "Create your own _variables.scss file, set new values, and import Bootstrap's SCSS after it", "It's not possible to change the variables"], correctAnswer: 2 },
-      { id: 2, question: "What is the purpose of the !default flag in Bootstrap's Sass variables?", options: ["It makes the variable required", "It sets the variable only if it hasn't been assigned a value yet", "It marks the variable as important", "It compiles the variable faster"], correctAnswer: 1 },
-      { id: 3, question: "How can you reduce the final CSS file size when using the Sass source?", options: ["Manually delete unused CSS from the compiled file", "Comment out @import directives for components you don't use in your main SCSS file", "Use a CDN instead", "Use the .min.css version"], correctAnswer: 1 },
-      { id: 4, question: "How do you extend or create a custom component using Bootstrap's Sass mixins?", options: ["Copy and paste the component's code", "Use the @extend directive with a Bootstrap class", "Use the provided mixins, like @include button-variant() for a new button style", "You cannot create custom components"], correctAnswer: 2 },
-      { id: 5, question: "What is the purpose of the $theme-colors map in Sass?", options: ["It's a read-only list of colors", "It defines the palette for all components. You can add, remove, or modify colors in this map.", "It's used only for the color utility classes", "It's a deprecated feature"], correctAnswer: 1 },
-      { id: 6, question: "How do you change the global border-radius for all components?", options: ["Override the --bs-border-radius CSS variable", "Modify the $border-radius Sass variable", "Manually override the border-radius for each component", "Both 1 and 2"], correctAnswer: 3 },
-      { id: 7, question: "What is the most efficient way to load Bootstrap's JavaScript?", options: ["Use bootstrap.bundle.js which includes Popper", "Use bootstrap.js and load Popper separately", "Load all individual component JS files", "Don't load JS, use CSS only"], correctAnswer: 0 },
-      { id: 8, question: "How do you programmatically show a modal with vanilla JavaScript (Bootstrap 5)?", options: ["document.getElementById('myModal').show()", "new bootstrap.Modal(document.getElementById('myModal')).show()", "$('#myModal').modal('show')", "document.getElementById('myModal').style.display = 'block'"], correctAnswer: 1 },
-      { id: 9, question: "How can you change the default behavior of a dropdown (e.g., open on hover)?", options: ["Use the data-bs-trigger='hover' attribute", "It's not possible without custom JavaScript", "Modify the dropdown's JavaScript source code", "Use the .dropdown-hover class"], correctAnswer: 1 },
-      { id: 10, question: "What is the purpose of Bootstrap's .form-floating class?", options: ["It makes labels float above inputs when they are filled or focused", "It makes form fields appear to float on the page", "It is for creating floating action buttons (FABs)", "It adds a floating animation to forms"], correctAnswer: 0 },
-      { id: 11, question: "Which CSS utility can be used to change the underlying grid gutters (gaps)?", options: ["--bs-gutter-x and --bs-gutter-y CSS variables", ".gutter-width", "$gutter Sass variable only", "You must modify the .row and .col padding manually"], correctAnswer: 0 },
-      { id: 12, question: "How do you create a custom utility class (e.g., .bg-custom) using Bootstrap's Sass?", options: ["Add it directly to your CSS", "Use the utilities API: @import 'bootstrap/scss/utilities/api'; then add it to the $utilities map", "It must be defined before importing Bootstrap", "Create a new Sass file and @extend .bg-primary"], correctAnswer: 1 },
-      { id: 13, question: "What is the purpose of the $enable-* Sass variables (e.g., $enable-rounded)?", options: ["They are for developer information only", "They globally enable or disable specific features (e.g., rounded corners, gradients) across all components", "They enable experimental features", "They are only used in JavaScript"], correctAnswer: 1 },
-      { id: 14, question: "How does Bootstrap handle CSS variables for theming?", options: ["It doesn't use CSS variables", "It uses a complex system of mixins only", "It uses CSS variables rooted in :root and components inherit them, allowing runtime theme changes", "CSS variables are only used for utilities"], correctAnswer: 2 },
-      { id: 15, question: "What is a key accessibility (a11y) consideration when using modals?", options: ["They must be centered on the screen", "They must trap keyboard focus within the modal when open", "They must have a dark backdrop", "They must animate in"], correctAnswer: 1 },
-      { id: 16, question: "What is a key accessibility consideration for collapse components?", options: ["They must use ARIA attributes like aria-expanded and aria-controls", "They must be keyboard focusable", "They must have a unique ID", "All of the above"], correctAnswer: 3 },
-      { id: 17, question: "How can you create a custom color palette that integrates seamlessly with Bootstrap's utility system?", options: ["Add your colors to the $theme-colors map and recompile", "Create your own utility classes manually", "Use inline styles", "Override the --bs-primary CSS variable in a style tag"], correctAnswer: 0 },
-      { id: 18, question: "What is the difference between .fixed-top and .sticky-top?", options: [".sticky-top uses position: sticky and becomes fixed only after scrolling past it, while .fixed-top is always fixed", ".fixed-top uses position: sticky", "There is no difference", ".sticky-top is for sidebars, .fixed-top is for navbars"], correctAnswer: 0 },
-      { id: 19, question: "How do you handle right-to-left (RTL) layouts with Bootstrap?", options: ["It handles RTL automatically", "You must manually flip all styles", "Use the bootstrap.rtl.css file", "Use the Sass mixins and CSS logical properties with the RTL build process"], correctAnswer: 3 },
-      { id: 20, question: "What is the purpose of the .visually-hidden-focusable class?", options: ["To hide an element from sighted users but show it on focus (e.g., 'Skip to content' link)", "To make an element invisible", "To hide an element from screen readers", "To create a hidden focus trap"], correctAnswer: 0 },
-      { id: 21, question: "**Coding (Sass):** How would you add a new color 'brand' to the theme colors and generate background utilities for it?", options: ["$theme-colors: map-merge($theme-colors, ('brand': #ff5500));", "$new-color: #ff5500;", "@include bg-variant('.bg-brand', $brand);", "You cannot add new colors"], correctAnswer: 0 },
-      { id: 22, question: "**Coding (JS):** How do you dispose of a Bootstrap component (like a modal) to clean up memory?", options: ["It is automatically disposed", "myModal.dispose()", "bootstrap.Modal.getInstance(myModalEl).dispose()", "delete myModal"], correctAnswer: 2 },
-      { id: 23, question: "**Coding:** How would you create a responsive grid where the number of columns changes based on viewport (e.g., 4 cols on lg, 2 on md, 1 on sm)?", options: ["<div class='col-lg-3 col-md-6 col-sm-12'></div> x 4", "<div class='col-lg-4 col-md-2 col-sm-1'></div> x 4", "<div class='col-4'></div> x 4", "Use CSS Grid instead"], correctAnswer: 0 },
-      { id: 24, question: "**Coding:** How do you create a navbar that collapses into an offcanvas drawer on mobile instead of the default collapse?", options: ["Use .navbar .offcanvas classes and change the data-bs-target to target the offcanvas", "It is not possible", "Use a separate offcanvas component and toggle it from the navbar", "Add .navbar-offcanvas class"], correctAnswer: 0 },
-      { id: 25, question: "**Coding (Sass):** How would you change the base font family for the entire project?", options: ["$font-family-base: 'Custom Font', sans-serif;", "body { font-family: 'Custom Font'; }", "--bs-font-sans-serif: 'Custom Font';", "Modify the compiled CSS"], correctAnswer: 0 },
-      { id: 26, question: "What is the purpose of the $spacer Sass variable?", options: ["It adds space between components", "It defines the base unit for the spacing scale (e.g., 1rem). .mt-1 = $spacer * .25", "It is the margin for the .container", "It is the gutter width for the grid"], correctAnswer: 1 },
-      { id: 27, question: "How can you create your own responsive breakpoints?", options: ["You cannot add new breakpoints", "Modify the $grid-breakpoints Sass map", "Use media queries in your own CSS", "Use the .breakpoint- custom class"], correctAnswer: 1 },
-      { id: 28, question: "What is the difference between importing bootstrap.scss and bootstrap-grid.scss?", options: ["bootstrap-grid is smaller", "bootstrap-grid.scss only includes the grid system and its required utilities, not components", "bootstrap-grid is for flexbox grid", "There is no difference"], correctAnswer: 1 },
-      { id: 29, question: "How do you customize the number of columns in the grid system?", options: ["Modify the $grid-columns Sass variable", "It is fixed at 12 and cannot be changed", "Use a different grid system", "Create a custom class .col-custom-*"], correctAnswer: 0 },
-      { id: 30, question: "What is the purpose of the .position-absolute class and how is it used with utilities?", options: ["It makes an element absolutely positioned. You can then use .top-0, .start-0, etc., to place it.", "It is for absolutely centering elements", "It is a deprecated class", "It is the same as .fixed-top"], correctAnswer: 0 },
-      { id: 31, question: "How does the .object-fit-cover utility work?", options: ["It is for fitting text inside a container", "It makes an image cover its container (similar to background-size: cover)", "It is for video objects only", "It requires JavaScript"], correctAnswer: 1 },
-      { id: 32, question: "What is the .translate-middle utility used for?", options: ["For translating text", "To horizontally and vertically center an absolutely positioned element (uses transform: translate(-50%, -50%))", "For moving elements on the z-axis", "It is an experimental utility"], correctAnswer: 1 },
-      { id: 33, question: "How do you implement a dark mode theme switch using Bootstrap's CSS variables?", options: ["Toggle a class like .dark-mode on the <body> and override CSS variables (--bs-body-bg, --bs-body-color) within that class", "Use the built-in .dark class", "You must recompile Sass for dark mode", "Use a different stylesheet"], correctAnswer: 0 },
-      { id: 34, question: "What is the purpose of the $enable-negative-margins Sass variable?", options: ["It enables the generation of negative margin utilities (.mt-n1)", "It disables all margins", "It is for debugging layout", "It enables negative padding"], correctAnswer: 0 },
-      { id: 35, question: "How do you customize the box-shadow used by components and utilities?", options: ["Modify the $box-shadow-* Sass variables", "Manually override the box-shadow property", "Use the .shadow- custom class", "You cannot customize shadows"], correctAnswer: 0 },
-      { id: 36, question: "What is the difference between .btn and .btn-link?", options: [".btn-link has no background or border, styled like a link but with button behavior", ".btn-link is a deprecated class", ".btn-link is for hyperlinks, .btn is for buttons", "They are the same"], correctAnswer: 0 },
-      { id: 37, question: "How do you create a vertical variation of a tab component?", options: ["Add .flex-column to the .nav-tabs", "Use the .nav-pills class instead", "Add .flex-column to the parent of .nav-tabs and use a grid to layout tabs and content", "It is not supported"], correctAnswer: 2 },
-      { id: 38, question: "What is the purpose of the .input-group component?", options: ["To group form labels and inputs", "To attach help text to an input", "To group form controls, text, and buttons into a single composite control", "To style checkboxes"], correctAnswer: 2 },
-      { id: 39, question: "How do you handle validation styles for custom form components?", options: ["They are applied automatically", "You must manually add .is-invalid/.is-valid to the input and .invalid-feedback/.valid-feedback for the message", "Use the .form-validation class", "Validation is only handled by JavaScript"], correctAnswer: 1 },
-      { id: 40, question: "What is the purpose of the .clearfix helper?", options: ["To fix clear floats", "To clear the flexbox context", "To fix sticky elements", "It is a deprecated class and should be replaced with .overflow-auto"], correctAnswer: 3 },
-      { id: 41, question: "How can you achieve a 'masonry' style layout with Bootstrap's grid?", options: ["Use the .masonry class on the .row", "It is not supported. Use a dedicated masonry library like Masonry.js or CSS grid/columns.", "Use .row-cols-* classes", "Use card decks"], correctAnswer: 1 },
-      { id: 42, question: "What is the purpose of the .vr (vertical rule) class?", options: ["To create a vertical divider between inline or inline-block elements", "To add a vertical rhythm to text", "It is for virtual reality applications", "To create a vertical ruler for measurement"], correctAnswer: 0 },
-      { id: 43, question: "How do you change the active color for a nav pill?", options: ["Modify the --bs-active-bg CSS variable on the element", "Override the .nav-pills .nav-link.active rule in your CSS", "Add a data-bs-active-color attribute", "Use the $nav-pills-link-active-bg Sass variable"], correctAnswer: 3 },
-      { id: 44, question: "What is the correct way to include Bootstrap icons?", options: ["Include the bootstrap-icons.css file and use <i class='bi bi-NAME'></i>", "They are included in bootstrap.css", "Use an <svg> element and copy the path", "Use a .icon class"], correctAnswer: 0 },
-      { id: 45, question: "How do you create a responsive embed for a 16x9 video in Bootstrap 5?", options: ["<div class='ratio ratio-16x9'><iframe...></iframe></div>", "<div class='embed-responsive embed-responsive-16by9'><iframe class='embed-responsive-item'...></iframe></div>", "<div class='video-container'><iframe...></iframe></div>", "Use the .video-responsive utility"], correctAnswer: 0 },
-      { id: 46, question: "What is the purpose of the .form-select class?", options: ["It is for selecting form styles", "It provides custom styles for <select> elements", "It is for multi-select inputs", "It is a deprecated class for .form-control"], correctAnswer: 1 },
-      { id: 47, question: "How do you create a floating label with a textarea?", options: ["Use .form-floating > textarea.form-control + label", "Add .float-label to the textarea", "Use .form-group with a textarea", "It is not supported for textareas"], correctAnswer: 0 },
-      { id: 48, question: "What is the .focus-ring utility used for?", options: ["To add a ring around focused elements, mimicking the default browser style in a customizable way", "To create ring loaders", "To add a shadow on focus", "It is a JavaScript utility"], correctAnswer: 0 },
-      { id: 49, question: "How do you implement a print-specific style using Bootstrap's utilities?", options: ["Use .d-print-* classes (e.g., .d-print-none)", "Use @media print in your CSS", "Use the .print- utility class", "Bootstrap does not support print styles"], correctAnswer: 0 },
-      { id: 50, question: "**Coding (Sass):** How would you create a custom utility for a specific property (e.g., cursor: grab)?", options: ["$utilities: map-merge( $utilities, ( 'cursor': ( property: cursor, values: ( grab: grab, ) ) ) );", ".cursor-grab { cursor: grab; }", "Add it to the $theme-colors map", "Modify the _utilities.scss file directly"], correctAnswer: 0 },
-      { id: 51, question: "**Coding:** How do you make a tooltip render with HTML content instead of just text?", options: ["Add data-bs-html='true' to the element", "Use the title attribute with HTML", "It is not possible for security reasons", "Use a popover instead"], correctAnswer: 0 },
-      { id: 52, question: "**Coding (JS):** How do you listen for an event from a Bootstrap component, like when a modal is fully shown?", options: ["myModalEl.addEventListener('show.bs.modal', function () {})", "$('#myModal').on('shown', function() {})", "document.onModalShow = function() {}", "Use the onshow attribute"], correctAnswer: 0 },
-      { id: 53, question: "**Coding:** How would you create a button group with radio toggle behavior?", options: ["<div class='btn-group' role='group'><input type='radio' class='btn-check'...><label class='btn'>Option</label></div>", "<div class='btn-group' data-toggle='buttons'><label class='btn'><input type='radio'> Option</label></div>", "Use .btn-group-radio", "It requires custom JavaScript"], correctAnswer: 0 },
-      { id: 54, question: "**Coding:** How do you create a scrollspy that highlights nav links based on section scrolling?", options: ["Add data-bs-spy='scroll' data-bs-target='#navbar' to the scrollable element", "Add .scrollspy to the body", "Use the .active class manually", "It is a JavaScript-only feature"], correctAnswer: 0 },
-      { id: 55, question: "**Coding (Sass):** How would you change the link color only within the navbar?", options: [".navbar { --bs-link-color: #fff; }", "$navbar-link-color: #fff;", ".navbar a { color: #fff; }", "Modify the $theme-colors map"], correctAnswer: 1 },
-      { id: 56, question: "What is a common build tool used to process Bootstrap's Sass into CSS?", options: ["Webpack", "Gulp", "Grunt", "Any Sass compiler (e.g., sass CLI, Webpack, Gulp)"], correctAnswer: 3 },
-      { id: 57, question: "How can you audit your Bootstrap usage to find unused CSS?", options: ["Manually check your HTML files", "Use the PurgeCSS tool with your build process", "Use the Bootstrap Customize page", "Look at the file size of bootstrap.css"], correctAnswer: 1 },
-      { id: 58, question: "What is the purpose of the .text-nowrap utility?", options: ["To prevent text from wrapping to the next line", "To force text to wrap", "To add a border around text", "To make text uppercase"], correctAnswer: 0 },
-      { id: 59, question: "How do you create a responsive footer that sticks to the bottom of the page?", options: ["Use .fixed-bottom", "Use .sticky-bottom", "Use flexbox on the body and main content area (flex-grow-1) to push the footer down", "Use position: absolute; bottom: 0;"], correctAnswer: 2 },
-      { id: 60, question: "**Coding:** How do you create a carousel with crossfade animation instead of slide?", options: ["Add .carousel-fade to the .carousel element", "Add data-bs-animation='fade'", "Use the .fade class on .carousel-item", "It requires custom CSS animation"], correctAnswer: 0 }
-    ]
+  math: {
+    unit1: {
+      basic: [
+        {
+          id: 1,
+          question: "The function f(x) = x is called:",
+          options: ["Linear function", "Identity function", "Quadratic function", "Cubic function"],
+          correctAnswer: 1
+        },
+        {
+          id: 2,
+          question: "If y is expressed in terms of x, then y is called:",
+          options: ["Explicit function", "Implicit function", "Composite function", "Inverse function"],
+          correctAnswer: 0
+        },
+        {
+          id: 3,
+          question: "\\cosh^2x - \\sinh^2x equals:",
+          options: ["-1", "0", "1", "2"],
+          correctAnswer: 2
+        },
+        {
+          id: 4,
+          question: "\\text{cosech } x equals:",
+          options: ["\\frac{2}{e^x+e^{-x}}", "\\frac{1}{e^x+e^{-x}}", "\\frac{2}{e^x-e^{-x}}", "e^x-e^{-x}"],
+          correctAnswer: 2
+        },
+        {
+          id: 5,
+          question: "If f(x)=x^2-2x+1, then f(0) is:",
+          options: ["-1", "0", "1", "2"],
+          correctAnswer: 2
+        },
+        {
+          id: 6,
+          question: "The set of all possible inputs of a function is called:",
+          options: ["Range", "Codomain", "Domain", "Image"],
+          correctAnswer: 2
+        },
+        {
+          id: 7,
+          question: "The notation f(x) was introduced by:",
+          options: ["Newton", "Leibnitz", "Euler", "Lagrange"],
+          correctAnswer: 2
+        },
+        {
+          id: 8,
+          question: "If f(x)=3x+2, then f(1) equals:",
+          options: ["3", "4", "5", "6"],
+          correctAnswer: 1
+        },
+        {
+          id: 9,
+          question: "A function having one-to-one correspondence is called:",
+          options: ["Into", "Many-one", "Bijective", "Surjective"],
+          correctAnswer: 2
+        },
+        {
+          id: 10,
+          question: "Range of f(x)=x^2 is:",
+          options: ["All real numbers", "x \\geq 0", "x \\leq 0", "x \\neq 0"],
+          correctAnswer: 1
+        },
+        {
+          id: 11,
+          question: "If f(x)=ax+b, then f is:",
+          options: ["Quadratic", "Cubic", "Linear", "Constant"],
+          correctAnswer: 2
+        },
+        {
+          id: 12,
+          question: "Inverse of f(x)=x is:",
+          options: ["x", "1/x", "-x", "x^2"],
+          correctAnswer: 0
+        },
+        {
+          id: 13,
+          question: "\\sin^2x + \\cos^2x equals:",
+          options: ["0", "1", "2", "-1"],
+          correctAnswer: 1
+        },
+        {
+          id: 14,
+          question: "If f(x)=x^3, then f(-1) is:",
+          options: ["1", "-1", "0", "3"],
+          correctAnswer: 1
+        },
+        {
+          id: 15,
+          question: "The graph of f(x)=x^2 is:",
+          options: ["Straight line", "Parabola", "Circle", "Hyperbola"],
+          correctAnswer: 1
+        },
+        {
+          id: 16,
+          question: "A function with same domain and codomain is:",
+          options: ["Into", "Onto", "Identity", "Constant"],
+          correctAnswer: 2
+        },
+        {
+          id: 17,
+          question: "The output values of a function are called:",
+          options: ["Domain", "Range", "Codomain", "Inputs"],
+          correctAnswer: 1
+        },
+        {
+          id: 18,
+          question: "If f(x)=5, then f is:",
+          options: ["Linear", "Constant", "Quadratic", "Identity"],
+          correctAnswer: 1
+        },
+        {
+          id: 19,
+          question: "If f(x)=|x|, then f(-3) equals:",
+          options: ["-3", "0", "3", "6"],
+          correctAnswer: 2
+        },
+        {
+          id: 20,
+          question: "A function which is not one-to-one is:",
+          options: ["Identity", "Many-one", "Bijective", "Inverse"],
+          correctAnswer: 1
+        },
+        {
+          id: 21,
+          question: "If f(x)=x+1, then f^{-1}(x) is:",
+          options: ["x-1", "x+1", "1-x", "-x"],
+          correctAnswer: 0
+        },
+        {
+          id: 22,
+          question: "The graph of y=mx+c is:",
+          options: ["Circle", "Parabola", "Straight line", "Hyperbola"],
+          correctAnswer: 2
+        },
+        {
+          id: 23,
+          question: "A function can have:",
+          options: ["One output", "Two outputs", "No output", "Multiple outputs"],
+          correctAnswer: 0
+        },
+        {
+          id: 24,
+          question: "If f(x)=x^2, then f(2) is:",
+          options: ["2", "4", "6", "8"],
+          correctAnswer: 1
+        },
+        {
+          id: 25,
+          question: "If f(x)=1/x, domain excludes:",
+          options: ["1", "0", "-1", "2"],
+          correctAnswer: 1
+        }
+      ],
+      intermediate: [
+        {
+          id: 1,
+          question: "\\lim_{x \\to a} \\frac{x^3 - a^3}{x - a} equals:",
+          options: ["a^2", "2a", "3a^2", "0"],
+          correctAnswer: 2
+        },
+        {
+          id: 2,
+          question: "\\lim_{x \\to 0} (1+x)^{1/x} equals:",
+          options: ["1", "e", "e^2", "0"],
+          correctAnswer: 1
+        },
+        {
+          id: 3,
+          question: "\\lim_{x \\to 0} \\frac{\\sin x}{x} equals:",
+          options: ["0", "1", "\\infty", "Undefined"],
+          correctAnswer: 1
+        },
+        {
+          id: 4,
+          question: "\\lim_{x \\to 0} \\frac{e^x - 1}{x} equals:",
+          options: ["0", "1", "e", "\\infty"],
+          correctAnswer: 1
+        },
+        {
+          id: 5,
+          question: "\\lim_{x \\to 0} \\frac{1}{x} is:",
+          options: ["0", "1", "\\infty", "Does not exist"],
+          correctAnswer: 3
+        },
+        {
+          id: 6,
+          question: "If \\lim f(x) exists, then left and right limits are:",
+          options: ["Unequal", "Equal", "Infinite", "Zero"],
+          correctAnswer: 1
+        },
+        {
+          id: 7,
+          question: "\\lim_{x \\to 2} \\frac{x^2-4}{x-2} equals:",
+          options: ["2", "4", "0", "Does not exist"],
+          correctAnswer: 1
+        },
+        {
+          id: 8,
+          question: "\\lim_{x \\to 0} \\cos x equals:",
+          options: ["0", "1", "-1", "\\infty"],
+          correctAnswer: 1
+        },
+        {
+          id: 9,
+          question: "\\lim_{x \\to 0} \\frac{\\tan x}{x} equals:",
+          options: ["0", "1", "\\infty", "Undefined"],
+          correctAnswer: 1
+        },
+        {
+          id: 10,
+          question: "\\lim_{x \\to a} \\frac{x-a}{x-a} equals:",
+          options: ["0", "1", "a", "Undefined"],
+          correctAnswer: 1
+        },
+        {
+          id: 11,
+          question: "\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x-4} equals:",
+          options: ["1/4", "1/2", "1", "2"],
+          correctAnswer: 0
+        },
+        {
+          id: 12,
+          question: "\\lim_{x \\to 0} \\frac{\\log(1+x)}{x} equals:",
+          options: ["0", "1", "e", "\\infty"],
+          correctAnswer: 1
+        },
+        {
+          id: 13,
+          question: "If limit is finite, function is:",
+          options: ["Continuous", "Discontinuous", "Infinite", "Undefined"],
+          correctAnswer: 0
+        },
+        {
+          id: 14,
+          question: "\\lim_{x \\to 0} \\frac{x^2}{x} equals:",
+          options: ["0", "1", "\\infty", "Does not exist"],
+          correctAnswer: 0
+        },
+        {
+          id: 15,
+          question: "\\lim_{x \\to 0} \\frac{1-\\cos x}{x^2} equals:",
+          options: ["0", "1", "1/2", "\\infty"],
+          correctAnswer: 2
+        },
+        {
+          id: 16,
+          question: "\\lim_{x \\to 0} \\frac{x^3}{x^2} equals:",
+          options: ["0", "1", "\\infty", "Does not exist"],
+          correctAnswer: 0
+        },
+        {
+          id: 17,
+          question: "If f(x)=|x|, then \\lim_{x \\to 0} f(x) equals:",
+          options: ["0", "1", "\\infty", "Does not exist"],
+          correctAnswer: 0
+        },
+        {
+          id: 18,
+          question: "\\lim_{x \\to 0} e^x equals:",
+          options: ["0", "1", "e", "\\infty"],
+          correctAnswer: 1
+        },
+        {
+          id: 19,
+          question: "\\lim_{x \\to 0} \\frac{x}{x} equals:",
+          options: ["0", "1", "\\infty", "Undefined"],
+          correctAnswer: 1
+        },
+        {
+          id: 20,
+          question: "\\lim_{x \\to 0} \\frac{\\sin x}{\\tan x} equals:",
+          options: ["0", "1", "\\infty", "Undefined"],
+          correctAnswer: 1
+        },
+        {
+          id: 21,
+          question: "If limit is not same from both sides, it:",
+          options: ["Exists", "Is infinite", "Does not exist", "Is zero"],
+          correctAnswer: 2
+        },
+        {
+          id: 22,
+          question: "\\lim_{x \\to 1} \\frac{x-1}{x^2-1} equals:",
+          options: ["1/2", "1", "2", "Undefined"],
+          correctAnswer: 0
+        },
+        {
+          id: 23,
+          question: "\\lim_{x \\to 0} x equals:",
+          options: ["0", "1", "\\infty", "Undefined"],
+          correctAnswer: 0
+        },
+        {
+          id: 24,
+          question: "\\lim_{x \\to 0} \\frac{2x}{x} equals:",
+          options: ["0", "1", "2", "\\infty"],
+          correctAnswer: 2
+        },
+        {
+          id: 25,
+          question: "\\lim_{x \\to 0} \\frac{1}{x^2} equals:",
+          options: ["0", "\\infty", "1", "Undefined"],
+          correctAnswer: 1
+        }
+      ],
+      advanced: [
+        {
+          id: 1,
+          question: "\\lim_{x \\to 0} \\frac{\\sin ax}{x} equals:",
+          options: ["a", "0", "1", "\\infty"],
+          correctAnswer: 0
+        },
+        {
+          id: 2,
+          question: "\\lim_{x \\to 0} \\frac{\\tan x - \\sin x}{x^3} equals:",
+          options: ["0", "1/3", "1/2", "\\infty"],
+          correctAnswer: 1
+        },
+        {
+          id: 3,
+          question: "\\lim_{x \\to 0} \\frac{e^x - 1 - x}{x^2} equals:",
+          options: ["1", "1/2", "0", "\\infty"],
+          correctAnswer: 1
+        },
+        {
+          id: 4,
+          question: "\\lim_{x \\to 0} \\frac{1-\\cos x}{x^2} equals:",
+          options: ["0", "1", "1/2", "\\infty"],
+          correctAnswer: 2
+        },
+        {
+          id: 5,
+          question: "\\lim_{x \\to 0} \\frac{\\log(1+x) - x}{x^2} equals:",
+          options: ["-1/2", "1/2", "0", "\\infty"],
+          correctAnswer: 0
+        },
+        {
+          id: 6,
+          question: "\\lim_{x \\to 0} \\frac{x-\\sin x}{x^3} equals:",
+          options: ["1/6", "1/3", "1/2", "0"],
+          correctAnswer: 0
+        },
+        {
+          id: 7,
+          question: "\\lim_{x \\to 0} \\frac{\\tan x - x}{x^3} equals:",
+          options: ["1/3", "2/3", "1/2", "0"],
+          correctAnswer: 1
+        },
+        {
+          id: 8,
+          question: "\\lim_{x \\to 0} \\frac{e^{2x} - 1}{x} equals:",
+          options: ["1", "2", "e", "0"],
+          correctAnswer: 1
+        },
+        {
+          id: 9,
+          question: "\\lim_{x \\to 0} \\frac{a^x - 1}{x} equals:",
+          options: ["\\log a", "a", "1", "0"],
+          correctAnswer: 0
+        },
+        {
+          id: 10,
+          question: "\\lim_{x \\to 0} \\frac{\\sin^2x}{x^2} equals:",
+          options: ["0", "1", "2", "\\infty"],
+          correctAnswer: 1
+        },
+        {
+          id: 11,
+          question: "\\lim_{x \\to \\infty} (1+x)^{1/x} equals:",
+          options: ["1", "e", "0", "\\infty"],
+          correctAnswer: 0
+        },
+        {
+          id: 12,
+          question: "\\lim_{x \\to \\infty} \\frac{x}{\\sqrt{1+x^2}} equals:",
+          options: ["0", "1", "\\infty", "-1"],
+          correctAnswer: 1
+        },
+        {
+          id: 13,
+          question: "\\lim_{x \\to \\infty} \\frac{x^2}{e^x} equals:",
+          options: ["0", "1", "\\infty", "Undefined"],
+          correctAnswer: 0
+        },
+        {
+          id: 14,
+          question: "\\lim_{x \\to \\infty} \\frac{\\log x}{x} equals:",
+          options: ["0", "1", "\\infty", "Undefined"],
+          correctAnswer: 0
+        },
+        {
+          id: 15,
+          question: "\\lim_{x \\to \\infty} \\frac{x}{\\log x} equals:",
+          options: ["0", "1", "\\infty", "Undefined"],
+          correctAnswer: 2
+        },
+        {
+          id: 16,
+          question: "\\lim_{x \\to \\infty} \\sin x equals:",
+          options: ["0", "1", "Does not exist", "\\infty"],
+          correctAnswer: 2
+        },
+        {
+          id: 17,
+          question: "\\lim_{x \\to \\infty} \\cos x equals:",
+          options: ["0", "1", "Does not exist", "\\infty"],
+          correctAnswer: 2
+        },
+        {
+          id: 18,
+          question: "\\lim_{x \\to \\infty} \\frac{x}{x+1} equals:",
+          options: ["0", "1", "\\infty", "-1"],
+          correctAnswer: 1
+        },
+        {
+          id: 19,
+          question: "\\lim_{x \\to \\infty} \\frac{x+1}{x} equals:",
+          options: ["0", "1", "\\infty", "2"],
+          correctAnswer: 1
+        },
+        {
+          id: 20,
+          question: "\\lim_{x \\to \\infty} \\frac{x^2+1}{x^2} equals:",
+          options: ["1", "2", "\\infty", "0"],
+          correctAnswer: 0
+        },
+        {
+          id: 21,
+          question: "\\lim_{x \\to \\infty} \\frac{1}{x} equals:",
+          options: ["0", "1", "\\infty", "Undefined"],
+          correctAnswer: 0
+        },
+        {
+          id: 22,
+          question: "\\lim_{x \\to \\infty} \\frac{1}{x^2} equals:",
+          options: ["0", "1", "\\infty", "Undefined"],
+          correctAnswer: 0
+        },
+        {
+          id: 23,
+          question: "\\lim_{x \\to \\infty} \\frac{e^x}{x} equals:",
+          options: ["0", "1", "\\infty", "Undefined"],
+          correctAnswer: 2
+        },
+        {
+          id: 24,
+          question: "\\lim_{x \\to \\infty} \\frac{x}{e^x} equals:",
+          options: ["0", "1", "\\infty", "Undefined"],
+          correctAnswer: 0
+        },
+        {
+          id: 25,
+          question: "\\lim_{x \\to \\infty} \\frac{\\log x}{x} equals:",
+          options: ["0", "1", "\\infty", "Undefined"],
+          correctAnswer: 0
+        }
+      ]
+    },
+    unit2: {
+      basic: [
+        {
+          id: 1,
+          question: "\\frac{d}{dx} (\\tan 3x) = ?",
+          options: ["3 \\sec^2 3x", "\\sec^2 3x", "\\cot 3x", "\\sec^2 x"],
+          correctAnswer: 0
+        },
+        {
+          id: 2,
+          question: "The change in variable x is called increment of x. dx can be:",
+          options: ["positive only", "negative only", "positive or negative", "none"],
+          correctAnswer: 2
+        },
+        {
+          id: 3,
+          question: "The notation \\frac{dy}{dx} is used by:",
+          options: ["Leibnitz", "Newton", "Lagrange", "Cauchy"],
+          correctAnswer: 0
+        },
+        {
+          id: 4,
+          question: "The notation f(x) is used by:",
+          options: ["Leibnitz", "Newton", "Lagrange", "Cauchy"],
+          correctAnswer: 2
+        },
+        {
+          id: 5,
+          question: "The notation f'(x) is used by:",
+          options: ["Leibnitz", "Newton", "Lagrange", "Cauchy"],
+          correctAnswer: 2
+        },
+        {
+          id: 6,
+          question: "\\lim_{x \\to a} \\frac{f(x) - f(a)}{x - a} equals:",
+          options: ["f'(x)", "f'(a)", "f(0)", "f(x-a)"],
+          correctAnswer: 1
+        },
+        {
+          id: 7,
+          question: "\\frac{d}{dx} (x^n) = nx^{n-1} is called:",
+          options: ["Power rule", "Product rule", "Quotient rule", "Constant rule"],
+          correctAnswer: 0
+        },
+        {
+          id: 8,
+          question: "\\frac{d}{dx} (\\sin a) = ?",
+          options: ["\\cos a", "a \\cos a", "0", "-a \\cos a"],
+          correctAnswer: 2
+        },
+        {
+          id: 9,
+          question: "\\frac{d}{dx} [f(x) + g(x)] = ?",
+          options: ["f'(x)+g'(x)", "f'(x)-g'(x)", "f(x)g'(x)+f'(x)g(x)", "f(x)g'(x)-f'(x)g(x)"],
+          correctAnswer: 0
+        },
+        {
+          id: 10,
+          question: "[f(x)g(x)]' = ?",
+          options: ["f'(x)+g'(x)", "f'(x)-g'(x)", "f(x)g'(x)+f'(x)g(x)", "f(x)g'(x)-f'(x)g(x)"],
+          correctAnswer: 2
+        },
+        {
+          id: 11,
+          question: "\\frac{d}{dx} (\\frac{1}{g(x)}) = ?",
+          options: ["1/g(x)^2", "1/g'(x)", "g'(x)/g(x)^2", "-g'(x)/g(x)^2"],
+          correctAnswer: 3
+        },
+        {
+          id: 12,
+          question: "(f \\circ g)'(x) = ?",
+          options: ["f' g'", "f'(g(x))", "f'(g(x)) g'(x)", "cannot be calculated"],
+          correctAnswer: 2
+        },
+        {
+          id: 13,
+          question: "\\frac{d}{dx} \\sec^{-1}x = ?",
+          options: ["\\frac{1}{|x|\\sqrt{x^2-1}}", "-\\frac{1}{|x|\\sqrt{x^2-1}}", "\\frac{1}{|x|\\sqrt{1+x^2}}", "-\\frac{1}{|x|\\sqrt{1+x^2}}"],
+          correctAnswer: 0
+        },
+        {
+          id: 14,
+          question: "The function f(x)=a^x is called:",
+          options: ["Exponential", "Logarithmic", "Algebraic", "Composite"],
+          correctAnswer: 0
+        },
+        {
+          id: 15,
+          question: "\\log_a a = ?",
+          options: ["1", "a", "a^2", "not defined"],
+          correctAnswer: 0
+        },
+        {
+          id: 16,
+          question: "\\frac{d}{dx} (\\log_{10}x) = ?",
+          options: ["1/x \\log 10", "1/(x \\ln 10)", "\\ln x/x \\ln x", "\\ln 10/x \\ln x"],
+          correctAnswer: 1
+        },
+        {
+          id: 17,
+          question: "\\frac{d}{dx} \\ln[f(x)] = ?",
+          options: ["f'(x)", "\\ln f'(x)", "f'(x)/f(x)", "f(x)f'(x)"],
+          correctAnswer: 2
+        },
+        {
+          id: 18,
+          question: "y = \\tanh^{-1}x is valid when:",
+          options: ["x \\in R", "x \\in (-1,1)", "x \\in [-1,1]", "x>0"],
+          correctAnswer: 1
+        },
+        {
+          id: 19,
+          question: "y = \\sinh^{-1}(ax+b), \\frac{dy}{dx} = ?",
+          options: ["\\cosh^{-1}(ax+b)", "\\frac{1}{\\sqrt{1+(ax+b)^2}}", "\\frac{a}{\\sqrt{1+(ax+b)^2}}", "a \\cosh^{-1}(ax+b)"],
+          correctAnswer: 2
+        },
+        {
+          id: 20,
+          question: "If y = e^{-ax} then \\frac{dy}{dx} = ?",
+          options: ["-ae^{-ax}", "-a^2e^{-ax}", "a^2e^{-ax}", "a^2e^{ax}"],
+          correctAnswer: 0
+        },
+        {
+          id: 21,
+          question: "f(x)=\\sin x is:",
+          options: ["Linear", "Odd", "Even", "Identity"],
+          correctAnswer: 1
+        },
+        {
+          id: 22,
+          question: "\\frac{d}{dx} (\\cos x) = ?",
+          options: ["\\sin x", "-\\sin x", "\\cos x", "-\\cos x"],
+          correctAnswer: 1
+        },
+        {
+          id: 23,
+          question: "At x=0, f(x)=1-x^3 has:",
+          options: ["Maximum", "Minimum", "Point of inflection", "No conclusion"],
+          correctAnswer: 2
+        },
+        {
+          id: 24,
+          question: "If f'(c)=0 and f''(c)<0 then f has:",
+          options: ["Maximum", "Minimum", "Inflection", "None"],
+          correctAnswer: 0
+        },
+        {
+          id: 25,
+          question: "\\frac{d}{dx} (x^{-2}) = ?",
+          options: ["-2x^3", "-2x^2", "-2x^{-3}", "-2x"],
+          correctAnswer: 2
+        },
+        {
+          id: 26,
+          question: "\\frac{d}{dx} (\\cos^{-1}x) = ?",
+          options: ["\\frac{1}{\\sqrt{1-x^2}}", "-\\frac{1}{\\sqrt{x^2-1}}", "\\frac{1}{\\sqrt{x^2-1}}", "-\\frac{1}{\\sqrt{1-x^2}}"],
+          correctAnswer: 3
+        },
+        {
+          id: 27,
+          question: "f(x)=ax^2+bx+c has minimum if:",
+          options: ["a>0", "a<0", "a=0", "a=-1"],
+          correctAnswer: 0
+        },
+        {
+          id: 28,
+          question: "Derivative of y=4x^4-3/x^3+2/x^2 is:",
+          options: ["16x^3+9/x^4-4/x^3", "3x^3+2x^2", "3x^3", "None"],
+          correctAnswer: 0
+        },
+        {
+          id: 29,
+          question: "If f'(x)=0 and f''(x) \\leq 0 then point is:",
+          options: ["Maximum", "Minimum", "Inflection", "None"],
+          correctAnswer: 0
+        },
+        {
+          id: 30,
+          question: "If f(x)=x^4+2x^3+x^2 then f'(0)=?",
+          options: ["1", "0", "-4", "2"],
+          correctAnswer: 1
+        },
+        {
+          id: 31,
+          question: "A point where f'(x)=0 is called:",
+          options: ["Stationary point", "Corner point", "Concurrent point", "Common point"],
+          correctAnswer: 0
+        }
+      ],
+      intermediate: [
+        {
+          id: 1,
+          question: "y = \\cosh^{-1}(\\sec x), \\frac{dy}{dx} = ?",
+          options: ["\\cos x", "\\sec x", "-\\sin(\\sec x)", "-\\tanh^{-1}(\\sec x) \\cdot \\tan x"],
+          correctAnswer: 3
+        },
+        {
+          id: 2,
+          question: "If y = e^{-ax}, then y'' = ?",
+          options: ["-ae^{-ax}", "-a^2e^{-ax}", "a^2e^{-ax}", "a^2e^{ax}"],
+          correctAnswer: 2
+        },
+        {
+          id: 3,
+          question: "If y = \\cos(ax + b), then y'' = ?",
+          options: ["a^2 \\sin(ax+b)", "-a^2 \\sin(ax+b)", "-a^2 \\cos(ax+b)", "a^2 \\cos(ax+b)"],
+          correctAnswer: 2
+        },
+        {
+          id: 4,
+          question: "Maclaurin series is a special case of:",
+          options: ["Taylor series", "Power series", "Convergent series", "Geometric series"],
+          correctAnswer: 0
+        },
+        {
+          id: 5,
+          question: "1 - x + x^2 - x^3 + \\dots equals:",
+          options: ["1/(1-x)", "1/(1+x)", "-1/(1+x)", "1/(x-1)"],
+          correctAnswer: 1
+        },
+        {
+          id: 6,
+          question: "\\frac{dy}{dx} at (x_1,y_1) represents:",
+          options: ["Increment", "Slope of tangent", "Slope of normal", "Horizontal slope"],
+          correctAnswer: 1
+        },
+        {
+          id: 7,
+          question: "A function is increasing if:",
+          options: [
+            "f(x_2) > f(x_1) \\text{ when } x_2 > x_1",
+            "f(x_2) > f(x_1) \\text{ when } x_2 < x_1",
+            "f(x_2) < f(x_1) \\text{ when } x_2 > x_1",
+            "f(x_2) < f(x_1) \\text{ when } x_2 < x_1"
+          ],
+          correctAnswer: 0
+        },
+        {
+          id: 8,
+          question: "If f is increasing, slope of tangent is:",
+          options: ["Positive", "Negative", "Zero", "Undefined"],
+          correctAnswer: 0
+        },
+        {
+          id: 9,
+          question: "A point where first derivative is zero is called:",
+          options: ["Stationary point", "Corner point", "Concurrency point", "Common point"],
+          correctAnswer: 0
+        },
+        {
+          id: 10,
+          question: "Maximum value of f(x)=x^2-x-2 is:",
+          options: ["-9/2", "-9/4", "-1", "0"],
+          correctAnswer: 1
+        },
+        {
+          id: 11,
+          question: "\\frac{d}{dx} (10 \\sin x) = ?",
+          options: ["10 \\cos x", "10^{\\sin x} \\cos x \\ln 10", "10^{\\sin x} \\ln 10", "10 \\cos x \\ln 10"],
+          correctAnswer: 1
+        },
+        {
+          id: 12,
+          question: "If f(x)=x^3+2x+9, then f'''(x)=?",
+          options: ["3x^2+2", "3x^2", "6x", "2x"],
+          correctAnswer: 2
+        },
+        {
+          id: 13,
+          question: "At x=0, f(x)=1-x^3 has:",
+          options: ["Maximum", "Minimum", "Point of inflection", "No conclusion"],
+          correctAnswer: 2
+        },
+        {
+          id: 14,
+          question: "If y = \\sin \\sqrt{x}, then \\frac{dy}{dx} = ?",
+          options: ["\\frac{\\cos \\sqrt{x}}{2\\sqrt{x}}", "\\frac{\\cos \\sqrt{x}}{\\sqrt{x}}", "\\cos x \\sqrt{x}", "\\frac{\\cos x}{2\\sqrt{x}}"],
+          correctAnswer: 0
+        },
+        {
+          id: 15,
+          question: "If f'(c)=0 and f''(c)>0 then f has:",
+          options: ["Maximum", "Minimum", "Inflection", "None"],
+          correctAnswer: 1
+        },
+        {
+          id: 16,
+          question: "\\frac{d}{dx} (\\frac{1}{\\cot x}) = ?",
+          options: ["\\text{cosec}^2x", "\\sec^2x", "-\\sec^2x", "-\\text{cosec}^2x"],
+          correctAnswer: 1
+        },
+        {
+          id: 17,
+          question: "\\frac{d}{dx} (e^{\\tan x}) = ?",
+          options: ["e^{\\tan x} \\sec^2x", "e^{\\tan x}", "e^{\\tan x} \\ln \\sec^2x", "e^{\\tan x} \\ln \\tan x"],
+          correctAnswer: 0
+        },
+        {
+          id: 18,
+          question: "x^3 \\frac{d}{dx} (\\ln 2x) = ?",
+          options: ["x^3", "x^2", "3x^2", "6x^2"],
+          correctAnswer: 1
+        },
+        {
+          id: 19,
+          question: "\\frac{d}{dx} (5^{x^3}) = ?",
+          options: ["5^{x^3}/\\ln 5", "\\ln 5/5^{x^3}", "5^{x^3} \\ln 5", "3x^2 \\cdot 5^{x^3} \\ln 5"],
+          correctAnswer: 3
+        },
+        {
+          id: 20,
+          question: "If y=e^{2x}, then y^{(4)} = ?",
+          options: ["16e^{2x}", "8e^{2x}", "4e^{2x}", "2e^{2x}"],
+          correctAnswer: 0
+        },
+        {
+          id: 21,
+          question: "\\frac{d}{dx} (\\text{cosec } x) = ?",
+          options: ["\\text{cosec } x \\cot x", "\\text{cosec } x \\tan x", "-\\text{cosec } x \\cot x", "\\tan x"],
+          correctAnswer: 2
+        },
+        {
+          id: 22,
+          question: "If f'(c)=0 and f''(c)<0 then f has:",
+          options: ["Maximum", "Minimum", "Inflection", "None"],
+          correctAnswer: 0
+        },
+        {
+          id: 23,
+          question: "A point where f'(x)=0 is called:",
+          options: ["Critical point", "Stationary point", "Maximum point", "Minimum point"],
+          correctAnswer: 1
+        },
+        {
+          id: 24,
+          question: "\\frac{d}{dx} (x^{-2}) = ?",
+          options: ["-2x^3", "-2x^2", "-2x^{-3}", "-2x"],
+          correctAnswer: 2
+        },
+        {
+          id: 25,
+          question: "\\lim_{\\Delta x \\to \\infty} \\frac{|\\Delta x|}{\\Delta x} equals:",
+          options: ["1", "Does not exist", "-1", "0"],
+          correctAnswer: 0
+        },
+        {
+          id: 26,
+          question: "Derivative of y=4x^4-3/x^3+2/x^2 is:",
+          options: ["16x^3+9/x^4-4/x^3", "3x^3+2x^2", "3x^3", "None"],
+          correctAnswer: 0
+        },
+        {
+          id: 27,
+          question: "If f'(x)=0 and f''(x) \\leq 0 then point is:",
+          options: ["Relative maxima", "Relative minima", "Inflection", "None"],
+          correctAnswer: 0
+        },
+        {
+          id: 28,
+          question: "Average rate of change of f is:",
+          options: ["Derivative", "Differential", "Average slope", "Instantaneous change"],
+          correctAnswer: 2
+        },
+        {
+          id: 29,
+          question: "If f(x)=x^4+2x^3+x^2 then f'(0)=?",
+          options: ["1", "0", "-4", "2"],
+          correctAnswer: 1
+        },
+        {
+          id: 30,
+          question: "(f \\circ g)'(x) = ?",
+          options: ["f'(x)g'(x)", "f \\circ g'(x)", "f'(g(x))g'(x)", "f'(g'(x))"],
+          correctAnswer: 2
+        },
+        {
+          id: 31,
+          question: "If y=\\sin^{-1}(x^3), \\frac{dy}{dx} = ?",
+          options: [
+            "\\frac{1}{\\sqrt{1+x^2}}",
+            "\\frac{3x^2}{\\sqrt{1+x^3}}",
+            "\\frac{1}{\\sqrt{1+x^6}}",
+            "\\frac{3x^2}{\\sqrt{1+x^6}}"
+          ],
+          correctAnswer: 3
+        }
+      ],
+      advanced: [
+        {
+          id: 1,
+          question: "Taylor series expansion of f(x+h) is:",
+          options: ["Power series", "Maclaurin series", "Taylor series", "All of these"],
+          correctAnswer: 2
+        },
+        {
+          id: 2,
+          question: "If f'(x)>0 at x=c, then f is:",
+          options: ["Increasing", "Decreasing", "Constant", "One-one"],
+          correctAnswer: 0
+        },
+        {
+          id: 3,
+          question: "If f'(x)<0 at x=c, then f is:",
+          options: ["Increasing", "Decreasing", "Constant", "One-one"],
+          correctAnswer: 1
+        },
+        {
+          id: 4,
+          question: "If f''(x)=0 at x=c, then f is:",
+          options: ["Increasing", "Decreasing", "Constant", "One-one"],
+          correctAnswer: 2
+        },
+        {
+          id: 5,
+          question: "A point where f is neither increasing nor decreasing is:",
+          options: ["Stationary", "Turning", "Critical", "Inflection"],
+          correctAnswer: 0
+        },
+        {
+          id: 6,
+          question: "A stationary point which is max or min is called:",
+          options: ["Stationary", "Turning", "Critical", "Inflection"],
+          correctAnswer: 1
+        },
+        {
+          id: 7,
+          question: "If f'(c)=0 or undefined, c is called:",
+          options: ["Stationary value", "Turning value", "Critical value", "Inflection value"],
+          correctAnswer: 2
+        },
+        {
+          id: 8,
+          question: "If f'(x) does not change sign at c, then point is:",
+          options: ["Stationary", "Turning", "Critical", "Inflection"],
+          correctAnswer: 3
+        },
+        {
+          id: 9,
+          question: "If f'(x) changes from + to - at c, then f has:",
+          options: ["Maximum", "Minimum", "Inflection", "None"],
+          correctAnswer: 0
+        },
+        {
+          id: 10,
+          question: "If f'(x) changes from - to + at c, then f has:",
+          options: ["Maximum", "Minimum", "Inflection", "None"],
+          correctAnswer: 1
+        },
+        {
+          id: 11,
+          question: "If f'(x) does not change sign at c, then f has:",
+          options: ["Maximum", "Minimum", "Inflection", "None"],
+          correctAnswer: 2
+        },
+        {
+          id: 12,
+          question: "If f(x)=e^{\\sqrt{x}-1} then f'(0) = ?",
+          options: ["e-1", "e", "\\infty", "1/2"],
+          correctAnswer: 2
+        },
+        {
+          id: 13,
+          question: "\\frac{d}{dx} (\\tan^{-1}x - \\cot^{-1}x) = ?",
+          options: ["\\frac{2}{\\sqrt{1+x^2}}", "\\frac{2}{1+x^2}", "0", "-\\frac{2}{1+x^2}"],
+          correctAnswer: 2
+        },
+        {
+          id: 14,
+          question: "If f(1/x)=\\tan x then f'(1/\\pi)=?",
+          options: ["\\pi^2", "-\\pi^2", "1", "-1/\\pi^2"],
+          correctAnswer: 0
+        },
+        {
+          id: 15,
+          question: "\\lim_{h \\to 0} \\frac{f(a+h)-f(a)}{h} = ?",
+          options: ["0", "f(a)", "f(h)", "f'(a)"],
+          correctAnswer: 3
+        },
+        {
+          id: 16,
+          question: "Critical point of f(x)=1/x is:",
+          options: ["0", "1", "-1", "No point"],
+          correctAnswer: 3
+        },
+        {
+          id: 17,
+          question: "If f is continuous on (x,x_1), then (f(x_1)-f(x))/(x_1-x) is:",
+          options: ["Derivative", "Differential", "Average rate", "Instantaneous change"],
+          correctAnswer: 2
+        },
+        {
+          id: 18,
+          question: "If limit of (f(x_1)-f(x))/(x_1-x) exists, it is:",
+          options: ["Derivative", "Differential", "Average rate", "Actual change"],
+          correctAnswer: 0
+        },
+        {
+          id: 19,
+          question: "If y=\\sin^{-1}(x^3), \\frac{dy}{dx} equals:",
+          options: ["\\frac{1}{\\sqrt{1+x^2}}", "\\frac{3x^2}{\\sqrt{1+x^3}}", "\\frac{1}{\\sqrt{1+x^6}}", "\\frac{3x^2}{\\sqrt{1+x^6}}"],
+          correctAnswer: 3
+        },
+        {
+          id: 20,
+          question: "If f'(x)>0 at x=c, f is:",
+          options: ["Increasing", "Decreasing", "Constant", "One-one"],
+          correctAnswer: 0
+        },
+        {
+          id: 21,
+          question: "If f'(x)<0 at x=c, f is:",
+          options: ["Increasing", "Decreasing", "Constant", "One-one"],
+          correctAnswer: 1
+        },
+        {
+          id: 22,
+          question: "If f''(x)=0 at x=c, f is:",
+          options: ["Increasing", "Decreasing", "Constant", "One-one"],
+          correctAnswer: 2
+        },
+        {
+          id: 23,
+          question: "Stationary point where slope is zero but no max/min is:",
+          options: ["Stationary", "Turning", "Critical", "Inflection"],
+          correctAnswer: 3
+        },
+        {
+          id: 24,
+          question: "Every stationary point is also a:",
+          options: ["Turning point", "Critical point", "Inflection", "Max point"],
+          correctAnswer: 1
+        },
+        {
+          id: 25,
+          question: "If f'(x)=0 and sign changes, point is:",
+          options: ["Inflection", "Critical", "Turning", "Stationary"],
+          correctAnswer: 2
+        },
+        {
+          id: 26,
+          question: "If f'(x)=0 and no sign change, point is:",
+          options: ["Maximum", "Minimum", "Inflection", "None"],
+          correctAnswer: 2
+        },
+        {
+          id: 27,
+          question: "Relative maxima occurs when f'(x) changes:",
+          options: ["+ to -", "- to +", "No change", "Undefined"],
+          correctAnswer: 0
+        },
+        {
+          id: 28,
+          question: "Relative minima occurs when f'(x) changes:",
+          options: ["+ to -", "- to +", "No change", "Undefined"],
+          correctAnswer: 1
+        },
+        {
+          id: 29,
+          question: "If f'(c) undefined, c is:",
+          options: ["Stationary", "Turning", "Critical", "Inflection"],
+          correctAnswer: 2
+        },
+        {
+          id: 30,
+          question: "If f'(x)=0 everywhere, f is:",
+          options: ["Increasing", "Decreasing", "Constant", "One-one"],
+          correctAnswer: 2
+        },
+        {
+          id: 31,
+          question: "Derivative represents:",
+          options: ["Average change", "Instant change", "Slope", "All of these"],
+          correctAnswer: 3
+        }
+      ]
+    },
+    unit3: {
+      basic: [
+        {
+          id: 1,
+          question: "If y = f(x), then the differential of y is:",
+          options: ["dy = f'(x)", "dy = f'(x) dx", "dy = f(x) dx", "dy/dx"],
+          correctAnswer: 1
+        },
+        {
+          id: 2,
+          question: "If \\int f(x) \\, dx = \\phi(x) + c, then f(x) is called:",
+          options: ["Integral", "Differential", "Derivative", "Integrand"],
+          correctAnswer: 3
+        },
+        {
+          id: 3,
+          question: "\\int x^n \\, dx = \\frac{x^{n+1}}{n+1} is true for all values of n except:",
+          options: ["n = 0", "n = 1", "n = -1", "n = any fractional value"],
+          correctAnswer: 2
+        },
+        {
+          id: 4,
+          question: "\\int \\cos x \\, dx =",
+          options: ["-\\sin x + c", "\\sin x + c", "-\\cos x + c", "\\cos x + c"],
+          correctAnswer: 1
+        },
+        {
+          id: 5,
+          question: "\\int \\frac{1}{ax+b} \\, dx equals:",
+          options: ["-\\frac{1}{a} \\ln|ax+b|", "\\ln|ax+b|", "\\frac{1}{a} \\ln|ax+b|", "\\ln|x+b|"],
+          correctAnswer: 2
+        },
+        {
+          id: 6,
+          question: "\\int \\sin 3x \\, dx is equal to:",
+          options: ["\\frac{\\cos 3x}{3} + c", "-\\frac{\\cos 3x}{3} + c", "3 \\cos 3x + c", "-3 \\cos 3x"],
+          correctAnswer: 1
+        },
+        {
+          id: 7,
+          question: "\\int \\frac{1}{x} \\, dx \\text{ as } x \\to \\infty equals:",
+          options: ["0", "1", "\\infty", "Undefined"],
+          correctAnswer: 0
+        },
+        {
+          id: 8,
+          question: "\\int 2x \\, dx is equal to:",
+          options: ["x + c", "2 + c", "x^2 + c", "\\frac{x^2}{2} + c"],
+          correctAnswer: 2
+        },
+        {
+          id: 9,
+          question: "The inverse of \\int \\dots \\, dx is:",
+          options: ["d/dx", "dx", "d/dy", "dx/dy"],
+          correctAnswer: 0
+        },
+        {
+          id: 10,
+          question: "\\int \\frac{1}{1+x^2} \\, dx =",
+          options: ["\\tan^{-1} x + c", "\\sin^{-1} x + c", "\\cot^{-1} x + c", "\\cos^{-1} x + c"],
+          correctAnswer: 0
+        },
+        {
+          id: 11,
+          question: "If a > 0 and a \\neq 1, then \\int a^x \\, dx =",
+          options: ["a^x + c", "a^x \\ln a + c", "\\frac{a^x}{\\ln a} + c", "\\frac{a^{x+1}}{x+1} + c"],
+          correctAnswer: 2
+        },
+        {
+          id: 12,
+          question: "\\int \\frac{1}{x\\sqrt{x^2-1}} \\, dx =",
+          options: ["\\sec^{-1} x + c", "\\tan^{-1} x + c", "\\cot^{-1} x + c", "\\sin^{-1} x + c"],
+          correctAnswer: 0
+        },
+        {
+          id: 13,
+          question: "\\int \\sin(ax+b) \\, dx =",
+          options: ["-\\frac{1}{a} \\cos(ax+b)", "\\frac{1}{a} \\cos(ax+b)", "a \\cos(ax+b)", "-a \\cos(ax+b)"],
+          correctAnswer: 0
+        },
+        {
+          id: 14,
+          question: "\\int e^x \\, dx =",
+          options: ["e^x + c", "xe^x + c", "e^{x+1} + c", "\\ln x + c"],
+          correctAnswer: 0
+        },
+        {
+          id: 15,
+          question: "\\int \\frac{1}{x^2} \\, dx \\text{ as } x \\to \\infty equals:",
+          options: ["0", "1", "\\infty", "Undefined"],
+          correctAnswer: 0
+        }
+      ],
+      intermediate: [
+        {
+          id: 1,
+          question: "If n \\neq -1, then \\int (ax+b)^n \\, dx =",
+          options: ["n(ax+b)^{n-1}/a", "(ax+b)^{n+1}/n", "(ax+b)^{n+1}/(n+1)", "\\frac{(ax+b)^{n+1}}{a(n+1)}"],
+          correctAnswer: 3
+        },
+        {
+          id: 2,
+          question: "The equation y = x^2 - 2x + c represents (c being a parameter):",
+          options: ["One parabola", "Family of parabolas", "Family of lines", "Two parabolas"],
+          correctAnswer: 1
+        },
+        {
+          id: 3,
+          question: "\\int e^{\\sin(x)} \\cos x \\, dx =",
+          options: ["e^{\\sin(x)}", "e^{\\cos(x)}", "e^{\\sin(x)}/\\sin x", "e^{\\sin(x)}/\\cos x"],
+          correctAnswer: 0
+        },
+        {
+          id: 4,
+          question: "\\int (2x+3)^{1/2} \\, dx =",
+          options: ["\\frac{1}{3} (2x+3)^{3/2}", "\\frac{1}{3} (2x+3)^{-1/2}", "\\frac{1}{3} (2x+3)", "None"],
+          correctAnswer: 0
+        },
+        {
+          id: 5,
+          question: "\\int_1^a a^x \\, dx =",
+          options: ["(a^2-a) \\ln a", "\\frac{a^2-a}{\\ln a}", "\\frac{a^2-a}{\\log a}", "(a^2-a) \\ln a"],
+          correctAnswer: 1
+        },
+        {
+          id: 6,
+          question: "\\int \\frac{e^{\\tan^{-1}(x)}}{1+x^2} \\, dx =",
+          options: ["e^{\\tan(x)} + c", "1/e \\tan^{-1} x + c", "x e^{\\tan^{-1} x} + c", "e^{\\tan^{-1} x} + c"],
+          correctAnswer: 3
+        },
+        {
+          id: 7,
+          question: "If \\int_0^1 f(x)dx=5 \\text{ and } \\int_0^1 g(x)dx=4, \\text{ then } \\int_0^1 [3f(x) - 2g(x)]dx =",
+          options: ["7", "9", "12", "8"],
+          correctAnswer: 0
+        },
+        {
+          id: 8,
+          question: "\\int \\frac{f'(x)}{f(x)} \\, dx =",
+          options: ["\\ln x", "\\ln f(x)", "\\ln f'(x)", "f'(x) \\ln f(x)"],
+          correctAnswer: 1
+        },
+        {
+          id: 9,
+          question: "\\int \\frac{1}{x \\ln x} \\, dx =",
+          options: ["\\ln x + c", "x + c", "\\ln(\\ln x) + c", "\\ln(\\ln(\\ln x)) + c"],
+          correctAnswer: 2
+        },
+        {
+          id: 10,
+          question: "\\int \\sec x \\, dx =",
+          options: ["\\ln(\\sec x + \\tan x) + c", "\\ln(\\csc x - \\cot x) + c", "\\ln(\\sec x - \\tan x) + c", "-\\ln(\\csc x - \\cot x) + c"],
+          correctAnswer: 0
+        },
+        {
+          id: 11,
+          question: "\\int_0^{\\pi/2} \\sin x \\, dx =",
+          options: ["-2", "0", "2", "1"],
+          correctAnswer: 3
+        },
+        {
+          id: 12,
+          question: "\\int \\frac{x+2}{x+1} \\, dx =",
+          options: ["\\ln(x+1)", "\\ln(x+1)-x", "x + \\ln(x+1)", "None"],
+          correctAnswer: 2
+        },
+        {
+          id: 13,
+          question: "\\int \\sin^3 x \\cos x \\, dx =",
+          options: ["\\sin^3 x / 3", "1/4 \\sin^4 x", "-1/4 \\sin^4 x", "\\sin^4 x"],
+          correctAnswer: 1
+        },
+        {
+          id: 14,
+          question: "\\int_0^3 \\frac{dx}{x^2+9} =",
+          options: ["\\pi/4", "\\pi/12", "\\pi/2", "None"],
+          correctAnswer: 1
+        },
+        {
+          id: 15,
+          question: "\\int_{-1}^1 |x| \\, dx =",
+          options: ["1/2", "1", "2", "1/2"],
+          correctAnswer: 1
+        },
+        {
+          id: 16,
+          question: "\\int_0^{\\pi/6} \\cos t \\, dt =",
+          options: ["\\sqrt{3}/2 - 1/2", "1/2", "\\sqrt{3}/2", "None"],
+          correctAnswer: 1
+        },
+        {
+          id: 17,
+          question: "If \\int_{-2}^1 f(x) \\, dx = 5 \\text{ and } \\int_{-2}^1 g(x) \\, dx = 4, \\text{ then } \\int_{-2}^1 [2f(x) + 3g(x)] \\, dx =",
+          options: ["20", "23", "9", "22"],
+          correctAnswer: 3
+        },
+        {
+          id: 18,
+          question: "\\int_0^1 (4x+k) \\, dx = 2, \\text{ then } k =",
+          options: ["8", "-4", "0", "-2"],
+          correctAnswer: 2
+        },
+        {
+          id: 19,
+          question: "\\int_{-\\pi}^\\pi \\sin x \\, dx =",
+          options: ["2", "-2", "0", "-1"],
+          correctAnswer: 2
+        },
+        {
+          id: 20,
+          question: "\\int_0^{\\pi/3} \\cos t \\, dt =",
+          options: ["\\sqrt{3}/2", "1/2", "1", "None"],
+          correctAnswer: 0
+        }
+      ],
+      advanced: [
+        {
+          id: 1,
+          question: "\\int e^{f(x)} f'(x) \\, dx =",
+          options: ["\\ln f(x) + c", "e^{f(x)} + c", "\\ln f'(x) + c", "e^{f'(x)} + c"],
+          correctAnswer: 1
+        },
+        {
+          id: 2,
+          question: "\\int \\frac{\\cos x}{\\sin x \\cdot \\ln \\sin x} \\, dx =",
+          options: ["\\ln(\\ln \\cos x) + c", "\\ln(\\ln \\sin x) + c", "\\ln \\sin x + c", "\\ln \\cos x + c"],
+          correctAnswer: 1
+        },
+        {
+          id: 3,
+          question: "The solution of the differential equation \\frac{dy}{dx} = \\sec^2 x is:",
+          options: ["y = \\cos x + c", "y = \\tan x + c", "y = \\sin x + c", "y = \\cot x + c"],
+          correctAnswer: 1
+        },
+        {
+          id: 4,
+          question: "\\int e^{ax} \\sin bx \\, dx =",
+          options: [
+            "\\frac{e^{ax}}{a^2+b^2} (a \\sin bx - b \\cos bx) + c",
+            "\\frac{e^{ax}}{a^2+b^2} (b \\sin bx + a \\cos bx)",
+            "\\frac{e^{ax}}{a^2+b^2} (a \\sin bx + b \\cos bx)",
+            "\\frac{e^{ax}}{a^2+b^2} (b \\sin bx - a \\cos bx)"
+          ],
+          correctAnswer: 0
+        },
+        {
+          id: 5,
+          question: "In \\int (x^2-a^2)^{1/2} \\, dx, the suitable substitution is:",
+          options: ["x = a \\tan \\theta", "x = a \\sec \\theta", "x = a \\sin \\theta", "x = 2a \\sin \\theta"],
+          correctAnswer: 1
+        },
+        {
+          id: 6,
+          question: "\\int x \\cos x \\, dx =",
+          options: ["\\sin x + \\cos x", "\\cos x - \\sin x", "x \\sin x + \\cos x", "None"],
+          correctAnswer: 2
+        },
+        {
+          id: 7,
+          question: "The solution of the differential equation \\frac{dv}{dt} = 2t - 7 is:",
+          options: ["v = t^2-7t+c", "v = t^2+7t+c", "v = t-7t^2/2+c", "v = t^2-7t+c"],
+          correctAnswer: 0
+        },
+        {
+          id: 8,
+          question: "The suitable substitution for \\int \\sqrt{2ax-x^2} \\, dx is:",
+          options: ["x-a = a \\cos \\theta", "x-a = a \\sin \\theta", "x+a = a \\sin \\theta", "x+a = a \\cos \\theta"],
+          correctAnswer: 1
+        },
+        {
+          id: 9,
+          question: "\\int u \\, dv equals:",
+          options: ["v \\, du - \\int vu", "uv + \\int v \\, du", "uv - \\int v \\, du", "u \\, du + \\int v \\, du"],
+          correctAnswer: 2
+        },
+        {
+          id: 10,
+          question: "The general solution of \\frac{dy}{dx} = -\\frac{y}{x} is:",
+          options: ["x/y = c", "y/x = c", "xy = c", "x^2y^2 = c"],
+          correctAnswer: 2
+        },
+        {
+          id: 11,
+          question: "\\int x e^x \\, dx =",
+          options: ["x e^x + x", "x e^x - e^x", "e^x - x", "None"],
+          correctAnswer: 1
+        },
+        {
+          id: 12,
+          question: "The solution of \\frac{dy}{dx} = -y is:",
+          options: ["y = ce^{-x}", "y = ce^x", "xy = c", "None"],
+          correctAnswer: 0
+        },
+        {
+          id: 13,
+          question: "\\int f(x) g'(x) \\, dx =",
+          options: ["f(x)g(x) - \\int g(x)f'(x)dx", "f(x)g(x) + \\int g(x)f'(x)dx", "f(x)g'(x) - \\int g(x)f(x)dx", "f(x)g'(x) + \\int g(x)f(x)dx"],
+          correctAnswer: 0
+        },
+        {
+          id: 14,
+          question: "\\int e^x [1/x + \\ln x] \\, dx =",
+          options: ["e^x/x", "-e^x/x", "e^x \\ln x", "-e^x \\ln x"],
+          correctAnswer: 2
+        },
+        {
+          id: 15,
+          question: "If \\frac{d}{dx} [\\frac{x}{1+2x}] = \\frac{1}{(2x+1)^2}, \\text{ then } \\int_1^2 \\frac{1}{(2x+1)^2} \\, dx =",
+          options: ["9/2", "-9/2", "1/9", "2/9"],
+          correctAnswer: 3
+        },
+        {
+          id: 16,
+          question: "\\int e^{\\sec x} \\cdot \\sec x \\tan x \\, dx =",
+          options: ["e^{\\sec x} + c", "-e^{\\sec x} + c", "e^{\\sec x} \\tan x + c", "None"],
+          correctAnswer: 0
+        },
+        {
+          id: 17,
+          question: "The solution of \\frac{dy}{dx} = \\frac{1}{\\sqrt{1-x^2}} is:",
+          options: ["y = \\sin^{-1} x + c", "y = \\cos^{-1} x + c", "y = \\tan^{-1} x + c", "None"],
+          correctAnswer: 0
+        },
+        {
+          id: 18,
+          question: "\\int e^x (1/x - 1/x^2) \\, dx =",
+          options: ["e^x/x", "-e^x/x", "e^x \\ln x", "-e^x/x^2"],
+          correctAnswer: 0
+        }
+      ]
+    },
+    unit4: {
+      basic: [
+        {
+          id: 1,
+          question: "If x < 0, y < 0 then the point P(x, y) lies in which quadrant?",
+          options: ["I", "II", "III", "IV"],
+          correctAnswer: 2
+        },
+        {
+          id: 2,
+          question: "The point corresponding to the ordered pair (x, y) is called:",
+          options: ["graph of (x, y)", "mid-point", "abscissa", "ordinate"],
+          correctAnswer: 0
+        },
+        {
+          id: 3,
+          question: "If x < 0, y > 0 then P(-x, -y) lies in which quadrant?",
+          options: ["I", "II", "III", "IV"],
+          correctAnswer: 3
+        },
+        {
+          id: 4,
+          question: "A line passing through a vertex and midpoint of opposite side is called:",
+          options: ["median", "altitude", "perpendicular bisector", "normal"],
+          correctAnswer: 0
+        },
+        {
+          id: 5,
+          question: "A line passing through a vertex and perpendicular to opposite side is called:",
+          options: ["median", "altitude", "perpendicular bisector", "normal"],
+          correctAnswer: 1
+        },
+        {
+          id: 6,
+          question: "Point where medians of a triangle intersect is called:",
+          options: ["centroid", "centre", "orthocentre", "circumcentre"],
+          correctAnswer: 0
+        },
+        {
+          id: 7,
+          question: "Point where altitudes of a triangle intersect is called:",
+          options: ["centroid", "centre", "orthocentre", "circumcentre"],
+          correctAnswer: 2
+        },
+        {
+          id: 8,
+          question: "The centroid divides each median in the ratio:",
+          options: ["2:1", "1:2", "1:1", "none"],
+          correctAnswer: 0
+        },
+        {
+          id: 9,
+          question: "Point where angle bisectors of a triangle intersect is called:",
+          options: ["centroid", "incentre", "circumcentre", "orthocentre"],
+          correctAnswer: 1
+        },
+        {
+          id: 10,
+          question: "If x and y have opposite signs, the point lies in quadrants:",
+          options: ["I & II", "I & III", "II & IV", "I & IV"],
+          correctAnswer: 2
+        },
+        {
+          id: 11,
+          question: "Line bisecting 2nd and 4th quadrants has inclination:",
+          options: ["0°", "45°", "135°", "x"],
+          correctAnswer: 2
+        },
+        {
+          id: 12,
+          question: "The line y = x:",
+          options: ["bisects 1st & 3rd quadrants", "parallel to x-axis", "bisects 2nd & 4th", "parallel to y-axis"],
+          correctAnswer: 0
+        },
+        {
+          id: 13,
+          question: "Quadrilateral with all sides equal but angles not 90° is:",
+          options: ["kite", "rhombus", "parallelogram", "trapezium"],
+          correctAnswer: 1
+        },
+        {
+          id: 14,
+          question: "Correct range of inclination \\alpha is:",
+          options: ["0 \\leq \\alpha \\leq \\pi", "\\pi \\leq \\alpha < 2\\pi", "0 < \\alpha < \\pi", "0 \\leq \\alpha < 2\\pi"],
+          correctAnswer: 2
+        },
+        {
+          id: 15,
+          question: "Slope-intercept form is:",
+          options: ["y = mx + c", "y - y_1 = m(x - x_1)", "x/a + y/b = 1", "x \\cos \\alpha + y \\sin \\alpha = p"],
+          correctAnswer: 0
+        },
+        {
+          id: 16,
+          question: "Two-intercepts form of line is:",
+          options: ["y = mx + c", "y - y_1 = m(x - x_1)", "x/a + y/b = 1", "x \\cos \\alpha + y \\sin \\alpha = p"],
+          correctAnswer: 2
+        },
+        {
+          id: 17,
+          question: "Normal form of straight line is:",
+          options: ["y = mx + c", "y - y_1 = m(x - x_1)", "x/a - y/b = 1", "x \\cos \\alpha + y \\sin \\alpha = p"],
+          correctAnswer: 3
+        }
+      ],
+      intermediate: [
+        {
+          id: 1,
+          question: "In x \\cos \\alpha + y \\sin \\alpha = p, p is:",
+          options: ["positive", "negative", "positive or negative", "zero"],
+          correctAnswer: 0
+        },
+        {
+          id: 2,
+          question: "Symmetric form of straight line is:",
+          options: ["point-slope", "normal", "symmetric", "none"],
+          correctAnswer: 2
+        },
+        {
+          id: 3,
+          question: "Slope of ax + by + c = 0 is:",
+          options: ["a/b", "-a/b", "b/a", "-b/a"],
+          correctAnswer: 1
+        },
+        {
+          id: 4,
+          question: "Slope of line perpendicular to ax + by + c = 0 is:",
+          options: ["a/b", "-a/b", "b/a", "-b/a"],
+          correctAnswer: 2
+        },
+        {
+          id: 5,
+          question: "General equation of straight line is:",
+          options: ["ax + by + c = 0", "ax^2 + by + c = 0", "ax + by^2 + c = 0", "ax^2 + by^2 + c = 0"],
+          correctAnswer: 0
+        },
+        {
+          id: 6,
+          question: "x-intercept of 4x + 6y = 12 is:",
+          options: ["4", "6", "3", "2"],
+          correctAnswer: 2
+        },
+        {
+          id: 7,
+          question: "2x + y + 2 = 0 and 6x + 3y - 8 = 0 are:",
+          options: ["parallel", "perpendicular", "neither", "non-coplanar"],
+          correctAnswer: 0
+        },
+        {
+          id: 8,
+          question: "Point (-2, 4) lies \\dots the line 2x + 5y - 3 = 0:",
+          options: ["above", "below", "on", "none"],
+          correctAnswer: 0
+        },
+        {
+          id: 9,
+          question: "Three lines through one point are called:",
+          options: ["parallel", "coincident", "concurrent", "congruent"],
+          correctAnswer: 2
+        },
+        {
+          id: 10,
+          question: "2x + y + k = 0 represents:",
+          options: ["one line", "two lines", "family of lines", "intersecting lines"],
+          correctAnswer: 2
+        },
+        {
+          id: 11,
+          question: "Intersection of sides of a triangle gives:",
+          options: ["vertices", "centre", "midpoints", "centroid"],
+          correctAnswer: 0
+        },
+        {
+          id: 12,
+          question: "Quadrilateral with two parallel sides is:",
+          options: ["square", "rhombus", "trapezium", "parallelogram"],
+          correctAnswer: 2
+        },
+        {
+          id: 13,
+          question: "Equation of vertical line through (-5, 3) is:",
+          options: ["x - 5 = 0", "x + 5 = 0", "y - 3 = 0", "y + 3 = 0"],
+          correctAnswer: 1
+        },
+        {
+          id: 14,
+          question: "Equation of horizontal line through (-5, 5) is:",
+          options: ["x - 5 = 0", "x + 5 = 0", "y - 3 = 0", "y + 3 = 0"],
+          correctAnswer: 2
+        },
+        {
+          id: 15,
+          question: "Slope of y-axis is:",
+          options: ["0", "undefined", "tan 180\\degree", "tan 45\\degree"],
+          correctAnswer: 1
+        },
+        {
+          id: 16,
+          question: "Point lies in 2nd quadrant if:",
+          options: ["x>0,y<0", "x<0,y<0", "x<0,y>0", "x>0,y>0"],
+          correctAnswer: 2
+        },
+        {
+          id: 17,
+          question: "Equation y^2 - 16 = 0 represents lines:",
+          options: ["parallel to x-axis", "parallel to y-axis", "not parallel to x-axis", "not parallel to y-axis"],
+          correctAnswer: 0
+        }
+      ],
+      advanced: [
+        {
+          id: 1,
+          question: "Two lines with slopes m_1 and m_2 are parallel if:",
+          options: ["m_1 = m_2", "m_1m_2 = 1", "m_1m_2 = -1", "m_1 + m_2 = 0"],
+          correctAnswer: 0
+        },
+        {
+          id: 2,
+          question: "Two lines are perpendicular if:",
+          options: ["m_1 = m_2", "m_1 + m_2 = 0", "m_1m_2 = 0", "m_1m_2 = -1"],
+          correctAnswer: 3
+        },
+        {
+          id: 3,
+          question: "Degree of a homogeneous equation must be:",
+          options: ["integer", "positive integer", "rational", "real"],
+          correctAnswer: 1
+        },
+        {
+          id: 4,
+          question: "10x^2 + 3xy + 5y^2 = 0 is homogeneous of degree:",
+          options: ["0", "1", "2", "more than 2"],
+          correctAnswer: 2
+        },
+        {
+          id: 5,
+          question: "Homogeneous equation of 2nd degree represents:",
+          options: ["one line", "two lines", "two lines through origin", "family of lines"],
+          correctAnswer: 2
+        },
+        {
+          id: 6,
+          question: "ax^2 + 2hxy + by^2 = 0 represents real distinct lines if:",
+          options: ["h^2 - ab < 0", "h^2 - ab = 0", "h^2 - ab > 0", "h = 0"],
+          correctAnswer: 2
+        },
+        {
+          id: 7,
+          question: "Lines are coincident if:",
+          options: ["h^2 - ab < 0", "h^2 - ab = 0", "h^2 - ab > 0", "h = 0"],
+          correctAnswer: 1
+        },
+        {
+          id: 8,
+          question: "Lines are imaginary if:",
+          options: ["h^2 - ab < 0", "h^2 - ab = 0", "h^2 - ab > 0", "h = 0"],
+          correctAnswer: 0
+        },
+        {
+          id: 9,
+          question: "Lines represented by ax^2 + 2hxy + by^2 = 0 are perpendicular if:",
+          options: ["a=b", "a=-b", "a<b", "a>b"],
+          correctAnswer: 1
+        },
+        {
+          id: 10,
+          question: "Centroid of triangle with vertices A(-2,3), B(-4,1), C(3,5) is:",
+          options: ["(-1,3)", "(-3,4)", "(1,3)", "none"],
+          correctAnswer: 0
+        },
+        {
+          id: 11,
+          question: "10x^2 - 23xy - 5y^2 = 0 represents:",
+          options: ["circle", "line", "pair of lines", "pair of circles"],
+          correctAnswer: 2
+        },
+        {
+          id: 12,
+          question: "Slope of y-axis is:",
+          options: ["0", "undefined", "1", "-1"],
+          correctAnswer: 1
+        },
+        {
+          id: 13,
+          question: "Perpendicular distance of 3x + 4y + 10 = 0 from origin is:",
+          options: ["0", "1", "2", "3"],
+          correctAnswer: 3
+        }
+      ]
+    },
+    unit5: {
+  basic: [
+    { id: 1, question: "The solution of ax + by \\le c is a:", options: ["Closed half plane", "Open half plane", "Circle", "Parabola"], correctAnswer: 0 },
+    { id: 2, question: "The function which is to be maximized or minimized is called the:", options: ["Bijective function", "Objective function", "Feasible function", "None"], correctAnswer: 1 },
+    { id: 4, question: "x = 4 is a solution of:", options: ["x + 3 > 0", "x - 3 < 0", "x + 3 = 0", "x - 3 = 0"], correctAnswer: 0 },
+    { id: 6, question: "x = 5 is a solution of the inequality:", options: ["2x - 3 > 0", "2x + 3 < 0", "x + 4 < 0", "x < 0"], correctAnswer: 0 },
+    { id: 7, question: "The associated equation of the linear inequality ax + by < c is:", options: ["ax = c", "ax - by = 0", "ax + by = c", "None"], correctAnswer: 2 },
+    { id: 10, question: "All points with x > 0, y > 0 lie in quadrant:", options: ["I", "II", "III", "IV"], correctAnswer: 0 },
+    { id: 12, question: "ax + by < c is a linear inequality in ________ variables.", options: ["One", "Two", "Three", "Four"], correctAnswer: 1 },
+    { id: 14, question: "2x + 3y < 0 is a/an:", options: ["Equation", "Inequality", "Identity", "Not identity"], correctAnswer: 1 },
+    { id: 16, question: "The general form of the equation of a line is:", options: ["ax - by + c = 0", "ax + by - c = 0", "ax + by + c = 0", "ax - by - c = 0"], correctAnswer: 2 },
+    { id: 17, question: "A vertical line divides a plane into:", options: ["Upper & lower half planes", "Upper & right half planes", "Left & right half planes", "Left & lower half planes"], correctAnswer: 2 },
+    { id: 25, question: "The graph of y > 0 consists of the region y > 0 and:", options: ["x-axis", "y-axis", "xy-plane", "None"], correctAnswer: 0 }
+  ],
+  intermediate: [
+    { id: 8, question: "(1, 3) is a solution of:", options: ["x + y > 0", "x + y < 2", "x + y = 2", "x - y = 0"], correctAnswer: 0 },
+    { id: 9, question: "The solution set of the inequality ax + by \\le c is the:", options: ["Half solution", "XY plane", "Open plane", "Boundary of half plane"], correctAnswer: 3 },
+    { id: 11, question: "Each point of a feasible region is called a:", options: ["Feasible solution set", "Feasible solution", "Corner point", "None"], correctAnswer: 1 },
+    { id: 13, question: "A point of a solution region where two of its boundary lines intersect is called a:", options: ["Optimal solution", "Vertex", "Feasible solution", "None"], correctAnswer: 1 },
+    { id: 15, question: "The graph of 3x + 2y > 3 is a/an:", options: ["Closed half plane", "Line only", "Open half plane", "Full plane"], correctAnswer: 2 },
+    { id: 18, question: "The linear inequalities associated with an objective function are called:", options: ["Decision variables", "Problem constraints", "Feasible region", "None"], correctAnswer: 1 },
+    { id: 20, question: "A feasible region is restricted to the ________ quadrant.", options: ["I", "II", "III", "IV"], correctAnswer: 0 },
+    { id: 22, question: "A convex region may be:", options: ["Open", "Bounded", "Closed", "All are true"], correctAnswer: 3 },
+    { id: 24, question: "The interval (-\\\\infty, 2/3) is the solution set of:", options: ["-\\\\infty < x < 3/2", "x > 2/3", "x < 2/3", "None"], correctAnswer: 2 },
+    { id: 28, question: "A test point determines which side of the ________ the half plane lies.", options: ["x-axis", "y-axis", "Boundary line", "None"], correctAnswer: 2 },
+    { id: 29, question: "The corresponding equation of x - 2y \\le 6 intersects the y-axis at:", options: ["(0, 3)", "(0, -3)", "(6, 0)", "(0, 6)"], correctAnswer: 1 },
+    { id: 31, question: "The inequality ax + by \\le c, when a = 0, represents a ________ half plane.", options: ["Left or right", "Upper or Lower", "Open", "None"], correctAnswer: 1 },
+    { id: 32, question: "The solution of the inequality x + 2y < 6 is:", options: ["(1, 1)", "(1, 3)", "(1, 4)", "(1, 5)"], correctAnswer: 0 }
+  ],
+  advanced: [
+    { id: 3, question: "There are ________ many feasible solutions in the feasible region.", options: ["Infinite", "Finite", "Some", "None"], correctAnswer: 0 },
+    { id: 5, question: "A point of a solution region where two boundary lines intersect is a corner point or:", options: ["Solution point", "Stationary", "Inflection", "Vertex"], correctAnswer: 3 },
+    { id: 19, question: "In linear programming, the maximum and minimum values of an objective function occur at:", options: ["Origin", "Interior points", "Corner points of feasible region", "Any boundary point"], correctAnswer: 2 },
+    { id: 21, question: "The feasible solution which maximizes or minimizes the objective function is called the:", options: ["Feasible region", "Optimal value", "Corner point", "Optimal solution"], correctAnswer: 3 },
+    { id: 23, question: "(0, 0) is the test point for:", options: ["y > mx", "x + y > 1", "2x - y \\ge 0", "3x + 4y > 10"], correctAnswer: 3 },
+    { id: 26, question: "Which one is NOT a corner point of x - 2y \\le 6, 2x + y \\ge 2, and x + 2y \\le 10?", options: ["(2, -2)", "(8, 1)", "(-2, 6)", "(0, -5)"], correctAnswer: 3 },
+    { id: 27, question: "To find the optimal solution, we evaluate the objective function at:", options: ["Corner points", "Only origin", "Any point", "All points of feasible region"], correctAnswer: 0 },
+    { id: 30, question: "The graph of -3x + 5y \\le 0 is:", options: ["On the origin side", "Left half plane", "Right half plane", "None"], correctAnswer: 0 },
+    { id: 33, question: "The non-negative variables x \\ge 0, y \\ge 0 are called:", options: ["Parameters", "Constants", "Decision variables", "Vertices"], correctAnswer: 2 }
+  ]
+},
+unit6: {
+  basic: [
+    { id: 1, question: "\\text{The equation of a circle whose center is } (g, f) \\text{ and radius is } r \\text{ is:}", options: ["\\sqrt{g^2-f^2-c}", "\\sqrt{g^2+f^2-c}", "\\sqrt{g^2+f^2+c}", "\\text{None}"], correctAnswer: 1 },
+    { id: 5, question: "\\text{The parabola } y^2 = x \\text{ passes through the:}", options: ["1^{st} \\text{ quadrant}", "\\text{Origin}", "2^{nd} \\text{ quadrant}", "\\text{None}"], correctAnswer: 1 },
+    { id: 6, question: "\\text{The eccentricity of a hyperbola is always:}", options: ["e = 1", "e < 1", "e > 1", "e \\ge 1"], correctAnswer: 2 },
+    { id: 10, question: "\\text{If } e = 1, \\text{ the conic is a:}", options: ["\\text{Circle}", "\\text{Parabola}", "\\text{Ellipse}", "\\text{Hyperbola}"], correctAnswer: 1 },
+    { id: 14, question: "\\text{Ellipse and hyperbola are called ________ conics.}", options: ["\\text{Central}", "\\text{Focal}", "\\text{Vertical}", "\\text{None}"], correctAnswer: 0 },
+    { id: 15, question: "\\text{In an ellipse, the length of the major axis is:}", options: ["4a", "2a", "2b^2", "\\text{None}"], correctAnswer: 1 },
+    { id: 17, question: "\\text{If } e < 1, \\text{ the conic is an:}", options: ["\\text{Circle}", "\\text{Parabola}", "\\text{Ellipse}", "\\text{Hyperbola}"], correctAnswer: 2 },
+    { id: 25, question: "\\text{If the circle } x^2+y^2-3x-2y+c=0 \\text{ passes through the origin, then } c =", options: ["-1", "1", "0", "\\infty"], correctAnswer: 2 },
+    { id: 26, question: "\\text{The length of the diameter of the circle } x^2 + y^2 = a^2 \\text{ is:}", options: ["a", "\\sqrt{a}", "\\text{zero}", "2a"], correctAnswer: 3 },
+    { id: 27, question: "\\text{The center of the ellipse } x^2 + 4y^2 = 16 \\text{ is:}", options: ["(0,4)", "(0,0)", "(0,16)", "(4,16)"], correctAnswer: 1 },
+    { id: 28, question: "\\text{If } r = 0, \\text{ then } x^2 + y^2 = r^2 \\text{ is called a ________ circle.}", options: ["\\text{Point}", "\\text{Zero}", "\\text{Small}", "\\text{Large}"], correctAnswer: 0 },
+    { id: 30, question: "\\text{The distance between the vertex and focus of } y^2 = 4ax \\text{ is:}", options: ["\\text{zero}", "4a", "a", "4"], correctAnswer: 2 },
+    { id: 31, question: "\\text{The midpoint of foci } F \\text{ and } F' \\text{ of an ellipse is called the:}", options: ["\\text{Vertex}", "\\text{Center}", "\\text{Focus}", "\\text{Directrix}"], correctAnswer: 1 },
+    { id: 32, question: "\\text{Foci of an ellipse always lie on the:}", options: ["\\text{Major axis}", "\\text{Minor axis}", "\\text{Co-vertices}", "\\text{None}"], correctAnswer: 0 },
+    { id: 35, question: "\\text{The two separate parts of a hyperbola are called:}", options: ["\\text{Branches}", "\\text{Parts}", "\\text{Curves}", "\\text{Directrix}"], correctAnswer: 0 },
+    { id: 37, question: "\\text{A line segment whose endpoints lie on a circle is called a:}", options: ["\\text{Diameter}", "\\text{Radius}", "\\text{Chord}", "\\text{None}"], correctAnswer: 2 },
+    { id: 41, question: "\\text{The parabola } y^2 = 4ax \\text{ opens towards the:}", options: ["\\text{Upward}", "\\text{Downward}", "\\text{Right side}", "\\text{Left side}"], correctAnswer: 2 },
+    { id: 42, question: "\\text{The parabola } y^2 = -4ax \\text{ opens towards the:}", options: ["\\text{Upward}", "\\text{Downward}", "\\text{Right side}", "\\text{Left side}"], correctAnswer: 3 },
+    { id: 43, question: "\\text{The parabola } x^2 = 4ay \\text{ opens towards the:}", options: ["\\text{Upward}", "\\text{Downward}", "\\text{Right side}", "\\text{Left side}"], correctAnswer: 0 },
+    { id: 44, question: "\\text{The parabola } x^2 = -4ay \\text{ opens towards the:}", options: ["\\text{Upward}", "\\text{Downward}", "\\text{Right side}", "\\text{Left side}"], correctAnswer: 1 },
+    { id: 46, question: "\\text{The focus of } x^2 = 4ay \\text{ is:}", options: ["(0, a)", "(a, 0)", "(0, -a)", "(-a, 0)"], correctAnswer: 0 },
+    { id: 48, question: "\\text{The focus of } x^2 = -4ay \\text{ is:}", options: ["(0, a)", "(a, 0)", "(0, -a)", "(-a, 0)"], correctAnswer: 2 },
+    { id: 50, question: "\\text{The directrix of } x^2 = 4ay \\text{ is:}", options: ["x = a", "x = -a", "y = -a", "y = a"], correctAnswer: 2 },
+    { id: 52, question: "\\text{The directrix of } x^2 = -4ay \\text{ is:}", options: ["y = -a", "y = a", "x = a", "x = -a"], correctAnswer: 1 },
+    { id: 58, question: "\\text{Vertices of the ellipse } \\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1, a > b \\text{ are:}", options: ["(\\pm a, 0)", "(0, \\pm a)", "(\\pm b, 0)", "(0, \\pm b)"], correctAnswer: 0 },
+    { id: 63, question: "\\text{If the eccentricity is less than 1, then the conic is:}", options: ["\\text{An ellipse}", "\\text{A circle}", "\\text{A parabola}", "\\text{A hyperbola}"], correctAnswer: 0 },
+    { id: 80, question: "\\text{The term which is NOT part of a circle's equation is:}", options: ["x^2", "y^2", "ax + by", "xy"], correctAnswer: 3 },
+    { id: 85, question: "\\text{Which of the following are functions:}", options: ["x^2 = 4ay", "x^2 = -4ay", "y^2 = 4ax", "\\text{Both } a \\text{ and } b"], correctAnswer: 3 },
+    { id: 86, question: "\\text{Length of the minor axis of } \\frac{x^2}{b^2} + \\frac{y^2}{a^2} = 1, a > b \\text{ is:}", options: ["a", "b", "2a", "2b"], correctAnswer: 3 },
+    { id: 88, question: "\\text{Directrix of the parabola } y^2 = 4ax \\text{ is:}", options: ["x = a", "x = -a", "y = a", "y = -a"], correctAnswer: 1 },
+    { id: 91, question: "\\text{The center of the circle } x^2 + y^2 + 8x - 6y + 37 = 0 \\text{ is:}", options: ["(4,3)", "(-4,3)", "(-4,-3)", "(4,-3)"], correctAnswer: 1 },
+    { id: 96, question: "\\text{The center of the circle } (x + 3)^2 + (y - 2)^2 = 16 \\text{ equals:}", options: ["(-3, 2)", "(3,-2)", "(3,2)", "(-3,-2)"], correctAnswer: 0 },
+    { id: 98, question: "\\text{The radius of the circle } x^2 + y^2 + 2gx + 2fy + c = 0 \\text{ is:}", options: ["\\sqrt{g^2+f^2-c}", "\\sqrt{g^2+f^2+c}", "\\sqrt{g^2-f^2+c}", "\\sqrt{g^2+f^2-c}"], correctAnswer: 3 }
+  ],
+  intermediate: [
+    { id: 2, question: "\\text{The directrix of the parabola } y^2 = 8x \\text{ is:}", options: ["x = -2", "x = 2", "y = -2", "y = 2"], correctAnswer: 0 },
+    { id: 7, question: "\\text{The focus of the parabola } y^2 = -12x \\text{ is:}", options: ["(0,-3)", "(3,0)", "(-3,0)", "(0,0)"], correctAnswer: 2 },
+    { id: 9, question: "\\text{Vertices of the hyperbola } \\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1 \\text{ are:}", options: ["(\\pm a, 0)", "(0, \\pm a)", "(0, \\pm b)", "(\\pm b, 0)"], correctAnswer: 0 },
+    { id: 13, question: "\\text{For } \\frac{x^2}{16} + \\frac{y^2}{25} = 1, \\text{ the value of } c \\text{ is:}", options: ["16", "25", "1", "\\sqrt{41}"], correctAnswer: 3 },
+    { id: 21, question: "\\text{Length of the latus rectum of } y^2 = 4ax \\text{ is:}", options: ["a", "2a", "4a", "\\text{None}"], correctAnswer: 2 },
+    { id: 24, question: "y = \\pm \\frac{b}{a}x \\text{ are the ________ of the hyperbola.}", options: ["\\text{Asymptotes}", "\\text{Tangents}", "\\text{Center}", "\\text{None}"], correctAnswer: 0 },
+    { id: 29, question: "\\text{The points } (\\pm a, 0) \\text{ for the hyperbola } \\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1 \\text{ are the:}", options: ["\\text{Focus}", "\\text{Vertices}", "\\text{Co-vertices}", "\\text{None}"], correctAnswer: 1 },
+    { id: 33, question: "\\text{The length of the latus rectum of an ellipse is:}", options: ["2a", "a", "4a", "\\frac{2b^2}{a}"], correctAnswer: 3 },
+    { id: 34, question: "\\text{The equation of the latus rectum of } y^2 = 4ax \\text{ is:}", options: ["y=a", "y=-a", "x=-a", "x=a"], correctAnswer: 3 },
+    { id: 36, question: "\\text{The vertex of the parabola } (x - 2)^2 = 8(y + 1) \\text{ is:}", options: ["(2,-1)", "(-2, 1)", "(0,0)", "(1,2)"], correctAnswer: 0 },
+    { id: 39, question: "\\text{The value of } a \\text{ for which } y^2 = 4ax \\text{ passes through } (2, 3) \\text{ is:}", options: ["8", "6", "5", "\\frac{9}{8}"], correctAnswer: 3 },
+    { id: 40, question: "\\text{If } \\frac{x^2}{36} + \\frac{y^2}{49} = 1, \\text{ then the ends of the minor axis are:}", options: ["(\\pm 6, 0)", "(0, \\pm 6)", "(0, \\pm 7)", "(\\pm 7, 0)"], correctAnswer: 0 },
+    { id: 45, question: "\\text{The focus of } y^2 = 4ax \\text{ is:}", options: ["(a, 0)", "(0, a)", "(-a, 0)", "(0, -a)"], correctAnswer: 0 },
+    { id: 47, question: "\\text{The focus of } y^2 = -4ax \\text{ is:}", options: ["(a, 0)", "(0, a)", "(-a, 0)", "(0, -a)"], correctAnswer: 2 },
+    { id: 49, question: "\\text{The directrix of } y^2 = 4ax \\text{ is:}", options: ["x = a", "x = -a", "y = a", "y = -a"], correctAnswer: 1 },
+    { id: 51, question: "\\text{The directrix of } y^2 = -4ax \\text{ is:}", options: ["x = -a", "x = a", "y = a", "y = -a"], correctAnswer: 1 },
+    { id: 57, question: "\\text{The center of the circle } x^2 + y^2 + 12x - 10y = 0 \\text{ is:}", options: ["(-6,-5)", "(6,-5)", "(6, 5)", "(-6,5)"], correctAnswer: 3 },
+    { id: 62, question: "\\text{The equation of the focal chord of the parabola } y^2 = 3x \\text{ is:}", options: ["y=\\frac{3}{4}", "x=\\frac{7}{4}", "y=\\frac{7}{4}", "\\text{None}"], correctAnswer: 3 },
+    { id: 67, question: "\\text{The point } (1,2) \\text{ relative to the circle } x^2+y^2=10 \\text{ is:}", options: ["\\text{Inside}", "\\text{Outside}", "\\text{On the circle}", "\\text{None}"], correctAnswer: 0 },
+    { id: 70, question: "\\text{The length of the latus rectum of } \\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1 \\text{ is:}", options: ["\\frac{2a^2}{b}", "\\frac{2b^2}{a}", "\\frac{a^2}{b}", "\\frac{b^2}{a}"], correctAnswer: 1 },
+    { id: 72, question: "\\text{Foci of the hyperbola } \\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1 \\text{ are:}", options: ["(\\pm c, 0)", "(0, \\pm c)", "(\\pm a, 0)", "(0, \\pm a)"], correctAnswer: 0 },
+    { id: 77, question: "\\text{Length of the latus rectum of a hyperbola is:}", options: ["\\frac{2a^2}{b}", "\\frac{2a}{b^2}", "\\frac{2b}{a^2}", "\\frac{2b^2}{a}"], correctAnswer: 3 },
+    { id: 79, question: "\\text{The equation of the asymptotes of } x^2 - y^2 = 9 \\text{ is:}", options: ["y = \\pm 3", "x = \\pm 3", "y = \\pm x", "y = 0"], correctAnswer: 2 },
+    { id: 81, question: "\\text{Two circles touch internally if:}", options: ["C_1C_2 = r_1+r_2", "C_1C_2 = |r_2-r_1|", "C_1C_2 = 0", "\\text{None}"], correctAnswer: 1 },
+    { id: 82, question: "\\text{Two circles touch externally if:}", options: ["C_1C_2 = r_1+r_2", "C_1C_2 = r_2-r_1", "C_1C_2 = 0", "\\text{None}"], correctAnswer: 0 },
+    { id: 83, question: "\\text{The position of point } (5, 6) \\text{ w.r.t circle } 2x^2+2y^2+12x-8y+1=0 \\text{ is:}", options: ["\\text{Inside}", "\\text{Outside}", "\\text{On the circle}", "\\text{None}"], correctAnswer: 1 },
+    { id: 87, question: "\\text{The center of the circle } x^2 + y^2 + 4x + 6y + 3 = 0 \\text{ is:}", options: ["(2, 3)", "(-2, 3)", "(-2, -3)", "(2, -3)"], correctAnswer: 2 },
+    { id: 89, question: "\\text{The length of the latus rectum of } 9x^2 + 4y^2 = 36 \\text{ is:}", options: ["\\frac{3}{8}", "\\frac{8}{3}", "\\frac{3}{4}", "\\frac{4}{3}"], correctAnswer: 1 },
+    { id: 90, question: "\\text{For a hyperbola, the relation between semi-axes is:}", options: ["c^2 = a^2-b^2", "c^2 = a^2+b^2", "b^2 = a^2+c^2", "a^2 = b^2+c^2"], correctAnswer: 1 },
+    { id: 93, question: "\\text{The center of the circle } 4x^2-4x+6y-25 = 0 \\text{ is:}", options: ["(1, -\\frac{3}{2})", "(\\frac{3}{2}, 1)", "(\\frac{1}{2},-\\frac{3}{4})", "(1, 2)"], correctAnswer: 2 },
+    { id: 94, question: "\\text{Foci of the ellipse } \\frac{x^2}{16} + \\frac{y^2}{12} = 1 \\text{ are:}", options: ["(\\pm 1,0)", "(0, \\pm 1)", "(\\pm 2,0)", "(0, \\pm 2)"], correctAnswer: 2 },
+    { id: 95, question: "\\text{Foci of } \\frac{y^2}{a^2} + \\frac{x^2}{b^2} = 1 \\text{ (where } a^2-b^2 = c^2 \\text{) are:}", options: ["(\\pm c, 0)", "(0, \\pm c)", "(c, \\pm c)", "(\\pm c, c)"], correctAnswer: 1 },
+    { id: 99, question: "\\text{The vertex of the parabola } (x - 1)^2 = 8(y + 2) \\text{ is:}", options: ["(1,-2)", "(0, 1)", "(-1,-2)", "(1, 2)"], correctAnswer: 0 }
+  ],
+  advanced: [
+    { id: 3, question: "\\text{The equation of the tangent to the ellipse } \\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1 \\text{ is:}", options: ["y-y_1 = m(x-x_1)", "y = \\frac{c}{m}", "\\frac{xx_1}{a^2} + \\frac{yy_1}{b^2} = 1", "\\text{None}"], correctAnswer: 2 },
+    { id: 4, question: "\\text{The transverse axis of the hyperbola } \\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1 \\text{ is the:}", options: ["\\text{x-axis}", "\\text{y-axis}", "\\text{z-axis}", "\\text{None}"], correctAnswer: 0 },
+    { id: 8, question: "\\text{The tangents of an ellipse are } y = mx \\pm:", options: ["\\sqrt{m^2a^2 + b^2}", "\\sqrt{m^2a^2 - b^2}", "\\frac{a}{m}", "\\text{None}"], correctAnswer: 0 },
+    { id: 11, question: "\\text{The parametric equations of } \\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1 \\text{ are:}", options: ["x=at^2, y=2at", "x=r\\cos\\theta, y=r\\sin\\theta", "x=a\\sec\\theta, y=b\\tan\\theta", "x=a\\cos\\theta, y=b\\sin\\theta"], correctAnswer: 2 },
+    { id: 12, question: "\\text{The equation of the tangent of } \\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1 \\text{ is } y = mx \\pm:", options: ["\\sqrt{a^2m^2 + b^2}", "\\sqrt{a^2m^2 - b^2}", "\\frac{a}{m}", "\\frac{b}{m}"], correctAnswer: 0 },
+    { id: 38, question: "\\text{The eccentricity of } \\frac{x^2}{16} + \\frac{y^2}{9} = 1 \\text{ is:}", options: ["\\frac{\\sqrt{7}}{4}", "\\frac{4}{5}", "-\\frac{\\sqrt{7}}{4}", "\\text{None}"], correctAnswer: 0 },
+    { id: 55, question: "ax^2 + 2hxy + by^2 + 2gx + 2fy + c = 0 \\text{ forms a parabola if } h^2-ab =", options: ["< 0", "0", "> 0", "\\text{None}"], correctAnswer: 1 },
+    { id: 56, question: "ax^2 + 2hxy + by^2 + 2gx + 2fy + c = 0 \\text{ forms a hyperbola if } h^2-ab =", options: ["< 0", "0", "> 0", "\\text{None}"], correctAnswer: 2 },
+    { id: 59, question: "ax^2 + 2hxy + by^2 = 0 \\text{ represents two real distinct lines if:}", options: ["h^2 > ab", "h^2 = ab", "h^2 < ab", "\\text{None}"], correctAnswer: 0 },
+    { id: 61, question: "\\text{The eccentricity of the ellipse } \\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1 \\text{ is:}", options: ["\\frac{\\sqrt{a^2-b^2}}{a}", "\\frac{\\sqrt{a^2+b^2}}{a}", "\\frac{\\sqrt{b^2-a^2}}{a}", "\\frac{\\sqrt{a^2-b^2}}{b}"], correctAnswer: 0 },
+    { id: 64, question: "\\text{The eccentricity of a rectangular hyperbola is:}", options: ["e > 1", "\\sqrt{2}", "1", "0"], correctAnswer: 1 },
+    { id: 68, question: "\\text{The slope of the tangent to } x^2+y^2=a^2 \\text{ at } (x_1,y_1) \\text{ is:}", options: ["\\frac{x_1}{y_1}", "\\frac{y_1}{x_1}", "-\\frac{x_1}{y_1}", "-\\frac{y_1}{x_1}"], correctAnswer: 2 },
+    { id: 71, question: "\\text{The eccentricity of a hyperbola is:}", options: ["\\frac{\\sqrt{a^2+b^2}}{a}", "\\frac{\\sqrt{a^2-b^2}}{a}", "\\frac{c}{a}", "\\text{Both } a \\text{ and } c"], correctAnswer: 3 },
+    { id: 74, question: "\\text{The equation of the tangent to } x^2+y^2=a^2 \\text{ at } (x_1,y_1) \\text{ is:}", options: ["xx_1-yy_1=a^2", "xx_1+yy_1=0", "xx_1-yy_1=0", "xx_1+yy_1=a^2"], correctAnswer: 3 },
+    { id: 78, question: "\\text{Condition for the line } y=mx+c \\text{ to touch the hyperbola } \\frac{x^2}{a^2}-\\frac{y^2}{b^2}=1 \\text{ is } c^2 =", options: ["a^2m^2+b^2", "a^2m^2-b^2", "b^2m^2-a^2", "\\text{None}"], correctAnswer: 1 },
+    { id: 84, question: "\\text{The length of the tangent from } P(-5, 10) \\text{ to the circle } 5x^2+5y^2+14x+12y-10=0 \\text{ is:}", options: ["5", "15", "\\sqrt{133}", "133"], correctAnswer: 2 },
+    { id: 92, question: "\\text{The slope of the tangent line to } y = f(x) \\text{ at } (x_1, y_1) \\text{ is:}", options: ["m", "\\frac{y_2-y_1}{x_2-x_1}", "f'(x_1)", "-\\frac{dx}{dy}"], correctAnswer: 2 },
+    { id: 97, question: "\\text{The eccentricity of } \\frac{y^2}{4} - x^2 = 1 \\text{ equals:}", options: ["\\frac{2}{\\sqrt{5}}", "-\\frac{2}{\\sqrt{5}}", "\\frac{\\sqrt{5}}{2}", "-\\frac{\\sqrt{5}}{2}"], correctAnswer: 2 },
+    // Repeat logic with variations to ensure exactly 33 per section
+    { id: 101, question: "\\text{The directrix of } y^2 = 16x \\text{ is:}", options: ["x = 4", "x = -4", "y = 4", "y = -4"], correctAnswer: 1 },
+    { id: 102, question: "\\text{The focus of } y^2 = 20x \\text{ is:}", options: ["(5, 0)", "(0, 5)", "(-5, 0)", "(0, -5)"], correctAnswer: 0 },
+    { id: 103, question: "\\text{The center of } (x-1)^2 + (y+2)^2 = 9 \\text{ is:}", options: ["(-1, 2)", "(1, -2)", "(1, 2)", "(-1, -2)"], correctAnswer: 1 },
+    { id: 104, question: "\\text{The radius of } x^2 + y^2 = 49 \\text{ is:}", options: ["49", "7", "\\sqrt{7}", "14"], correctAnswer: 1 },
+    { id: 105, question: "\\text{The eccentricity of a circle is:}", options: ["1", "0", "\\infty", "0.5"], correctAnswer: 1 },
+    { id: 106, question: "\\text{The conic } x^2/4 + y^2/9 = 1 \\text{ is an:}", options: ["\\text{Ellipse}", "\\text{Hyperbola}", "\\text{Parabola}", "\\text{Circle}"], correctAnswer: 0 },
+    { id: 107, question: "\\text{The length of major axis for } x^2/25 + y^2/9 = 1 \\text{ is:}", options: ["5", "10", "3", "6"], correctAnswer: 1 },
+    { id: 108, question: "\\text{The length of minor axis for } x^2/25 + y^2/9 = 1 \\text{ is:}", options: ["5", "10", "3", "6"], correctAnswer: 3 },
+    { id: 109, question: "\\text{The asymptote of } x^2 - y^2 = 1 \\text{ is:}", options: ["y = x", "y = 2x", "y = 0.5x", "\\text{None}"], correctAnswer: 0 },
+    { id: 110, question: "\\text{The distance between foci of ellipse is:}", options: ["a", "2a", "c", "2c"], correctAnswer: 3 },
+    { id: 111, question: "\\text{If the discriminant } B^2-4AC < 0, \\text{ the conic is a:}", options: ["\\text{Parabola}", "\\text{Hyperbola}", "\\text{Ellipse}", "\\text{None}"], correctAnswer: 2 },
+    { id: 112, question: "\\text{If the discriminant } B^2-4AC = 0, \\text{ the conic is a:}", options: ["\\text{Parabola}", "\\text{Hyperbola}", "\\text{Ellipse}", "\\text{None}"], correctAnswer: 0 },
+    { id: 113, question: "\\text{If the discriminant } B^2-4AC > 0, \\text{ the conic is a:}", options: ["\\text{Parabola}", "\\text{Hyperbola}", "\\text{Ellipse}", "\\text{None}"], correctAnswer: 1 },
+    { id: 114, question: "\\text{The vertex of } y^2 = 4ax \\text{ is:}", options: ["(a, 0)", "(0, 0)", "(0, a)", "(a, a)"], correctAnswer: 1 },
+    { id: 115, question: "\\text{The focal parameter } p \\text{ for } y^2 = 4ax \\text{ is:}", options: ["a", "2a", "4a", "p"], correctAnswer: 0 }
+  ]
+},
+unit7: {
+  basic: [
+    { id: 5, question: "\\text{The magnitude of a ______ cannot be changed.}", options: ["\\text{Null vector}", "\\text{Unit vector}", "\\text{Negative of a vector}", "\\text{None}"], correctAnswer: 1 },
+    { id: 6, question: "\\text{The vector } [0, 0, 1] \\text{ lies along the:}", options: ["\\text{x-axis}", "\\text{y-axis}", "\\text{z-axis}", "\\text{All of these}"], correctAnswer: 2 },
+    { id: 9, question: "\\text{The magnitude (norm) of a non-zero vector } \\mathbf{u} \\text{ is always:}", options: ["|\\mathbf{u}| = 0", "|\\mathbf{u}| < 0", "|\\mathbf{u}| > 0", "|\\mathbf{u}| \\ge 0"], correctAnswer: 2 },
+    { id: 13, question: "\\text{A vector parallel and perpendicular to every vector is the:}", options: ["\\text{Position vector}", "\\text{Negative vector}", "\\text{Zero vector}", "\\text{Unit vector}"], correctAnswer: 2 },
+    { id: 19, question: "\\text{The position vector of the point } (-1, 2, 3) \\text{ is:}", options: ["\\mathbf{i} + 2\\mathbf{j} + 3\\mathbf{k}", "\\mathbf{i} - 2\\mathbf{j} + 3\\mathbf{k}", "\\mathbf{i} - 2\\mathbf{j} - 3\\mathbf{k}", "-\\mathbf{i} + 2\\mathbf{j} + 3\\mathbf{k}"], correctAnswer: 3 },
+    { id: 20, question: "\\text{Additive inverse of a position vector is a:}", options: ["\\text{Position vector}", "\\text{Unit vector}", "\\text{Null vector}", "\\text{None}"], correctAnswer: 3 },
+    { id: 21, question: "\\text{The expression } \\mathbf{V}/|\\mathbf{V}| \\text{ (for a non-zero vector) equals:}", options: ["|\\mathbf{V}|", "\\mathbf{V}", "0", "\\hat{\\mathbf{V}}"], correctAnswer: 3 },
+    { id: 31, question: "\\text{A vector making an angle } \\alpha \\text{ with the x-axis is represented as:}", options: ["\\cos \\alpha \\mathbf{i} + \\sin \\alpha \\mathbf{j}", "\\sin \\alpha \\mathbf{i} + \\cos \\alpha \\mathbf{j}", "\\cos \\alpha \\mathbf{i} - \\sin \\alpha \\mathbf{j}", "\\text{All of these}"], correctAnswer: 0 },
+    { id: 43, question: "\\text{Which vector is parallel to every vector?}", options: ["\\text{Position vector}", "\\text{Null vector}", "\\text{Unit vector}", "\\text{None}"], correctAnswer: 1 },
+    { id: 47, question: "\\text{The magnitude of the vector } \\mathbf{v} = 2\\mathbf{i} - 3\\mathbf{j} + 4\\mathbf{k} \\text{ is:}", options: ["29", "\\sqrt{29}", "28", "\\sqrt{28}"], correctAnswer: 1 },
+    { id: 49, question: "\\text{If two vectors } \\mathbf{u} \\text{ and } \\mathbf{v} \\text{ are orthogonal, then:}", options: ["\\mathbf{u} \\times \\mathbf{v} = 0", "\\mathbf{u} = -\\lambda \\mathbf{v}", "\\mathbf{u} \\cdot \\mathbf{v} = 0", "\\mathbf{v} = \\mathbf{u} + \\lambda \\mathbf{v}"], correctAnswer: 2 },
+    { id: 50, question: "\\text{The direction cosines of a vector are:}", options: ["\\text{Real numbers}", "\\text{-ve real numbers}", "\\text{+ve real numbers}", "\\text{Non-zero real numbers}"], correctAnswer: 0 },
+    { id: 52, question: "\\text{A vector having norm 2 and lying on a horizontal line is:}", options: ["2\\mathbf{i}", "-2\\mathbf{i}", "\\text{Both } a \\text{ and } b", "\\text{None}"], correctAnswer: 2 },
+    { id: 56, question: "\\text{Let } \\vec{OA} = \\mathbf{a} \\text{ and } \\vec{OB} = \\mathbf{b}, \\text{ then vector } \\vec{AB} \\text{ is:}", options: ["\\mathbf{a} - \\mathbf{b}", "\\mathbf{a} + \\mathbf{b}", "\\mathbf{b} - \\mathbf{a}", "\\mathbf{b} + \\mathbf{a}"], correctAnswer: 2 },
+    { id: 57, question: "\\text{Work done (W) is defined by the formula:}", options: ["\\mathbf{F} \\times \\mathbf{F}", "\\mathbf{F} \\times \\mathbf{d}", "\\mathbf{F} \\cdot \\mathbf{d}", "\\mathbf{d} \\cdot \\mathbf{F}"], correctAnswer: 2 },
+    { id: 62, question: "\\text{A vector whose initial point is at the origin and terminal point is P is called the:}", options: ["\\text{Displacement}", "\\text{Magnitude}", "\\text{Position vector}", "\\text{None}"], correctAnswer: 2 },
+    { id: 67, question: "\\text{Commutative law holds true in:}", options: ["\\text{Vector product}", "\\text{Cross product}", "\\text{Scalar (Dot) product}", "\\text{None}"], correctAnswer: 2 },
+    { id: 73, question: "\\text{In vector } \\mathbf{u} = [4, 5], \\text{ the numbers 4 and 5 are called:}", options: ["\\text{Coordinates}", "\\text{Vectors}", "\\text{Components}", "\\text{Ordinates}"], correctAnswer: 2 },
+    { id: 77, question: "\\text{The magnitude } |\\cos \\alpha \\mathbf{i} + \\sin \\alpha \\mathbf{j} + 0\\mathbf{k}| \\text{ is:}", options: ["0", "1", "-1", "2"], correctAnswer: 1 },
+    { id: 78, question: "\\text{Magnitude of vector } \\mathbf{v} = -\\mathbf{i} + \\mathbf{j} \\text{ is:}", options: ["\\sqrt{1}", "\\sqrt{2}", "\\sqrt{3}", "\\sqrt{4}"], correctAnswer: 1 },
+    { id: 79, question: "\\text{The value of } \\mathbf{k} \\cdot (\\mathbf{i} \\times \\mathbf{j}) \\text{ is:}", options: ["0", "1", "2", "-1"], correctAnswer: 1 },
+    { id: 85, question: "\\text{The cross product } \\mathbf{i} \\times \\mathbf{i} \\text{ equals:}", options: ["1", "2", "0", "-1"], correctAnswer: 2 }
+  ],
+  intermediate: [
+    { id: 2, question: "\\text{The projection of vector } \\mathbf{a} = u\\mathbf{i} + v\\mathbf{j} + w\\mathbf{k} \\text{ along the j-axis is:}", options: ["u", "v", "w", "\\text{None}"], correctAnswer: 1 },
+    { id: 3, question: "\\text{The expression } ab \\sin \\theta \\text{ is equal to:}", options: ["|\\mathbf{a} \\cdot \\mathbf{b}|", "\\mathbf{a} \\cdot \\mathbf{b}", "|\\mathbf{a} \\times \\mathbf{b}|", "(\\mathbf{a} \\times \\mathbf{b})/|\\mathbf{a} \\times \\mathbf{b}|"], correctAnswer: 2 },
+    { id: 7, question: "\\text{The volume of a parallelepiped with edges } (\\mathbf{i}-4\\mathbf{j}+\\mathbf{k}), (\\mathbf{i}-\\mathbf{j}-2\\mathbf{k}), \\text{ and } (2\\mathbf{i}-3\\mathbf{j}+\\mathbf{k}) \\text{ is:}", options: ["10", "0", "14", "17"], correctAnswer: 2 },
+    { id: 10, question: "\\text{If A, B, C, D are vertices of a parallelepiped, its volume is:}", options: ["[\\vec{AB} \\vec{BC} \\vec{CD}]", "[\\vec{AB} \\vec{AC} \\vec{BD}]", "[\\vec{AB} \\vec{AC} \\vec{AD}]", "[\\vec{BC} \\vec{BD} \\vec{AD}]"], correctAnswer: 2 },
+    { id: 12, question: "\\text{The moment of force } \\mathbf{F} \\text{ about point A, applied at point B, is:}", options: ["\\mathbf{F} \\cdot \\vec{AB}", "\\vec{AB} \\times \\mathbf{F}", "\\vec{BA} \\cdot \\mathbf{F}", "\\mathbf{F} \\times \\vec{BA}"], correctAnswer: 1 },
+    { id: 16, question: "\\text{The value of } 2\\mathbf{i} \\cdot (5\\mathbf{j} \\times 3\\mathbf{k}) \\text{ is:}", options: ["1", "30", "0", "12"], correctAnswer: 1 },
+    { id: 17, question: "\\text{Vectors } \\mathbf{u} = 2\\mathbf{i}-4\\mathbf{j}+5\\mathbf{k} \\text{ and } \\mathbf{v} = 4\\mathbf{i}-3\\mathbf{j}-4\\mathbf{k} \\text{ are:}", options: ["\\text{Parallel}", "\\text{Perpendicular}", "\\text{Neither parallel nor perp}", "\\text{None}"], correctAnswer: 1 },
+    { id: 23, question: "\\text{The angle between the vector } \\sqrt{3}\\mathbf{i} + \\mathbf{j} \\text{ and the x-axis is:}", options: ["30^\\circ", "60^\\circ", "45^\\circ", "90^\\circ"], correctAnswer: 0 },
+    { id: 25, question: "\\text{If } \\mathbf{u}, \\mathbf{v}, \\text{ and } \\mathbf{w} \\text{ are coplanar, then } \\mathbf{u} \\cdot (\\mathbf{v} \\times \\mathbf{w}) \\text{ is:}", options: ["0", "1", "-1", "\\text{None}"], correctAnswer: 0 },
+    { id: 27, question: "\\text{If } \\mathbf{u} \\cdot \\mathbf{i} = 2 \\text{ and } \\mathbf{u} \\cdot \\mathbf{j} = 3, \\text{ then the vector } \\mathbf{u} \\text{ is:}", options: ["3\\mathbf{i} - 2\\mathbf{j}", "2\\mathbf{i} - 3\\mathbf{j}", "3\\mathbf{i} + 2\\mathbf{j}", "2\\mathbf{i} + 3\\mathbf{j}"], correctAnswer: 3 },
+    { id: 35, question: "\\text{The projection of vector } \\mathbf{a} \\text{ along vector } \\mathbf{b} \\text{ is given by:}", options: ["(\\mathbf{a} \\cdot \\mathbf{b}) / |\\mathbf{b}|", "\\mathbf{a} \\cdot \\mathbf{b}", "(\\mathbf{a} \\cdot \\mathbf{b}) / |\\mathbf{a}|", "\\mathbf{a} \\times \\mathbf{b}"], correctAnswer: 0 },
+    { id: 36, question: "\\text{If } \\mathbf{u} \\text{ and } \\mathbf{v} \\text{ are adjacent vectors of a parallelogram, its area is:}", options: ["\\mathbf{u} \\cdot \\mathbf{v}", "|\\mathbf{u} \\cdot \\mathbf{v}|", "\\mathbf{u} \\times \\mathbf{v}", "|\\mathbf{u} \\times \\mathbf{v}|"], correctAnswer: 3 },
+    { id: 38, question: "\\text{The dot product of two vectors is minimum when } \\theta \\text{ is:}", options: ["0^\\circ", "\\pi", "\\pi/2", "\\pi/4"], correctAnswer: 1 },
+    { id: 59, question: "\\text{If } |\\mathbf{a}|=16, |\\mathbf{b}|=2, \\text{ and the angle is } 60^\\circ, \\text{ their scalar product is:}", options: ["6", "48", "16", "24"], correctAnswer: 2 },
+    { id: 60, question: "\\text{Work done by force } 2\\mathbf{i}-\\mathbf{j}-\\mathbf{k} \\text{ in displacement } 3\\mathbf{i}+2\\mathbf{j}-5\\mathbf{k} \\text{ is:}", options: ["3", "5", "7", "9"], correctAnswer: 3 },
+    { id: 63, question: "\\text{If } P=(2,3) \\text{ and } Q=(6,-2), \\text{ then the vector } \\vec{PQ} \\text{ is:}", options: ["4\\mathbf{i} + 5\\mathbf{j}", "-4\\mathbf{i} + 5\\mathbf{j}", "4\\mathbf{i} - 5\\mathbf{j}", "5\\mathbf{i} - 4\\mathbf{j}"], correctAnswer: 2 }
+  ],
+  advanced: [
+    { id: 1, question: "\\text{If } \\mathbf{u} = 2\\mathbf{i} + a\\mathbf{j} + 5\\mathbf{k} \\text{ and } \\mathbf{v} = 3\\mathbf{i} + \\mathbf{j} + a\\mathbf{k} \\text{ are perpendicular, then } a =", options: ["0", "3", "-1", "-1/2"], correctAnswer: 2 },
+    { id: 4, question: "\\text{If } 4\\mathbf{i} + 0\\mathbf{j} - 3\\mathbf{k} \\text{ is a vector, then the direction cosine } \\cos \\gamma \\text{ is:}", options: ["4/5", "1/5", "-3/5", "2/5"], correctAnswer: 2 },
+    { id: 11, question: "(\\mathbf{i} - \\mathbf{j}) \\cdot (\\mathbf{j} - \\mathbf{k}) \\times (\\mathbf{k} - \\mathbf{i}) \\text{ equals:}", options: ["1", "0", "-1", "2"], correctAnswer: 1 },
+    { id: 30, question: "\\text{The vector triple product } \\mathbf{u} \\times (\\mathbf{v} \\times \\mathbf{w}) \\text{ is equivalent to:}", options: ["(\\mathbf{u} \\cdot \\mathbf{w})\\mathbf{v} - (\\mathbf{u} \\cdot \\mathbf{v})\\mathbf{w}", "\\mathbf{v}(\\mathbf{w} \\cdot \\mathbf{u})", "\\mathbf{w}(\\mathbf{u} \\cdot \\mathbf{v})", "\\text{None}"], correctAnswer: 0 },
+    { id: 34, question: "\\text{A unit vector perpendicular to both vectors } \\mathbf{a} \\text{ and } \\mathbf{b} \\text{ is:}", options: ["(\\mathbf{a} \\cdot \\mathbf{b}) / |\\mathbf{a}||\\mathbf{b}|", "(\\mathbf{a} \\times \\mathbf{b}) / |\\mathbf{a} \\times \\mathbf{b}|", "(\\mathbf{a} \\times \\mathbf{b}) / |\\mathbf{a}|", "\\mathbf{a} \\times \\mathbf{b}"], correctAnswer: 1 },
+    { id: 41, question: "\\text{If } |\\mathbf{a} \\cdot \\mathbf{b}| = 6 \\text{ and } |\\mathbf{a} \\times \\mathbf{b}| = 6\\sqrt{3}, \\text{ the angle between them is:}", options: ["90^\\circ", "60^\\circ", "30^\\circ", "45^\\circ"], correctAnswer: 1 },
+    { id: 44, question: "\\text{If } \\alpha, \\beta, \\gamma \\text{ are directional angles, then } \\sin^2 \\alpha + \\sin^2 \\beta + \\sin^2 \\gamma =", options: ["0", "1", "2", "-2"], correctAnswer: 2 },
+    { id: 46, question: "\\text{If } \\mathbf{u}, \\mathbf{v}, \\text{ and } \\mathbf{w} \\text{ are edges of a tetrahedron, its volume is:}", options: ["1/4 [\\mathbf{u}\\mathbf{v}\\mathbf{w}]", "1/6 [\\mathbf{u}\\mathbf{v}\\mathbf{w}]", "[\\mathbf{u}\\mathbf{v}\\mathbf{w}]", "1/3 [\\mathbf{u}\\mathbf{v}\\mathbf{w}]"], correctAnswer: 1 },
+    { id: 54, question: "\\text{If } \\mathbf{a} = 4\\mathbf{i} + 3\\mathbf{j} + \\mathbf{k} \\text{ and } \\mathbf{b} = 2\\mathbf{i} - \\mathbf{j} - 2\\mathbf{k}, \\text{ a vector perpendicular to both is:}", options: ["7\\mathbf{i} - 6\\mathbf{j} - 10\\mathbf{k}", "1/\\sqrt{185} (7\\mathbf{i} - 6\\mathbf{j} - 10\\mathbf{k})", "1/\\sqrt{185} (7\\mathbf{i} + 6\\mathbf{j} + 10\\mathbf{k})", "\\text{None}"], correctAnswer: 1 },
+    { id: 70, question: "\\text{Geometrically, } \\mathbf{a} \\cdot (\\mathbf{b} \\times \\mathbf{c}) \\text{ represents:}", options: ["\\text{Area of triangle}", "\\text{Volume of parallelepiped}", "\\text{Volume of tetrahedron}", "\\text{Area of parallelogram}"], correctAnswer: 1 },
+    { id: 75, question: "\\text{If } \\mathbf{a} = [2, 3, 1] \\text{ and } \\mathbf{b} = [1, 0, 2], \\text{ then } \\mathbf{a} \\times \\mathbf{b} \\text{ is:}", options: ["6\\mathbf{i} - 3\\mathbf{j} - 3\\mathbf{k}", "6\\mathbf{i} + 3\\mathbf{j} + 3\\mathbf{k}", "-6\\mathbf{i} + 3\\mathbf{j} + 3\\mathbf{k}", "\\text{Null vector}"], correctAnswer: 0 }
+  ]
+}
   }
 };
 

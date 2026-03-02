@@ -3,6 +3,8 @@ import { sidebarStyles } from "../assets/dummyStyles";
 import questionsData from "../assets/dummyData";
 import { toast } from "react-toastify";
 import axios from "axios";
+import { API_BASE } from "../services/api";
+
 import {
   Code,
   Cpu,
@@ -24,8 +26,15 @@ import {
   Menu,
   CheckCircle,
   XCircle,
+  SquareFunction,
+  TrendingUp,
+  Sigma,
+  Shapes,
+  AreaChart,
+  Orbit,
+  Navigation,
 } from "lucide-react";
-const API_BASE = "http://localhost:4000";
+import { InlineMath, BlockMath } from "react-katex";
 
 function Sidebar() {
   const [selectedTech, setSelectedTech] = useState(null);
@@ -37,7 +46,6 @@ function Sidebar() {
 
   const submittedRef = useRef(false);
   const asideRef = useRef(null);
-  
 
   useEffect(() => {
     const handleResize = () => {
@@ -63,86 +71,58 @@ function Sidebar() {
 
   const technologies = [
     {
-      id: "html",
-      name: "HTML",
-      icon: <Globe size={20} />,
+      id: "unit1",
+      name: "U1: fraction & Limits",
+      icon: <SquareFunction size={20} />,
       color: "bg-orange-50 text-orange-600 border-orange-200",
     },
     {
-      id: "css",
-      name: "CSS",
-      icon: <Layout size={20} />,
+      id: "unit2",
+      name: "U2: Diffrentiation ",
+      icon: <TrendingUp size={20} />,
       color: "bg-blue-50 text-blue-600 border-blue-200",
     },
     {
-      id: "js",
-      name: "JavaScript",
-      icon: <Code size={20} />,
+      id: "unit3",
+      name: "U3:Integration ",
+      icon: <Sigma size={20} />,
       color: "bg-yellow-50 text-yellow-600 border-yellow-200",
     },
     {
-      id: "react",
-      name: "React",
-      icon: <Cpu size={20} />,
+      id: "unit4",
+      name: "U4: Analytic Geometry",
+      icon: <Shapes size={20} />,
       color: "bg-cyan-50 text-cyan-600 border-cyan-200",
     },
     {
-      id: "node",
-      name: "Node.js",
-      icon: <Code size={20} />,
-      color: "bg-green-50 text-green-600 border-green-200",
+      id: "unit5",
+      name: "U5:LINEAR INEQUALITIES ",
+      icon: <AreaChart size={20} />,
+      color: "bg-cyan-50 text-cyan-600 border-cyan-200",
     },
     {
-      id: "mongodb",
-      name: "MongoDB",
-      icon: <Database size={20} />,
-      color: "bg-emerald-50 text-emerald-600 border-emerald-200",
+      id: "unit6",
+      name: "U6: Conic Sections  ",
+      icon: <Orbit size={20} />,
+      color: "bg-cyan-50 text-cyan-600 border-cyan-200",
     },
     {
-      id: "java",
-      name: "Java",
-      icon: <Coffee size={20} />,
-      color: "bg-red-50 text-red-600 border-red-200",
-    },
-    {
-      id: "python",
-      name: "Python",
-      icon: <Terminal size={20} />,
-      color: "bg-indigo-50 text-indigo-600 border-indigo-200",
-    },
-    {
-      id: "cpp",
-      name: "C++",
-      icon: <Code size={20} />,
-      color: "bg-purple-50 text-purple-600 border-purple-200",
-    },
-    {
-      id: "bootstrap",
-      name: "Bootstrap",
-      icon: <Layout size={20} />,
-      color: "bg-pink-50 text-pink-600 border-pink-200",
+      id: "unit7",
+      name: "U7: Vectors  ",
+      icon: <Navigation size={20} />,
+      color: "bg-cyan-50 text-cyan-600 border-cyan-200",
     },
   ];
 
   const levels = [
-    { id: "basic", name: "Basic", questions: 20, icon: <Star size={16} /> },
-    {
-      id: "intermediate",
-      name: "Intermediate",
-      questions: 40,
-      icon: <Zap size={16} />,
-    },
-    {
-      id: "advanced",
-      name: "Advanced",
-      questions: 60,
-      icon: <Target size={16} />,
-    },
+    { id: "basic", name: "Basic", icon: <Star size={16} /> },
+    { id: "intermediate", name: "Intermediate", icon: <Zap size={16} /> },
+    { id: "advanced", name: "Advanced", icon: <Target size={16} /> },
   ];
 
   const getQuestions = () => {
     if (!selectedTech || !selectedLevel) return [];
-    return questionsData[selectedTech]?.[selectedLevel] || [];
+    return questionsData.math?.[selectedTech]?.[selectedLevel] || [];
   };
 
   const calculateScore = () => {
@@ -252,17 +232,17 @@ function Sidebar() {
   const submitResult = async () => {
     if (submittedRef.current) return;
     if (!selectedTech || !selectedLevel) return;
+
+    const techName = technologies.find((t) => t.id === selectedTech)?.name;
+
     const payload = {
-      title: `${selectedTech.toUpperCase()} - ${
-        selectedLevel.charAt(0).toUpperCase() + selectedLevel.slice(1)
-      } quiz`,
+      title: `Math Quiz: ${techName} (${selectedLevel})`, // Better title
       technology: selectedTech,
       level: selectedLevel,
       totalQuestions: score.total,
       correct: score.correct,
       wrong: score.total - score.correct,
     };
-
     try {
       submittedRef.current = true;
       toast.info("saving your result");
@@ -318,7 +298,7 @@ function Sidebar() {
                   <BookOpen size={28} className="text-indigo-700" />
                 </div>
                 <div>
-                  <h1 className={sidebarStyles.logoTitle}>Tech Quiz Master</h1>
+                  <h1 className={sidebarStyles.logoTitle}> Math Quiz Master</h1>
                   <p className={sidebarStyles.logoSubtitle}>
                     Test your knowledge and skills
                   </p>
@@ -407,7 +387,7 @@ function Sidebar() {
           <div className={sidebarStyles.sidebarFooter}>
             <div className={sidebarStyles.footerContent}>
               <div className={sidebarStyles.footerContentCenter}>
-                <p >Master your skills ine Quiz at a time</p>
+                <p>Master your skills ine Quiz at a time</p>
                 <p className={sidebarStyles.footerHighlight}>
                   Keep Learning, Keep Growing!
                 </p>
@@ -415,7 +395,7 @@ function Sidebar() {
             </div>
           </div>
         </aside>
-          <main className={sidebarStyles.mainContent}>
+        <main className={sidebarStyles.mainContent}>
           <div className={sidebarStyles.mobileHeader}>
             <button
               onClick={toggleSidebar}
@@ -479,12 +459,12 @@ function Sidebar() {
                   <Award size={64} className="text-indigo-700" />
                 </div>
                 <h2 className={sidebarStyles.welcomeTitle}>
-                  Welcome to Tech Quiz Master
+                  Welcome to Math Quiz Master
                 </h2>
                 <p className={sidebarStyles.welcomeDescription}>
-                  Select a technology from the sidebar to start your quiz
-                  journey. Test your knowledge at basic, intermediate, or
-                  advanced levels.
+                  Select a Chapter from the sidebar to start your quiz journey.
+                  Test your knowledge at basic, intermediate, or advanced
+                  levels.
                 </p>
 
                 <div className={sidebarStyles.featuresGrid}>
@@ -493,10 +473,10 @@ function Sidebar() {
                       <Star size={20} />
                     </div>
                     <h3 className={sidebarStyles.featureTitle}>
-                      Multiple Technologies
+                      Math Chapters quiz
                     </h3>
                     <p className={sidebarStyles.featureDescription}>
-                      HTML, CSS, JavaScript, React, and more
+                      All the Chapters of Math class 12
                     </p>
                   </div>
 
@@ -528,7 +508,7 @@ function Sidebar() {
                 <div className={sidebarStyles.welcomePrompt}>
                   <p className={sidebarStyles.welcomePromptText}>
                     <Sparkles size={16} className="mr-2" />
-                    Select any technology to begin your learning adventure!
+                    Select any Chapter to begin your Quiz adventure!
                   </p>
                 </div>
               </div>
@@ -621,8 +601,8 @@ function Sidebar() {
                           score.percentage >= 80
                             ? "bg-green-400"
                             : score.percentage >= 60
-                            ? "bg-yellow-400"
-                            : "bg-red-400"
+                              ? "bg-yellow-400"
+                              : "bg-red-400"
                         }`}
                         style={{ width: `${score.percentage}%` }}
                       />
@@ -663,8 +643,15 @@ function Sidebar() {
                   <div className={sidebarStyles.questionIcon}>
                     <Target size={20} />
                   </div>
-                  <h2 className={sidebarStyles.questionText}>
-                    {currentQ.question}
+                  <h2
+                    className={`${sidebarStyles.questionText} font-serif italic`}
+                  >
+                    {currentQ.question.includes("\\") ||
+                    currentQ.question.includes("^") ? (
+                      <InlineMath math={currentQ.question} />
+                    ) : (
+                      currentQ.question
+                    )}
                   </h2>
                 </div>
 
@@ -686,8 +673,8 @@ function Sidebar() {
                               ? sidebarStyles.optionCorrect
                               : sidebarStyles.optionIncorrect
                             : showFeedback && isCorrect
-                            ? sidebarStyles.optionCorrect
-                            : sidebarStyles.optionNormal
+                              ? sidebarStyles.optionCorrect
+                              : sidebarStyles.optionNormal
                         }`}
                       >
                         <div className={sidebarStyles.optionContent}>
@@ -716,7 +703,15 @@ function Sidebar() {
                             <div className={sidebarStyles.optionIconEmpty} />
                           )}
                           <span className={sidebarStyles.optionText}>
-                            {option}
+                            {typeof option === "string" &&
+                            (option.includes("\\") ||
+                              option.includes("^") ||
+                              option.includes("_") ||
+                              option.includes("/")) ? ( 
+                              <InlineMath math={option} />
+                            ) : (
+                              option
+                            )}
                           </span>
                         </div>
                       </button>
@@ -740,7 +735,7 @@ function Sidebar() {
           )}
         </main>
       </div>
-      <style > {sidebarStyles.customStyles}</style>
+      <style> {sidebarStyles.customStyles}</style>
     </div>
   );
 }

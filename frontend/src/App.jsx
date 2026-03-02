@@ -4,7 +4,7 @@ import Login from './components/login'
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import Signup from './components/Signup'
 import MyResultPage from './pages/MyResultPage'
-
+import 'katex/dist/katex.min.css';
 function RequireAuth({ children }) {
   const isLoggedIn = Boolean(localStorage.getItem('authToken'))
   const location = useLocation()

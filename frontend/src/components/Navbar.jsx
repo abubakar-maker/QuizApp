@@ -75,7 +75,7 @@ function Navbar({ logoSrc }) {
         </div>
         <div className={navbarStyles.titleContainer}>
           <div className={navbarStyles.titleBackground}>
-            <h1 className={navbarStyles.titleText}>Coding Quiz Application</h1>
+            <h1 className={navbarStyles.titleText}>Math  Quiz Application</h1>
           </div>
         </div>
 

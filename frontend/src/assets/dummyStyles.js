@@ -338,7 +338,7 @@ export const sidebarStyles = {
   questionContainer: "bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-gray-100",
   questionHeader: "flex items-center mb-2",
   questionIcon: "bg-indigo-100 text-indigo-600 p-2 rounded-lg mr-3",
-  questionText: "text-lg md:text-xl font-semibold text-slate-800",
+  questionText: "text-lg md:text-xl  text-slate-800",
   
   // Options container
   optionsContainer: "space-y-4 mt-6",
